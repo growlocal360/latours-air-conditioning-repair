@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Carlyss LA Service",
+  "description": "Air conditioning repair service and HVAC contractor serving Carlyss, LA.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Carlyss",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Louisiana"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://latourshvac.com/service-areas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Carlyss, LA",
+      "item": "https://latourshvac.com/service-areas/carlyss-la/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Service Carlyss LA | Latour's HVAC"
+  description="Air Conditioning Repair Service in Carlyss, LA. Latour's HVAC provides AC repair, installation, furnace repair, and 24/7 emergency HVAC service. Call (337) 912-1233."
+  keywords="air conditioning repair carlyss LA, AC repair carlyss, HVAC contractor carlyss LA, furnace repair carlyss, heating carlyss LA"
+  ogDescription="Expert HVAC services in Carlyss, LA. AC repair, installation, furnace repair & 24/7 emergency service. Just south of Sulphur."
+  canonicalUrl="https://latourshvac.com/service-areas/carlyss-la/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+        <li>Carlyss, LA</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair Service in Carlyss, LA</h1>
+      <p>Professional HVAC service for Carlyss residents. Located just south of Sulphur, we provide fast response times and expert service.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Need <strong>air conditioning repair in Carlyss, LA</strong>? Latour's HVAC provides professional HVAC services to Carlyss residents and businesses. This growing community just south of Sulphur deserves reliable heating and cooling service.</p>
+
+          <p>Carlyss's mix of established homes and newer construction requires versatile HVAC expertise. Whether you need emergency AC repair, a new system installation, or routine maintenance, our experienced technicians deliver quality service with upfront pricing.</p>
+
+          <h2>HVAC Services Available in Carlyss, LA</h2>
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models</li>
+            <li><strong>AC Installation:</strong> New system installation with proper sizing</li>
+            <li><strong>Furnace Repair:</strong> Gas and electric furnace diagnostics and repair</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers, dehumidifiers, and duct cleaning</li>
+          </ul>
+
+          <h2>Why Carlyss Residents Choose Latour's HVAC</h2>
+          <ul>
+            <li><strong>Quick Response:</strong> Just minutes from our Lake Charles headquarters</li>
+            <li><strong>24/7 Emergency Service:</strong> AC or heating emergency? We're available any time</li>
+            <li><strong>Upfront Pricing:</strong> No surprises—know the cost before we start</li>
+            <li><strong>Licensed & Insured:</strong> Full protection for your home and family</li>
+          </ul>
+
+          <h2>About Carlyss, LA</h2>
+          <p>Carlyss is an unincorporated community in Calcasieu Parish, located south of Sulphur along Highway 27. The area has seen significant residential growth and offers a suburban atmosphere with easy access to both Sulphur and Lake Charles. Like all of Southwest Louisiana, Carlyss experiences hot, humid summers.</p>
+
+          <p>Areas we serve in Carlyss include:</p>
+          <ul>
+            <li>Highway 27 corridor</li>
+            <li>All residential subdivisions</li>
+            <li>Commercial properties</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Carlyss</h2>
+          <p>Ready for reliable HVAC service? Carlyss residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Carlyss HVAC Service</h4>
+            <p>Fast response from our Lake Charles team!</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Nearby Areas</h4>
+            <ul>
+              <li><a href="/">Lake Charles, LA</a></li>
+              <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+              <li><a href="/service-areas/hackberry-la/">Hackberry, LA</a></li>
+              <li><a href="/service-areas/">All Service Areas</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Carlyss?</h2>
+      <p>Professional service from your Lake Charles neighbors.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

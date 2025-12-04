@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Heating Tune-Up Service",
+  "serviceType": "Heating System Maintenance",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Professional heating tune-up and maintenance service in Lake Charles, LA. Furnace and heat pump maintenance to ensure reliable operation."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Heating Contractor",
+      "item": "https://latourshvac.com/heating-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Heating Tune-Up",
+      "item": "https://latourshvac.com/heating-contractor/heating-tune-up/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Heating Tune-Up Lake Charles LA | Furnace & Heat Pump Maintenance | Latour's HVAC"
+  description="Heating Tune-Up in Lake Charles, LA. Professional furnace and heat pump maintenance to ensure reliable winter heating. Prevent breakdowns. Call (337) 912-1233."
+  keywords="heating tune-up lake charles, furnace maintenance lake charles LA, heat pump tune-up, heating maintenance, furnace service"
+  ogDescription="Professional heating tune-up in Lake Charles. Keep your furnace or heat pump running efficiently and prevent winter breakdowns."
+  canonicalUrl="https://latourshvac.com/heating-contractor/heating-tune-up/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/heating-contractor/">Heating Contractor</a></li>
+        <li>Heating Tune-Up</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Heating Tune-Up in Lake Charles, LA</h1>
+      <p>Professional furnace and heat pump maintenance to ensure reliable heating, improve efficiency, and prevent costly winter breakdowns.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">A <strong>heating tune-up</strong> before winter arrives ensures your furnace or heat pump will work reliably when temperatures drop. Latour's HVAC provides comprehensive heating maintenance that improves efficiency, catches problems early, and extends equipment life.</p>
+
+          <p>While Lake Charles winters are mild, cold fronts can bring temperatures into the 30s. When that happens, you want to know your heating system is ready. Annual maintenance is the best way to prevent unexpected breakdowns during the coldest nights of the year.</p>
+
+          <h2>What's Included in a Heating Tune-Up</h2>
+
+          <h3>For Gas Furnaces:</h3>
+          <ul>
+            <li>Inspect heat exchanger for cracks (safety critical)</li>
+            <li>Check and adjust burner operation</li>
+            <li>Test ignition system</li>
+            <li>Inspect and clean flame sensor</li>
+            <li>Check gas pressure and connections</li>
+            <li>Inspect flue and venting system</li>
+            <li>Test safety controls and limit switches</li>
+            <li>Check and tighten electrical connections</li>
+            <li>Lubricate moving parts</li>
+            <li>Replace or clean air filter</li>
+            <li>Test thermostat operation</li>
+            <li>Check blower motor and airflow</li>
+            <li>Test carbon monoxide levels</li>
+          </ul>
+
+          <h3>For Heat Pumps:</h3>
+          <ul>
+            <li>Check refrigerant levels</li>
+            <li>Test defrost cycle operation</li>
+            <li>Inspect and clean outdoor coil</li>
+            <li>Check reversing valve operation</li>
+            <li>Test auxiliary/emergency heat</li>
+            <li>Inspect electrical connections</li>
+            <li>Check capacitors and contactors</li>
+            <li>Lubricate moving parts</li>
+            <li>Clean or replace air filter</li>
+            <li>Test thermostat calibration</li>
+            <li>Check airflow and ductwork</li>
+          </ul>
+
+          <h2>Benefits of Annual Heating Maintenance</h2>
+          <ul>
+            <li><strong>Prevent Breakdowns:</strong> Most heating failures are preventable with regular maintenance</li>
+            <li><strong>Safety:</strong> Furnace inspections catch dangerous issues like cracked heat exchangers and gas leaks</li>
+            <li><strong>Lower Energy Bills:</strong> A tuned system operates 10-25% more efficiently</li>
+            <li><strong>Extended Equipment Life:</strong> Proper maintenance can add years to your system's lifespan</li>
+            <li><strong>Maintain Warranty:</strong> Many manufacturers require annual maintenance for warranty coverage</li>
+            <li><strong>Peace of Mind:</strong> Know your heating will work when you need it</li>
+          </ul>
+
+          <h2>When to Schedule Your Heating Tune-Up</h2>
+          <p>The best time for heating maintenance in Lake Charles is:</p>
+          <ul>
+            <li><strong>September-October:</strong> Before the heating season begins</li>
+            <li><strong>After Summer:</strong> If you have a heat pump, get it checked after heavy summer cooling use</li>
+          </ul>
+          <p>Scheduling before winter ensures any needed repairs can be completed before cold weather arrives.</p>
+
+          <h2>Save with a Maintenance Plan</h2>
+          <p>Our <a href="/hvac-contractor/hvac-maintenance/">HVAC Maintenance Plans</a> cover both heating and cooling tune-ups, plus:</p>
+          <ul>
+            <li>Priority scheduling during busy seasons</li>
+            <li>15% discount on any repairs</li>
+            <li>No overtime charges</li>
+            <li>Transferable to new homeowners</li>
+          </ul>
+
+          <h2>Schedule Your Heating Tune-Up</h2>
+          <p>Don't wait for the first cold night. Schedule your heating tune-up now by calling <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">booking online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Schedule Heating Tune-Up</h4>
+            <p>Prepare for winter with professional maintenance.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Heating Services</h4>
+            <ul>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+              <li><a href="/heating-contractor/heat-pump-repair/">Heat Pump Repair</a></li>
+              <li><a href="/heating-contractor/furnace-installation/">Furnace Installation</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/ac-tune-up/">AC Tune-Up</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Keep Your Heating Running Strong</h2>
+      <p>Schedule your tune-up before winter arrives.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

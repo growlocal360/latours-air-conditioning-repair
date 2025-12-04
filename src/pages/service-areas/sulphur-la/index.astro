@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Sulphur LA Service",
+  "description": "Air conditioning repair service and HVAC contractor serving Sulphur, LA. AC repair, AC installation, furnace repair, and 24/7 emergency service.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Sulphur",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Louisiana"
+    }
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://latourshvac.com/service-areas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sulphur, LA",
+      "item": "https://latourshvac.com/service-areas/sulphur-la/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Service Sulphur LA | Latour's HVAC"
+  description="Air Conditioning Repair Service in Sulphur, LA. Latour's HVAC provides AC repair, installation, furnace repair, and 24/7 emergency HVAC service. Call (337) 912-1233."
+  keywords="air conditioning repair sulphur LA, AC repair sulphur, HVAC contractor sulphur LA, furnace repair sulphur, heating sulphur LA"
+  ogDescription="Expert HVAC services in Sulphur, LA. AC repair, installation, furnace repair & 24/7 emergency service. Just 10 minutes from Lake Charles."
+  canonicalUrl="https://latourshvac.com/service-areas/sulphur-la/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+        <li>Sulphur, LA</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair Service in Sulphur, LA</h1>
+      <p>Fast, reliable HVAC service for Sulphur residents. Just 10 minutes from our Lake Charles headquarters, we provide quick response times and expert service.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Need <strong>air conditioning repair in Sulphur, LA</strong>? Latour's HVAC provides professional HVAC services to Sulphur residents and businesses with the same fast response times and quality workmanship we're known for in Lake Charles. Located just 10 minutes west on I-10, we're your local HVAC contractor for all heating and cooling needs.</p>
+
+          <p>Sulphur's hot, humid summers demand reliable air conditioning, and our technicians understand the unique challenges of Southwest Louisiana's climate. Whether you need emergency AC repair, a new system installation, or routine maintenance, we deliver expert service with upfront pricing and 100% satisfaction guaranteed.</p>
+
+          <h2>HVAC Services Available in Sulphur, LA</h2>
+          <p>We provide complete heating and cooling services to the Sulphur community:</p>
+
+          <div class="services-grid" style="margin: 2rem 0;">
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <h3>AC Repair</h3>
+              <p>Fast AC repair for all makes and models. Same-day service available for Sulphur homes and businesses.</p>
+              <a href="/ac-contractor/ac-repair/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <h3>AC Installation</h3>
+              <p>Professional installation of central air, ductless mini-splits, and heat pumps with manufacturer warranties.</p>
+              <a href="/ac-contractor/ac-installation/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card heating">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v10M18.5 8a6.5 6.5 0 1 1-13 0M5 22h14M5 18h14"></path></svg>
+              </div>
+              <h3>Furnace Repair</h3>
+              <p>Expert furnace diagnostics and repair for gas and electric systems. Keep your home warm all winter.</p>
+              <a href="/furnace-repair/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card heating">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+              </div>
+              <h3>Heat Pump Service</h3>
+              <p>Installation, repair, and maintenance for heat pump systems—ideal for Louisiana's climate.</p>
+              <a href="/heating-contractor/heat-pump-installation/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+          </div>
+
+          <h2>Why Sulphur Residents Choose Latour's HVAC</h2>
+          <ul>
+            <li><strong>Close Proximity:</strong> Just 10 minutes from our Lake Charles headquarters means faster response times</li>
+            <li><strong>24/7 Emergency Service:</strong> AC or heating emergency? We're available any time, day or night</li>
+            <li><strong>Local Knowledge:</strong> We understand Sulphur's housing stock and common HVAC challenges</li>
+            <li><strong>Upfront Pricing:</strong> No surprises—you'll know the cost before we start work</li>
+            <li><strong>Licensed & Insured:</strong> Full protection for your home and family</li>
+            <li><strong>All Major Brands:</strong> We service and install Carrier, Trane, Lennox, Goodman, and more</li>
+          </ul>
+
+          <h2>About Sulphur, LA</h2>
+          <p>Sulphur is a thriving city in Calcasieu Parish with a population of around 20,000 residents. Known for its proximity to Lake Charles and the petrochemical industry, Sulphur offers affordable housing and a strong sense of community. The city experiences the same hot, humid summers as Lake Charles, with temperatures regularly exceeding 95°F from June through September.</p>
+
+          <p>Popular Sulphur neighborhoods and areas we serve include:</p>
+          <ul>
+            <li>Downtown Sulphur</li>
+            <li>South Sulphur</li>
+            <li>Frasch Park area</li>
+            <li>Henning Drive corridor</li>
+            <li>Highway 27 South</li>
+            <li>All residential subdivisions</li>
+          </ul>
+
+          <h2>Common HVAC Issues in Sulphur Homes</h2>
+          <p>Our Sulphur service calls often address these common issues:</p>
+          <ul>
+            <li><strong>Frozen AC Coils:</strong> Often caused by low refrigerant or restricted airflow</li>
+            <li><strong>High Humidity:</strong> Louisiana's humidity can overwhelm undersized or aging AC systems</li>
+            <li><strong>Dirty Filters:</strong> Pet dander, pollen, and dust clog filters quickly in this area</li>
+            <li><strong>Thermostat Problems:</strong> Outdated thermostats waste energy and reduce comfort</li>
+            <li><strong>Duct Leaks:</strong> Common in older Sulphur homes, causing efficiency losses</li>
+          </ul>
+
+          <h2>Sulphur ZIP Codes We Serve</h2>
+          <p>We provide HVAC service to all Sulphur ZIP codes including:</p>
+          <ul>
+            <li>70663 - Central Sulphur</li>
+            <li>70664 - Sulphur (alternate)</li>
+            <li>70665 - South Sulphur / Carlyss area</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Sulphur</h2>
+          <p>Ready to schedule AC repair, heating service, or a free installation estimate? Sulphur residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">book online</a>. We typically arrive within 1-2 hours for emergency calls.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Sulphur HVAC Service</h4>
+            <p>Fast response from our Lake Charles team—just 10 minutes away!</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Nearby Areas</h4>
+            <ul>
+              <li><a href="/">Lake Charles, LA</a></li>
+              <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+              <li><a href="/service-areas/carlyss-la/">Carlyss, LA</a></li>
+              <li><a href="/service-areas/hackberry-la/">Hackberry, LA</a></li>
+              <li><a href="/service-areas/">All Service Areas</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Sulphur?</h2>
+      <p>We're just 10 minutes away and ready to help.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

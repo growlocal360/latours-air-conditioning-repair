@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Prien Service",
+  "description": "Air conditioning repair and HVAC service for the Prien area in Lake Charles, LA.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Neighborhood",
+    "name": "Prien",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Lake Charles"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lake Charles Neighborhoods",
+      "item": "https://latourshvac.com/neighborhoods/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Prien",
+      "item": "https://latourshvac.com/neighborhoods/prien/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Prien Lake Charles | Latour's HVAC"
+  description="Air Conditioning Repair in Prien, Lake Charles. Fast, reliable HVAC service for the Prien Lake area. AC repair, installation & 24/7 emergency service. Call (337) 912-1233."
+  keywords="air conditioning repair prien, AC repair prien lake charles, HVAC prien, heating prien lake charles, prien lake road"
+  ogDescription="HVAC service for the Prien Lake area in Lake Charles. Fast response, expert technicians, 24/7 emergency service."
+  canonicalUrl="https://latourshvac.com/neighborhoods/prien/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Lake Charles</a></li>
+        <li>Prien</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair in Prien, Lake Charles</h1>
+      <p>Trusted HVAC service for the Prien Lake area. Fast response times, expert technicians, and 24/7 emergency service for your comfort.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Living in the <strong>Prien</strong> area? Latour's HVAC is your trusted neighbor for <strong>air conditioning repair</strong> and complete HVAC services. The Prien Lake Road corridor and surrounding neighborhoods deserve top-quality HVAC care—and that's exactly what we deliver.</p>
+
+          <p>The Prien area features a diverse mix of homes from established neighborhoods to newer developments. Whether you have a lakefront property, a home in one of the many subdivisions, or a commercial property along Prien Lake Road, our technicians know the area and provide fast, professional service.</p>
+
+          <h2>HVAC Services for Prien Residents</h2>
+          <p>We provide comprehensive heating and cooling services to the Prien community:</p>
+
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models. Most repairs completed same-day.</li>
+            <li><strong>AC Installation:</strong> New system installation with proper sizing for your home.</li>
+            <li><strong>Heating Repair:</strong> Furnace and heat pump repair to keep you warm during Louisiana winters.</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance for efficient heating and cooling.</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns and extend equipment life.</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers, dehumidifiers, and duct cleaning for healthier air.</li>
+          </ul>
+
+          <h2>Why Prien Homeowners Trust Latour's</h2>
+          <ul>
+            <li><strong>Fast Response:</strong> We typically arrive within 1 hour for emergency calls in Prien</li>
+            <li><strong>Local Knowledge:</strong> We're familiar with Prien homes and common HVAC issues in the area</li>
+            <li><strong>Clean, Professional Service:</strong> We treat your home with respect</li>
+            <li><strong>Upfront Pricing:</strong> No surprises. You approve the price before we start work</li>
+            <li><strong>24/7 Availability:</strong> AC emergencies don't wait for business hours</li>
+          </ul>
+
+          <h2>About Prien</h2>
+          <p>The Prien area encompasses the neighborhoods along Prien Lake Road and around Prien Lake in south Lake Charles. This desirable area features excellent schools, convenient shopping, and easy access to I-10. The area includes a mix of established neighborhoods with mature landscaping and newer developments with modern homes.</p>
+
+          <p>Prien Lake itself provides beautiful waterfront views and recreational opportunities. Many homes in the area feature lakefront or lake-view lots, requiring HVAC systems that can handle the higher humidity levels common near the water.</p>
+
+          <h2>Common HVAC Issues in Prien Homes</h2>
+          <p>Based on our service calls in the Prien area, we commonly address:</p>
+          <ul>
+            <li>Humidity control for lakefront and near-lake properties</li>
+            <li>AC efficiency issues during peak summer heat</li>
+            <li>Duct cleaning for homes with mature landscaping</li>
+            <li>Thermostat upgrades to smart systems</li>
+            <li>Seasonal maintenance for year-round comfort</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Prien</h2>
+          <p>Ready for reliable HVAC service? Prien residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Prien HVAC Service</h4>
+            <p>Your neighbors trust Latour's. Fast, reliable service for your home.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Lake Charles Neighborhoods</h4>
+            <ul>
+              <li><a href="/neighborhoods/margaret-place/">Margaret Place</a></li>
+              <li><a href="/neighborhoods/graywood/">Graywood</a></li>
+              <li><a href="/neighborhoods/terre-sainte/">Terre Sainte</a></li>
+              <li><a href="/neighborhoods/country-club/">Country Club</a></li>
+              <li><a href="/neighborhoods/broadmoor/">Broadmoor</a></li>
+              <li><a href="/">All Lake Charles</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Prien?</h2>
+      <p>Fast, professional service from your Lake Charles neighbors.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

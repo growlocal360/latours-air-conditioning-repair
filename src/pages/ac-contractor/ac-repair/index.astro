@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AC Repair Service",
+  "serviceType": "Air Conditioning Repair",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Fast, reliable AC repair service in Lake Charles, LA. Same-day service available, all brands serviced, 24/7 emergency repairs."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AC Contractor",
+      "item": "https://latourshvac.com/ac-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AC Repair",
+      "item": "https://latourshvac.com/ac-contractor/ac-repair/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="AC Repair Lake Charles LA | Same-Day Service | Latour's HVAC"
+  description="AC Repair in Lake Charles, LA. Fast, reliable air conditioning repair service. Same-day service, upfront pricing, 24/7 emergency repairs. Call (337) 912-1233."
+  keywords="AC repair lake charles, air conditioning repair lake charles LA, AC not cooling, AC repair near me, emergency AC repair"
+  ogDescription="Fast, reliable AC repair in Lake Charles. Same-day service, upfront pricing, all brands serviced. Available 24/7 for emergencies."
+  canonicalUrl="https://latourshvac.com/ac-contractor/ac-repair/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ac-contractor/">AC Contractor</a></li>
+        <li>AC Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>AC Repair in Lake Charles, LA</h1>
+      <p>Fast, reliable air conditioning repair service. Same-day appointments available, upfront pricing, and 24/7 emergency service when your AC breaks down.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">When your <strong>AC breaks down in Lake Charles</strong>, you need fast, reliable repair service from technicians who know what they're doing. Latour's HVAC provides same-day <strong>AC repair</strong> for all makes and models, with upfront pricing and a 100% satisfaction guarantee.</p>
+
+          <p>Louisiana's summer heat is no joke—temperatures regularly exceed 95°F with humidity that makes it feel even hotter. A broken air conditioner isn't just uncomfortable; it can be dangerous for children, elderly family members, and pets. That's why we offer 24/7 emergency AC repair and typically arrive within 1-2 hours in Lake Charles.</p>
+
+          <h2>Common AC Problems We Repair</h2>
+          <p>Our NATE-certified technicians diagnose and repair all types of air conditioning problems:</p>
+
+          <ul>
+            <li><strong>AC Not Cooling:</strong> The most common complaint. Could be low refrigerant, dirty coils, compressor issues, or thermostat problems.</li>
+            <li><strong>AC Not Turning On:</strong> Often caused by electrical issues, capacitor failure, or thermostat malfunctions.</li>
+            <li><strong>AC Blowing Warm Air:</strong> Usually indicates refrigerant leaks, compressor problems, or airflow restrictions.</li>
+            <li><strong>Strange Noises:</strong> Grinding, squealing, or banging sounds indicate mechanical problems that need immediate attention.</li>
+            <li><strong>AC Short Cycling:</strong> Frequent on/off cycling often means an oversized unit, refrigerant issues, or electrical problems.</li>
+            <li><strong>High Humidity:</strong> AC running but not removing humidity properly may need coil cleaning or refrigerant charge.</li>
+            <li><strong>Water Leaks:</strong> Clogged drain lines, frozen coils, or condensate pump failures.</li>
+            <li><strong>Ice on AC Unit:</strong> Low refrigerant, poor airflow, or dirty coils can cause ice buildup.</li>
+          </ul>
+
+          <h2>Our AC Repair Process</h2>
+          <ol>
+            <li><strong>Schedule Service:</strong> Call us or book online. We offer same-day appointments for most repairs.</li>
+            <li><strong>Accurate Diagnosis:</strong> Our technician thoroughly inspects your system to identify the root cause.</li>
+            <li><strong>Upfront Pricing:</strong> We explain the problem and provide a written quote before any work begins.</li>
+            <li><strong>Expert Repair:</strong> Once approved, we complete the repair using quality parts.</li>
+            <li><strong>System Test:</strong> We verify your AC is cooling properly before we leave.</li>
+            <li><strong>Maintenance Tips:</strong> We share tips to prevent future problems.</li>
+          </ol>
+
+          <h2>AC Brands We Service</h2>
+          <p>Our technicians are trained to repair all major air conditioning brands:</p>
+          <ul>
+            <li>Carrier</li>
+            <li>Trane</li>
+            <li>Lennox</li>
+            <li>Goodman</li>
+            <li>Rheem</li>
+            <li>Ruud</li>
+            <li>American Standard</li>
+            <li>Daikin</li>
+            <li>Amana</li>
+            <li>York</li>
+            <li>And many more</li>
+          </ul>
+
+          <h2>When to Repair vs. Replace Your AC</h2>
+          <p>We believe in honest recommendations. Here's our general guidance:</p>
+          <ul>
+            <li><strong>Repair:</strong> If your AC is under 10 years old and the repair is less than 50% of replacement cost</li>
+            <li><strong>Consider Replacement:</strong> If your AC is 10-15 years old and needs major repairs</li>
+            <li><strong>Replace:</strong> If your AC is over 15 years old, uses R-22 refrigerant, or needs multiple expensive repairs</li>
+          </ul>
+          <p>We'll always give you options and help you make the best decision for your situation and budget.</p>
+
+          <h2>AC Repair Service Areas</h2>
+          <p>We provide AC repair throughout Southwest Louisiana:</p>
+          <ul>
+            <li><a href="/">Lake Charles, LA</a> - Same-day service, fastest response</li>
+            <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+            <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+            <li><a href="/service-areas/moss-bluff-la/">Moss Bluff, LA</a></li>
+            <li><a href="/service-areas/iowa-la/">Iowa, LA</a></li>
+            <li><a href="/service-areas/">All Service Areas</a></li>
+          </ul>
+
+          <h2>Schedule AC Repair Today</h2>
+          <p>Don't suffer in the heat. Call <a href="tel:+13379121233">(337) 912-1233</a> for fast AC repair or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>AC Not Working?</h4>
+            <p>Same-day repair service. Call now or schedule online.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Repair</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>AC Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+              <li><a href="/ac-contractor/ac-tune-up/">AC Tune-Up</a></li>
+              <li><a href="/ac-contractor/ductless-mini-split/">Ductless Mini Split</a></li>
+              <li><a href="/ac-contractor/emergency-ac-repair/">Emergency AC Repair</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Fast AC Repair in Lake Charles</h2>
+      <p>Same-day service. Upfront pricing. 100% satisfaction guaranteed.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

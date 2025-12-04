@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && cp -r js dist/ && cp -r css dist/",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.0"
   },
   "devDependencies": {
-    "terser": "^5.44.1",
-    "vite": "^5.0.0"
+    "terser": "^5.44.1"
   }
 }

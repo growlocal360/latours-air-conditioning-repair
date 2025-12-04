@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "HVAC Installation Service",
+  "serviceType": "HVAC System Installation",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Complete HVAC system installation in Lake Charles, LA. Professional system design, quality equipment, and expert installation."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HVAC Contractor",
+      "item": "https://latourshvac.com/hvac-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HVAC Installation",
+      "item": "https://latourshvac.com/hvac-contractor/hvac-installation/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="HVAC Installation Lake Charles LA | Free Estimates | Latour's HVAC"
+  description="HVAC Installation in Lake Charles, LA. Complete heating and cooling system installation. Professional design, quality equipment, expert installation. Call (337) 912-1233."
+  keywords="HVAC installation lake charles, HVAC system installation lake charles LA, new HVAC system, heating cooling installation, HVAC replacement"
+  ogDescription="Complete HVAC system installation in Lake Charles. Professional design, quality equipment, expert installation. Financing available."
+  canonicalUrl="https://latourshvac.com/hvac-contractor/hvac-installation/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+        <li>HVAC Installation</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>HVAC Installation in Lake Charles, LA</h1>
+      <p>Complete heating and cooling system installation. Professional design, quality equipment from top brands, and expert installation backed by warranties.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Installing a new <strong>HVAC system</strong> is one of the most important investments you'll make in your home. Latour's HVAC provides complete <strong>HVAC installation in Lake Charles</strong>—from initial consultation through final testing—ensuring you get the right system, properly sized and expertly installed for years of reliable comfort.</p>
+
+          <p>A new HVAC system is more than just equipment. It's the ductwork that delivers conditioned air, the thermostat that controls it, and the installation quality that determines how well it all works together. We take a whole-system approach to ensure every component works in harmony.</p>
+
+          <h2>Our HVAC Installation Process</h2>
+          <ol>
+            <li><strong>Free In-Home Consultation:</strong> We evaluate your home, discuss your comfort needs, and review your existing system</li>
+            <li><strong>Load Calculation:</strong> Manual J calculations determine the exact heating and cooling capacity your home needs</li>
+            <li><strong>System Design:</strong> We design a system that matches your home's requirements, including ductwork evaluation</li>
+            <li><strong>Equipment Selection:</strong> We recommend systems that match your needs, efficiency goals, and budget</li>
+            <li><strong>Written Proposal:</strong> Detailed quote including all equipment, installation, and warranty information</li>
+            <li><strong>Professional Installation:</strong> Our certified technicians install your system to manufacturer specifications</li>
+            <li><strong>Ductwork Services:</strong> Repair, modification, or replacement of ductwork as needed</li>
+            <li><strong>System Commissioning:</strong> Complete testing to verify proper operation</li>
+            <li><strong>Customer Training:</strong> We show you how to operate and maintain your new system</li>
+          </ol>
+
+          <h2>HVAC Systems We Install</h2>
+
+          <h3>Central Air Conditioning & Heating</h3>
+          <p>Traditional split systems with outdoor condenser and indoor air handler/furnace. Available in a range of efficiencies to match your budget and energy goals.</p>
+
+          <h3>Heat Pump Systems</h3>
+          <p>Energy-efficient systems that provide both heating and cooling. Ideal for Louisiana's mild climate.</p>
+
+          <h3>Ductless Mini Split Systems</h3>
+          <p>Zoned comfort without ductwork. Perfect for additions, older homes, or creating separate comfort zones.</p>
+
+          <h3>Packaged Units</h3>
+          <p>All-in-one systems for homes with limited indoor space. All components housed in a single outdoor unit.</p>
+
+          <h3>Dual Fuel Systems</h3>
+          <p>Combines a heat pump with gas furnace backup for optimal efficiency year-round.</p>
+
+          <h2>Why Proper Installation Matters</h2>
+          <p>Studies show that improper installation can reduce HVAC efficiency by 30% or more. Common installation problems include:</p>
+          <ul>
+            <li><strong>Incorrect Sizing:</strong> Oversized or undersized systems waste energy and fail to maintain comfort</li>
+            <li><strong>Improper Refrigerant Charge:</strong> Too much or too little refrigerant reduces efficiency and damages compressors</li>
+            <li><strong>Ductwork Problems:</strong> Leaky or undersized ducts waste conditioned air</li>
+            <li><strong>Airflow Issues:</strong> Poor airflow causes uneven temperatures and premature wear</li>
+          </ul>
+          <p>Our certified technicians follow manufacturer specifications and industry best practices to ensure your installation performs as designed.</p>
+
+          <h2>HVAC Brands We Install</h2>
+          <ul>
+            <li>Carrier</li>
+            <li>Trane</li>
+            <li>Lennox</li>
+            <li>Goodman</li>
+            <li>Rheem</li>
+            <li>Daikin</li>
+            <li>American Standard</li>
+          </ul>
+
+          <h2>Financing Available</h2>
+          <p>We offer flexible financing options to make your new HVAC system affordable:</p>
+          <ul>
+            <li>Low monthly payments</li>
+            <li>Competitive interest rates</li>
+            <li>Quick approval process</li>
+            <li>Options for various credit situations</li>
+          </ul>
+
+          <h2>Schedule Your Free Estimate</h2>
+          <p>Ready for a new HVAC system? Call <a href="tel:+13379121233">(337) 912-1233</a> for a free in-home estimate or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Free HVAC Estimates</h4>
+            <p>Professional system design and upfront pricing.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Get Free Estimate</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>HVAC Services</h4>
+            <ul>
+              <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/indoor-air-quality/">Indoor Air Quality</a></li>
+              <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+              <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+              <li><a href="/heating-contractor/furnace-installation/">Furnace Installation</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Complete HVAC Installation in Lake Charles</h2>
+      <p>Quality equipment. Expert installation. Lasting comfort.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

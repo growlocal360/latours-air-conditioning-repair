@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Graywood Service",
+  "description": "Air conditioning repair and HVAC service for the Graywood neighborhood in Lake Charles, LA.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Neighborhood",
+    "name": "Graywood",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Lake Charles"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lake Charles Neighborhoods",
+      "item": "https://latourshvac.com/neighborhoods/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Graywood",
+      "item": "https://latourshvac.com/neighborhoods/graywood/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Graywood Lake Charles | Latour's HVAC"
+  description="Air Conditioning Repair in Graywood, Lake Charles. Fast, reliable HVAC service for the Graywood community. AC repair, installation & 24/7 emergency service. Call (337) 912-1233."
+  keywords="air conditioning repair graywood, AC repair graywood lake charles, HVAC graywood, heating graywood lake charles"
+  ogDescription="HVAC service for the Graywood community in Lake Charles. Fast response, expert technicians, 24/7 emergency service."
+  canonicalUrl="https://latourshvac.com/neighborhoods/graywood/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Lake Charles</a></li>
+        <li>Graywood</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair in Graywood, Lake Charles</h1>
+      <p>Trusted HVAC service for Graywood residents. Fast response times, expert technicians, and 24/7 emergency service for your comfort.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Living in <strong>Graywood</strong>? Latour's HVAC is your trusted neighbor for <strong>air conditioning repair</strong> and complete HVAC services. As one of Lake Charles' premier master-planned communities, Graywood homes deserve top-quality HVAC care—and that's exactly what we deliver.</p>
+
+          <p>Graywood's beautiful Southern French Country-style homes require reliable heating and cooling systems to stay comfortable year-round. Whether you're in the original Graywood subdivision or one of the newer sections near Gray Plantation Country Club, our technicians know the area well and provide fast, professional service.</p>
+
+          <h2>HVAC Services for Graywood Residents</h2>
+          <p>We provide comprehensive heating and cooling services to the Graywood community:</p>
+
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models. Most repairs completed same-day.</li>
+            <li><strong>AC Installation:</strong> New system installation with proper sizing for Graywood's larger homes.</li>
+            <li><strong>Heating Repair:</strong> Furnace and heat pump repair to keep you warm during Louisiana winters.</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance for efficient heating and cooling.</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns and extend equipment life.</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers, dehumidifiers, and duct cleaning for healthier air.</li>
+          </ul>
+
+          <h2>Why Graywood Homeowners Trust Latour's</h2>
+          <p>Graywood is a prestigious community, and we understand that homeowners expect premium service. Here's why your neighbors choose us:</p>
+
+          <ul>
+            <li><strong>Fast Response:</strong> We typically arrive within 1 hour for emergency calls in Graywood</li>
+            <li><strong>Experienced Technicians:</strong> Our team is familiar with the HVAC systems common in Graywood homes</li>
+            <li><strong>Clean, Professional Service:</strong> We treat your home with respect—shoe covers, drop cloths, and thorough cleanup</li>
+            <li><strong>Upfront Pricing:</strong> No surprises. You approve the price before we start work</li>
+            <li><strong>24/7 Availability:</strong> AC emergencies don't wait for business hours</li>
+          </ul>
+
+          <h2>About Graywood</h2>
+          <p>Graywood is a prestigious master-planned community located south of Prien Lake Road in Lake Charles. The neighborhood features picturesque Southern French Country-style homes, tree-lined streets, and access to Gray Plantation Country Club amenities including golf and swimming.</p>
+
+          <p>The community's larger homes often feature two-zone HVAC systems, and many residents have upgraded to energy-efficient heat pumps to handle Louisiana's long cooling season. Whether you have a traditional split system, a heat pump, or ductless mini-splits, we service them all.</p>
+
+          <h2>Common HVAC Issues in Graywood</h2>
+          <p>Based on our service calls in the Graywood area, we commonly address:</p>
+          <ul>
+            <li>Dual-zone system imbalances (one floor too hot or cold)</li>
+            <li>Humidity control issues in larger homes</li>
+            <li>Aging equipment in original Graywood sections</li>
+            <li>Duct leaks in attic spaces</li>
+            <li>Thermostat programming and smart thermostat setup</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Graywood</h2>
+          <p>Ready for reliable HVAC service? Graywood residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Graywood HVAC Service</h4>
+            <p>Your neighbors trust Latour's. Fast, reliable service for your home.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Lake Charles Neighborhoods</h4>
+            <ul>
+              <li><a href="/neighborhoods/margaret-place/">Margaret Place</a></li>
+              <li><a href="/neighborhoods/prien/">Prien</a></li>
+              <li><a href="/neighborhoods/terre-sainte/">Terre Sainte</a></li>
+              <li><a href="/neighborhoods/country-club/">Country Club</a></li>
+              <li><a href="/neighborhoods/broadmoor/">Broadmoor</a></li>
+              <li><a href="/">All Lake Charles</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Graywood?</h2>
+      <p>Fast, professional service from your Lake Charles neighbors.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

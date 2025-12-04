@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "HVAC Contractor Services",
+  "serviceType": "HVAC Contractor",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Comprehensive HVAC contractor services in Lake Charles, LA including maintenance plans, indoor air quality solutions, duct cleaning, and thermostat installation.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "HVAC Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HVAC Maintenance Plans"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Indoor Air Quality"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Duct Cleaning"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Thermostat Installation"
+        }
+      }
+    ]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HVAC Contractor",
+      "item": "https://latourshvac.com/hvac-contractor/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="HVAC Contractor Lake Charles LA | Latour's HVAC"
+  description="HVAC Contractor in Lake Charles, LA. Complete heating and cooling services including maintenance plans, indoor air quality, duct cleaning, and thermostat installation. Call (337) 912-1233."
+  keywords="HVAC contractor lake charles, HVAC services lake charles LA, indoor air quality, duct cleaning lake charles, HVAC maintenance plans"
+  ogDescription="Full-service HVAC contractor in Lake Charles. Maintenance plans, indoor air quality, duct cleaning, and smart thermostat installation."
+  canonicalUrl="https://latourshvac.com/hvac-contractor/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>HVAC Contractor</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>HVAC Contractor in Lake Charles, LA</h1>
+      <p>Complete heating, ventilation, and air conditioning services. From maintenance plans to indoor air quality solutions, we keep your home comfortable and healthy year-round.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">As a full-service <strong>HVAC contractor in Lake Charles, LA</strong>, Latour's HVAC goes beyond heating and cooling repairs. We provide comprehensive services that improve your comfort, air quality, and energy efficiency. From preventive maintenance plans that keep your system running smoothly to indoor air quality solutions that protect your family's health, we're your complete HVAC partner.</p>
+
+          <p>Louisiana's hot, humid climate puts extra demands on HVAC systems. Proper maintenance, clean ductwork, and good indoor air quality aren't luxuries—they're essential for comfort, health, and energy savings. Our HVAC contractor services address all these needs under one roof.</p>
+
+          <h2>Our HVAC Contractor Services</h2>
+
+          <div class="services-grid" style="margin: 2rem 0;">
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <h3>HVAC Maintenance Plans</h3>
+              <p>Preventive maintenance that extends equipment life, improves efficiency, and prevents costly breakdowns. Our plans include priority scheduling and discounts on repairs.</p>
+              <a href="/hvac-contractor/hvac-maintenance/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 6v6l4 2"></path></svg>
+              </div>
+              <h3>Indoor Air Quality</h3>
+              <p>Solutions for cleaner, healthier air including air purifiers, UV germicidal lights, whole-home dehumidifiers, and advanced filtration systems.</p>
+              <a href="/hvac-contractor/indoor-air-quality/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </div>
+              <h3>Duct Cleaning</h3>
+              <p>Professional duct cleaning removes dust, allergens, mold, and debris that accumulate in your ductwork, improving air quality and system efficiency.</p>
+              <a href="/hvac-contractor/duct-cleaning/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <h3>Thermostat Installation</h3>
+              <p>Smart and programmable thermostat installation for better comfort control and energy savings. Wi-Fi thermostats let you control your HVAC from anywhere.</p>
+              <a href="/hvac-contractor/thermostat-installation/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <h3>HVAC Installation</h3>
+              <p>Complete HVAC system installation including equipment selection, ductwork design, and professional installation backed by manufacturer warranties.</p>
+              <a href="/hvac-contractor/hvac-installation/" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h3>Commercial HVAC</h3>
+              <p>Light commercial HVAC services for offices, retail spaces, and small businesses. Installation, repair, and maintenance for commercial systems.</p>
+              <a href="/contact/" class="btn btn-outline btn-sm">Contact Us</a>
+            </div>
+          </div>
+
+          <h2>Why HVAC Maintenance Matters in Louisiana</h2>
+          <p>Louisiana's climate is tough on HVAC systems. High humidity, long cooling seasons, and salty Gulf air all contribute to wear and tear. Regular maintenance by a qualified HVAC contractor:</p>
+          <ul>
+            <li><strong>Extends Equipment Life:</strong> Well-maintained systems last 15-20 years vs. 10-12 for neglected units</li>
+            <li><strong>Reduces Energy Costs:</strong> Clean, tuned systems operate 15-25% more efficiently</li>
+            <li><strong>Prevents Breakdowns:</strong> Most AC failures are preventable with regular maintenance</li>
+            <li><strong>Maintains Warranty:</strong> Many manufacturers require annual maintenance for warranty coverage</li>
+            <li><strong>Improves Air Quality:</strong> Clean filters and coils mean cleaner air for your family</li>
+          </ul>
+
+          <h2>Indoor Air Quality Solutions</h2>
+          <p>The EPA estimates indoor air can be 2-5 times more polluted than outdoor air. In Louisiana's humid climate, mold and mildew add additional concerns. Our indoor air quality services include:</p>
+          <ul>
+            <li><strong>Whole-Home Air Purifiers:</strong> Remove up to 99.9% of airborne particles, viruses, and bacteria</li>
+            <li><strong>UV Germicidal Lights:</strong> Kill mold, bacteria, and viruses in your ductwork</li>
+            <li><strong>Whole-Home Dehumidifiers:</strong> Control humidity levels to prevent mold growth</li>
+            <li><strong>HEPA Filtration:</strong> Hospital-grade filtration for allergy and asthma sufferers</li>
+            <li><strong>Fresh Air Ventilation:</strong> Bring in filtered outdoor air to reduce indoor pollutants</li>
+          </ul>
+
+          <h2>Smart Thermostat Benefits</h2>
+          <p>Upgrading to a smart thermostat is one of the easiest ways to improve comfort and save energy:</p>
+          <ul>
+            <li>Control your HVAC from your smartphone anywhere in the world</li>
+            <li>Automatic scheduling learns your preferences and adjusts accordingly</li>
+            <li>Energy reports show usage patterns and savings opportunities</li>
+            <li>Integration with other smart home devices</li>
+            <li>Typical savings of 10-23% on heating and cooling costs</li>
+          </ul>
+          <p>We install and service Nest, Ecobee, Honeywell Home, and other leading smart thermostat brands.</p>
+
+          <h2>Service Areas</h2>
+          <p>We provide HVAC contractor services throughout Southwest Louisiana:</p>
+          <ul>
+            <li><a href="/">Lake Charles, LA</a></li>
+            <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+            <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+            <li><a href="/service-areas/moss-bluff-la/">Moss Bluff, LA</a></li>
+            <li><a href="/service-areas/iowa-la/">Iowa, LA</a></li>
+            <li><a href="/service-areas/deridder-la/">DeRidder, LA</a></li>
+          </ul>
+
+          <h2>Schedule HVAC Service Today</h2>
+          <p>Whether you need a maintenance plan, indoor air quality assessment, duct cleaning, or thermostat upgrade, Latour's HVAC is here to help. Call <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>HVAC Service Experts</h4>
+            <p>Maintenance plans, indoor air quality, and more.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>HVAC Services</h4>
+            <ul>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/indoor-air-quality/">Indoor Air Quality</a></li>
+              <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+              <li><a href="/hvac-contractor/hvac-installation/">HVAC Installation</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Your Complete HVAC Contractor in Lake Charles</h2>
+      <p>From maintenance to air quality, we've got you covered.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

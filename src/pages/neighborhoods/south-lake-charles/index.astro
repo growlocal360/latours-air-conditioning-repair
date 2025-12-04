@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - South Lake Charles Service",
+  "description": "Air conditioning repair and HVAC service for South Lake Charles neighborhoods.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Neighborhood",
+    "name": "South Lake Charles",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Lake Charles"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lake Charles Neighborhoods",
+      "item": "https://latourshvac.com/neighborhoods/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "South Lake Charles",
+      "item": "https://latourshvac.com/neighborhoods/south-lake-charles/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair South Lake Charles | Latour's HVAC"
+  description="Air Conditioning Repair in South Lake Charles. Fast, reliable HVAC service for Prien Lake Road, Nelson Road, and South Lake Charles areas. Call (337) 912-1233."
+  keywords="air conditioning repair south lake charles, AC repair south lake charles, HVAC prien lake road, heating south lake charles"
+  ogDescription="HVAC service for South Lake Charles, Prien Lake Road, Nelson Road areas. Fast response, expert technicians, 24/7 emergency service."
+  canonicalUrl="https://latourshvac.com/neighborhoods/south-lake-charles/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Lake Charles</a></li>
+        <li>South Lake Charles</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair in South Lake Charles</h1>
+      <p>Trusted HVAC service for South Lake Charles, Prien Lake Road, Nelson Road, and surrounding neighborhoods. Fast response and 24/7 emergency service.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead"><strong>South Lake Charles</strong> is home to many of the city's most desirable neighborhoods, from the upscale communities along Prien Lake Road to the established subdivisions off Nelson Road. Latour's HVAC provides fast, professional <strong>air conditioning repair</strong> and HVAC services to residents throughout South Lake Charles.</p>
+
+          <p>Our shop on Saucier Road means we're right in the heart of South Lake Charles—we can typically arrive at your home within 30-45 minutes for emergency calls. Whether you live near Prien Lake Mall, in one of the Graywood communities, or anywhere in South Lake Charles, we're your nearby HVAC experts.</p>
+
+          <h2>HVAC Services for South Lake Charles</h2>
+          <p>We provide comprehensive heating and cooling services throughout South Lake Charles:</p>
+
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair—most jobs completed same-day</li>
+            <li><strong>AC Installation:</strong> New system installation with proper sizing and quality workmanship</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance for efficient heating and cooling</li>
+            <li><strong>Heating Repair:</strong> Furnace and heat pump repair to keep you comfortable</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns and maximize efficiency</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers, dehumidifiers, and UV light systems</li>
+            <li><strong>Ductless Mini Splits:</strong> Perfect for room additions and bonus rooms</li>
+          </ul>
+
+          <h2>South Lake Charles Neighborhoods We Serve</h2>
+          <ul>
+            <li>Prien Lake Road corridor</li>
+            <li>Graywood and Gray Plantation</li>
+            <li>Nelson Road subdivisions</li>
+            <li>Country Club Road area</li>
+            <li>Sallier Street neighborhoods</li>
+            <li>Lake Street South area</li>
+            <li>McNeese State University area</li>
+            <li>All South Lake Charles neighborhoods</li>
+          </ul>
+
+          <h2>Why South Lake Charles Homeowners Trust Latour's</h2>
+          <ul>
+            <li><strong>Nearby Location:</strong> Based on Saucier Road, we're your local neighborhood HVAC company</li>
+            <li><strong>Fast Response:</strong> We typically arrive within 30-45 minutes for South Lake Charles emergency calls</li>
+            <li><strong>Quality-Focused:</strong> We understand South Lake Charles homeowners expect premium service</li>
+            <li><strong>Experienced Technicians:</strong> Familiar with the HVAC systems in local homes</li>
+            <li><strong>Upfront Pricing:</strong> No surprises—you approve the price before work begins</li>
+            <li><strong>24/7 Availability:</strong> Emergency service when you need it most</li>
+          </ul>
+
+          <h2>Common HVAC Needs in South Lake Charles</h2>
+          <p>Based on our extensive experience serving South Lake Charles, we commonly address:</p>
+          <ul>
+            <li><strong>Two-Zone Systems:</strong> Many larger homes have dual-zone systems requiring balanced operation</li>
+            <li><strong>Humidity Issues:</strong> Prien Lake's proximity increases humidity challenges</li>
+            <li><strong>High-Efficiency Upgrades:</strong> Homeowners upgrading to more efficient equipment</li>
+            <li><strong>Heat Pump Optimization:</strong> Ensuring heat pumps perform efficiently in Louisiana's climate</li>
+            <li><strong>Smart Thermostat Installation:</strong> Modern comfort control for discerning homeowners</li>
+          </ul>
+
+          <h2>About South Lake Charles</h2>
+          <p>South Lake Charles includes some of the most sought-after neighborhoods in the Lake Charles area. The Prien Lake Road corridor features upscale shopping, dining, and residential communities. Neighborhoods like Graywood, Gray Plantation, and the areas along Nelson Road and Country Club Road offer beautiful homes with mature trees and established character.</p>
+
+          <p>McNeese State University anchors the area, bringing energy and activity to the surrounding neighborhoods. The mix of newer construction and established homes means we service everything from modern high-efficiency systems to equipment that's ready for an upgrade.</p>
+
+          <h2>Schedule HVAC Service in South Lake Charles</h2>
+          <p>Your neighborhood HVAC experts are ready to help. Call <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>South Lake Charles HVAC</h4>
+            <p>Your nearby neighborhood experts.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Lake Charles Neighborhoods</h4>
+            <ul>
+              <li><a href="/neighborhoods/graywood/">Graywood</a></li>
+              <li><a href="/neighborhoods/prien/">Prien</a></li>
+              <li><a href="/neighborhoods/country-club/">Country Club</a></li>
+              <li><a href="/neighborhoods/north-lake-charles/">North Lake Charles</a></li>
+              <li><a href="/">All Lake Charles</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>South Lake Charles HVAC Experts</h2>
+      <p>Fast, professional service from your neighborhood experts.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

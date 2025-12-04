@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://latourshvac.com/service-areas/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Service Areas | Latour's HVAC - Lake Charles & Southwest Louisiana"
+  description="HVAC Service Areas - Latour's HVAC serves Lake Charles, Sulphur, Westlake, Moss Bluff, Iowa, DeRidder, DeQuincy, and all of Southwest Louisiana. Call (337) 912-1233."
+  keywords="HVAC service areas, air conditioning repair near me, heating contractor southwest louisiana, AC repair sulphur LA, HVAC westlake LA"
+  ogTitle="Service Areas | Latour's HVAC - Southwest Louisiana"
+  ogDescription="We serve Lake Charles and all surrounding communities with professional HVAC services. Find your area."
+  canonicalUrl="https://latourshvac.com/service-areas/"
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Service Areas</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>HVAC Service Areas in Southwest Louisiana</h1>
+      <p>Latour's HVAC proudly serves Lake Charles and all surrounding communities within a 25-mile radius. Find your location below for local HVAC service.</p>
+    </div>
+  </section>
+
+  <!-- Service Areas Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 3rem;">
+        <span class="subtitle">Where We Serve</span>
+        <h2>Cities & Towns We Service</h2>
+        <p>Click on your city to learn more about our HVAC services in your area.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Lake Charles - Main -->
+        <div class="service-card">
+          <div class="service-icon" style="background: linear-gradient(135deg, #ff6b35, #e55a2b);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3>Lake Charles, LA</h3>
+          <p><strong>Our Home Base</strong> - Fastest response times and complete HVAC services for all Lake Charles neighborhoods including Graywood, Margaret Place, Prien, and downtown.</p>
+          <p><strong>ZIP Codes:</strong> 70601, 70602, 70605, 70607, 70609</p>
+          <a href="/" class="btn btn-primary btn-sm">Lake Charles HVAC</a>
+        </div>
+
+        <!-- Sulphur -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Sulphur, LA</h3>
+          <p>Just 10 minutes west of Lake Charles. Full HVAC services including AC repair, heating installation, and 24/7 emergency service.</p>
+          <p><strong>ZIP Codes:</strong> 70663, 70664, 70665</p>
+          <a href="/service-areas/sulphur-la/" class="btn btn-outline btn-sm">Sulphur HVAC Services</a>
+        </div>
+
+        <!-- Westlake -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Westlake, LA</h3>
+          <p>Across the lake from downtown Lake Charles. Complete heating and cooling services with quick response times.</p>
+          <p><strong>ZIP Code:</strong> 70669</p>
+          <a href="/service-areas/westlake-la/" class="btn btn-outline btn-sm">Westlake HVAC Services</a>
+        </div>
+
+        <!-- Moss Bluff -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Moss Bluff, LA</h3>
+          <p>North of Lake Charles with growing residential communities. AC repair, installation, and maintenance services available.</p>
+          <p><strong>ZIP Code:</strong> 70611</p>
+          <a href="/service-areas/moss-bluff-la/" class="btn btn-outline btn-sm">Moss Bluff HVAC Services</a>
+        </div>
+
+        <!-- Iowa -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Iowa, LA</h3>
+          <p>East of Lake Charles on I-10. Full-service HVAC contractor providing residential and commercial services.</p>
+          <p><strong>ZIP Code:</strong> 70647</p>
+          <a href="/service-areas/iowa-la/" class="btn btn-outline btn-sm">Iowa HVAC Services</a>
+        </div>
+
+        <!-- DeRidder -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>DeRidder, LA</h3>
+          <p>Beauregard Parish seat, about 45 minutes north of Lake Charles. HVAC installation, repair, and maintenance.</p>
+          <p><strong>ZIP Code:</strong> 70634</p>
+          <a href="/service-areas/deridder-la/" class="btn btn-outline btn-sm">DeRidder HVAC Services</a>
+        </div>
+
+        <!-- DeQuincy -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>DeQuincy, LA</h3>
+          <p>Northwest of Lake Charles in Calcasieu Parish. Residential AC and heating services with same-day availability.</p>
+          <p><strong>ZIP Code:</strong> 70633</p>
+          <a href="/service-areas/dequincy-la/" class="btn btn-outline btn-sm">DeQuincy HVAC Services</a>
+        </div>
+
+        <!-- Kinder -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Kinder, LA</h3>
+          <p>Allen Parish community northeast of Lake Charles. Complete HVAC contractor services for homes and businesses.</p>
+          <p><strong>ZIP Code:</strong> 70648</p>
+          <a href="/service-areas/kinder-la/" class="btn btn-outline btn-sm">Kinder HVAC Services</a>
+        </div>
+
+        <!-- Ragley -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Ragley, LA</h3>
+          <p>Beauregard Parish community between Lake Charles and DeRidder. AC and heating services for residential customers.</p>
+          <p><strong>ZIP Code:</strong> 70657</p>
+          <a href="/service-areas/ragley-la/" class="btn btn-outline btn-sm">Ragley HVAC Services</a>
+        </div>
+
+        <!-- Carlyss -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Carlyss, LA</h3>
+          <p>South of Sulphur near the Gulf. Full HVAC services including AC repair, installation, and maintenance.</p>
+          <p><strong>ZIP Code:</strong> 70665</p>
+          <a href="/service-areas/carlyss-la/" class="btn btn-outline btn-sm">Carlyss HVAC Services</a>
+        </div>
+
+        <!-- Hackberry -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Hackberry, LA</h3>
+          <p>Cameron Parish community south of Sulphur. HVAC services for this coastal community.</p>
+          <p><strong>ZIP Code:</strong> 70645</p>
+          <a href="/service-areas/hackberry-la/" class="btn btn-outline btn-sm">Hackberry HVAC Services</a>
+        </div>
+
+        <!-- Grand Lake -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Grand Lake, LA</h3>
+          <p>Cameron Parish community southeast of Lake Charles. AC repair and heating services available.</p>
+          <p><strong>ZIP Code:</strong> 70607</p>
+          <a href="/service-areas/grand-lake-la/" class="btn btn-outline btn-sm">Grand Lake HVAC Services</a>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div style="margin-top: 3rem;">
+        <h2 class="text-center" style="margin-bottom: 1.5rem;">Our Service Area Map</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220349.3549479198!2d-93.45!3d30.2266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863b9986e6d38c9d%3A0xd0c77c890d697b99!2sLake%20Charles%2C%20LA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Latour's HVAC Service Area Map">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Not in List -->
+      <div style="margin-top: 3rem; text-align: center; background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg);">
+        <h3>Don't See Your City Listed?</h3>
+        <p>We may still serve your area! If you're within 25 miles of Lake Charles, give us a call to confirm service availability.</p>
+        <a href="tel:+13379121233" class="btn btn-primary btn-lg" style="margin-top: 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Call (337) 912-1233
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>HVAC Service Across Southwest Louisiana</h2>
+      <p>Fast, reliable heating and cooling service wherever you are.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

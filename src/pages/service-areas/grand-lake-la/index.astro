@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Grand Lake LA Service",
+  "description": "Air conditioning repair service and HVAC contractor serving Grand Lake, LA and Cameron Parish.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Grand Lake",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Louisiana"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://latourshvac.com/service-areas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Grand Lake, LA",
+      "item": "https://latourshvac.com/service-areas/grand-lake-la/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Service Grand Lake LA | Latour's HVAC"
+  description="Air Conditioning Repair Service in Grand Lake, LA. Latour's HVAC provides AC repair, installation, furnace repair, and 24/7 emergency HVAC service. Call (337) 912-1233."
+  keywords="air conditioning repair grand lake LA, AC repair grand lake, HVAC contractor grand lake LA, furnace repair grand lake, heating grand lake LA"
+  ogDescription="Expert HVAC services in Grand Lake, LA. AC repair, installation, furnace repair & 24/7 emergency service. Serving Cameron Parish from Lake Charles."
+  canonicalUrl="https://latourshvac.com/service-areas/grand-lake-la/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+        <li>Grand Lake, LA</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair Service in Grand Lake, LA</h1>
+      <p>Professional HVAC service for Grand Lake and Cameron Parish residents. Lakeside living deserves reliable heating and cooling.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Need <strong>air conditioning repair in Grand Lake, LA</strong>? Latour's HVAC provides professional HVAC services to Grand Lake residents and businesses. This beautiful lakeside community in Cameron Parish deserves quality heating and cooling service.</p>
+
+          <p>Grand Lake's proximity to the water means high humidity is a constant challenge. Our technicians understand these conditions and provide HVAC solutions designed to keep your home comfortable while managing moisture effectively.</p>
+
+          <h2>HVAC Services Available in Grand Lake, LA</h2>
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models</li>
+            <li><strong>AC Installation:</strong> High-efficiency systems for humid environments</li>
+            <li><strong>Furnace Repair:</strong> Gas and electric furnace diagnostics and repair</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance</li>
+            <li><strong>Dehumidification:</strong> Critical for lakeside humidity control</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers and whole-home solutions</li>
+          </ul>
+
+          <h2>Why Grand Lake Residents Choose Latour's HVAC</h2>
+          <ul>
+            <li><strong>Humidity Expertise:</strong> We specialize in solutions for high-humidity environments</li>
+            <li><strong>24/7 Emergency Service:</strong> AC or heating emergency? We're available any time</li>
+            <li><strong>Upfront Pricing:</strong> No surprises—know the cost before we start</li>
+            <li><strong>Licensed & Insured:</strong> Full protection for your home and family</li>
+          </ul>
+
+          <h2>About Grand Lake, LA</h2>
+          <p>Grand Lake is an unincorporated community in Cameron Parish, located south of Lake Charles along the shores of Grand Lake (also known as Big Lake). The community offers a peaceful, rural lifestyle with abundant fishing and outdoor recreation. Like all of coastal Louisiana, the area experiences high humidity year-round.</p>
+
+          <p>Areas we serve in Grand Lake include:</p>
+          <ul>
+            <li>Highway 384 corridor</li>
+            <li>Lakefront properties</li>
+            <li>All residential areas</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Grand Lake</h2>
+          <p>Ready for reliable HVAC service? Grand Lake residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Grand Lake HVAC Service</h4>
+            <p>Lakeside expertise from Lake Charles!</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Nearby Areas</h4>
+            <ul>
+              <li><a href="/">Lake Charles, LA</a></li>
+              <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+              <li><a href="/service-areas/hackberry-la/">Hackberry, LA</a></li>
+              <li><a href="/service-areas/">All Service Areas</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Grand Lake?</h2>
+      <p>Professional service for Cameron Parish.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

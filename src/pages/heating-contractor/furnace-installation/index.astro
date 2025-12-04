@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Furnace Installation Service",
+  "serviceType": "Furnace Installation",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Professional furnace installation in Lake Charles, LA. Gas and electric furnace installation with proper sizing, quality equipment, and expert workmanship."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Heating Contractor",
+      "item": "https://latourshvac.com/heating-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Furnace Installation",
+      "item": "https://latourshvac.com/heating-contractor/furnace-installation/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Furnace Installation Lake Charles LA | Free Estimates | Latour's HVAC"
+  description="Furnace Installation in Lake Charles, LA. Professional gas and electric furnace installation with proper sizing and expert workmanship. Free estimates. Call (337) 912-1233."
+  keywords="furnace installation lake charles, furnace replacement lake charles LA, new furnace, gas furnace installation, electric furnace installation"
+  ogDescription="Professional furnace installation in Lake Charles. Gas and electric furnaces, proper sizing, quality installation. Financing available."
+  canonicalUrl="https://latourshvac.com/heating-contractor/furnace-installation/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/heating-contractor/">Heating Contractor</a></li>
+        <li>Furnace Installation</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Furnace Installation in Lake Charles, LA</h1>
+      <p>Professional gas and electric furnace installation. Proper sizing, quality equipment, and expert workmanship for reliable winter heating.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Need a new <strong>furnace installation in Lake Charles</strong>? Latour's HVAC installs high-efficiency gas and electric furnaces designed for reliable heating during Louisiana winters. We help you choose the right furnace for your home, ensure proper sizing, and provide expert installation backed by manufacturer warranties.</p>
+
+          <p>While heat pumps are popular in our mild climate, many Lake Charles homeowners prefer the warmth of a gas furnace. Gas furnaces deliver hotter air (110-140°F) compared to heat pumps (85-95°F), which some people find more comfortable during cold snaps.</p>
+
+          <h2>Types of Furnaces We Install</h2>
+
+          <h3>Gas Furnaces</h3>
+          <p>The most popular choice for Lake Charles homes with natural gas service. Modern gas furnaces achieve efficiency ratings of 80-98% AFUE (Annual Fuel Utilization Efficiency).</p>
+          <ul>
+            <li><strong>Single-Stage:</strong> Basic operation, lower cost, reliable performance</li>
+            <li><strong>Two-Stage:</strong> Runs at low capacity most of the time for better comfort and efficiency</li>
+            <li><strong>Variable-Speed/Modulating:</strong> Precise temperature control, highest efficiency, quietest operation</li>
+          </ul>
+
+          <h3>Electric Furnaces</h3>
+          <p>A good option for homes without gas service. Electric furnaces have lower installation costs but higher operating costs than gas.</p>
+
+          <h3>Dual Fuel Systems</h3>
+          <p>Combines a heat pump with a gas furnace backup. The heat pump handles mild weather efficiently, while the furnace provides powerful heating during the coldest days.</p>
+
+          <h2>Our Furnace Installation Process</h2>
+          <ol>
+            <li><strong>Free Consultation:</strong> We evaluate your home's heating needs and existing system</li>
+            <li><strong>Load Calculation:</strong> Proper sizing based on your home's specific requirements</li>
+            <li><strong>Equipment Selection:</strong> We recommend options that match your needs and budget</li>
+            <li><strong>Written Proposal:</strong> Detailed quote with no hidden fees</li>
+            <li><strong>Professional Installation:</strong> Expert installation following all safety codes</li>
+            <li><strong>Safety Testing:</strong> Thorough testing of gas connections, venting, and operation</li>
+            <li><strong>Customer Training:</strong> We show you how to operate and maintain your new furnace</li>
+          </ol>
+
+          <h2>Furnace Brands We Install</h2>
+          <ul>
+            <li>Carrier</li>
+            <li>Trane</li>
+            <li>Lennox</li>
+            <li>Goodman</li>
+            <li>Rheem</li>
+            <li>American Standard</li>
+          </ul>
+
+          <h2>Signs You Need a New Furnace</h2>
+          <ul>
+            <li>Furnace is 15-20 years old</li>
+            <li>Frequent repairs becoming costly</li>
+            <li>Energy bills increasing significantly</li>
+            <li>Uneven heating throughout your home</li>
+            <li>Furnace makes unusual noises</li>
+            <li>Yellow or flickering pilot light (indicates combustion issues)</li>
+            <li>Visible rust or cracks in the unit</li>
+          </ul>
+
+          <h2>Furnace vs. Heat Pump: Which Is Right for You?</h2>
+          <p>Both options work well in Lake Charles. Here's a quick comparison:</p>
+          <ul>
+            <li><strong>Gas Furnace:</strong> Lower operating cost if gas is cheap, delivers warmer air, works well in existing ducted homes</li>
+            <li><strong>Heat Pump:</strong> Higher efficiency, provides both heating and cooling, lower carbon footprint</li>
+            <li><strong>Dual Fuel:</strong> Best of both worlds—efficiency plus backup power</li>
+          </ul>
+          <p>We'll help you evaluate your options based on your home, energy costs, and comfort preferences.</p>
+
+          <h2>Financing Available</h2>
+          <p>We offer flexible financing to make your furnace installation affordable:</p>
+          <ul>
+            <li>Low monthly payments</li>
+            <li>Quick approval process</li>
+            <li>Competitive rates</li>
+          </ul>
+
+          <h2>Schedule Your Free Estimate</h2>
+          <p>Ready for a new furnace? Call <a href="tel:+13379121233">(337) 912-1233</a> for a free estimate or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Free Furnace Estimates</h4>
+            <p>Get expert advice and upfront pricing.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Get Free Estimate</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Heating Services</h4>
+            <ul>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+              <li><a href="/heating-contractor/heat-pump-repair/">Heat Pump Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/heating-tune-up/">Heating Tune-Up</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Professional Furnace Installation</h2>
+      <p>Quality equipment. Expert installation. Free estimates.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

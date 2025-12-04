@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Heat Pump Repair Service",
+  "serviceType": "Heat Pump Repair",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Professional heat pump repair service in Lake Charles, LA. Fast diagnosis and repair for all heat pump brands and models."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Heating Contractor",
+      "item": "https://latourshvac.com/heating-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Heat Pump Repair",
+      "item": "https://latourshvac.com/heating-contractor/heat-pump-repair/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Heat Pump Repair Lake Charles LA | Same-Day Service | Latour's HVAC"
+  description="Heat Pump Repair in Lake Charles, LA. Fast, reliable service for all heat pump brands. Same-day service available, 24/7 emergency repairs. Call (337) 912-1233."
+  keywords="heat pump repair lake charles, heat pump service lake charles LA, heat pump not heating, heat pump not cooling, heat pump troubleshooting"
+  ogDescription="Expert heat pump repair in Lake Charles. Fast diagnosis, quality repairs, all brands serviced. Same-day and emergency service available."
+  canonicalUrl="https://latourshvac.com/heating-contractor/heat-pump-repair/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/heating-contractor/">Heating Contractor</a></li>
+        <li>Heat Pump Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Heat Pump Repair in Lake Charles, LA</h1>
+      <p>Expert diagnosis and repair for all heat pump brands. Same-day service available, upfront pricing, and 24/7 emergency repairs.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Is your <strong>heat pump not heating or cooling properly</strong>? Latour's HVAC provides fast, reliable <strong>heat pump repair</strong> for Lake Charles homeowners. Our NATE-certified technicians diagnose problems accurately and fix them right the first time—with most repairs completed the same day.</p>
+
+          <p>Heat pumps are complex systems that require specialized knowledge to repair properly. Unlike standard air conditioners, heat pumps include a reversing valve and defrost controls that require expert diagnosis. Our technicians are trained specifically on heat pump systems and have the experience to get yours working again quickly.</p>
+
+          <h2>Common Heat Pump Problems We Repair</h2>
+          <ul>
+            <li><strong>Heat Pump Not Heating:</strong> Could be a stuck reversing valve, low refrigerant, defrost issues, or thermostat problems</li>
+            <li><strong>Heat Pump Not Cooling:</strong> Similar causes as cooling issues—refrigerant, airflow, or electrical problems</li>
+            <li><strong>Heat Pump Running Constantly:</strong> May indicate low refrigerant, dirty coils, or incorrect sizing</li>
+            <li><strong>Heat Pump Short Cycling:</strong> Turning on and off frequently often signals electrical issues or refrigerant problems</li>
+            <li><strong>Ice Building Up:</strong> Defrost cycle problems, low refrigerant, or airflow restrictions</li>
+            <li><strong>Heat Pump Making Noise:</strong> Grinding, squealing, or rattling indicate mechanical issues</li>
+            <li><strong>Heat Pump Blowing Cold Air in Heat Mode:</strong> Reversing valve, refrigerant, or defrost issues</li>
+            <li><strong>High Energy Bills:</strong> Efficiency problems often caused by refrigerant leaks or dirty components</li>
+          </ul>
+
+          <h2>Heat Pump Brands We Service</h2>
+          <p>Our technicians are trained to repair all major heat pump brands:</p>
+          <ul>
+            <li>Carrier</li>
+            <li>Trane</li>
+            <li>Lennox</li>
+            <li>Goodman</li>
+            <li>Rheem</li>
+            <li>Daikin</li>
+            <li>American Standard</li>
+            <li>York</li>
+            <li>Ruud</li>
+            <li>And more</li>
+          </ul>
+
+          <h2>Our Heat Pump Repair Process</h2>
+          <ol>
+            <li><strong>Schedule Service:</strong> Call or book online for same-day or next-day appointments</li>
+            <li><strong>Thorough Diagnosis:</strong> We test all system components to identify the root cause</li>
+            <li><strong>Upfront Quote:</strong> We explain the problem and provide pricing before repairs</li>
+            <li><strong>Expert Repair:</strong> Quality repairs using OEM or equivalent parts</li>
+            <li><strong>System Test:</strong> We verify proper operation in both heating and cooling modes</li>
+            <li><strong>Recommendations:</strong> Tips to prevent future problems</li>
+          </ol>
+
+          <h2>Heat Pump Repair vs. Replacement</h2>
+          <p>We provide honest recommendations based on your specific situation:</p>
+          <ul>
+            <li><strong>Repair:</strong> Usually the best choice for systems under 10 years old with minor issues</li>
+            <li><strong>Consider Replacement:</strong> If repair costs exceed 50% of a new system's cost</li>
+            <li><strong>Replace:</strong> For units over 15 years old or those needing frequent major repairs</li>
+          </ul>
+          <p>We'll explain all your options and never pressure you into an unnecessary replacement.</p>
+
+          <h2>24/7 Emergency Heat Pump Repair</h2>
+          <p>Heat pump emergencies don't wait for business hours. If your heat pump fails during a cold night or on a weekend, call <a href="tel:+13379121233">(337) 912-1233</a> for emergency service. We typically arrive within 1-2 hours in Lake Charles.</p>
+
+          <h2>Schedule Heat Pump Repair</h2>
+          <p>Get your heat pump working again. Call <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a> for fast, reliable service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Heat Pump Not Working?</h4>
+            <p>Same-day repair service available.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Repair</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Heating Services</h4>
+            <ul>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+              <li><a href="/heating-contractor/furnace-installation/">Furnace Installation</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/heating-tune-up/">Heating Tune-Up</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Expert Heat Pump Repair in Lake Charles</h2>
+      <p>Fast diagnosis. Quality repairs. All brands serviced.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

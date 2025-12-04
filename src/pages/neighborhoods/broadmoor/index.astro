@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Broadmoor Service",
+  "description": "Air conditioning repair and HVAC service for the Broadmoor neighborhood in Lake Charles, LA.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Neighborhood",
+    "name": "Broadmoor",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Lake Charles"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lake Charles Neighborhoods",
+      "item": "https://latourshvac.com/neighborhoods/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Broadmoor",
+      "item": "https://latourshvac.com/neighborhoods/broadmoor/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Broadmoor Lake Charles | Latour's HVAC"
+  description="Air Conditioning Repair in Broadmoor, Lake Charles. Fast, reliable HVAC service for the Broadmoor community. AC repair, installation & 24/7 emergency service. Call (337) 912-1233."
+  keywords="air conditioning repair broadmoor, AC repair broadmoor lake charles, HVAC broadmoor, heating broadmoor lake charles"
+  ogDescription="HVAC service for the Broadmoor community in Lake Charles. Fast response, expert technicians, 24/7 emergency service."
+  canonicalUrl="https://latourshvac.com/neighborhoods/broadmoor/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Lake Charles</a></li>
+        <li>Broadmoor</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair in Broadmoor, Lake Charles</h1>
+      <p>Trusted HVAC service for Broadmoor residents. Fast response times, expert technicians, and 24/7 emergency service for your comfort.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Living in <strong>Broadmoor</strong>? Latour's HVAC is your trusted neighbor for <strong>air conditioning repair</strong> and complete HVAC services. This established Lake Charles neighborhood features well-maintained homes that deserve reliable heating and cooling service—and that's exactly what we deliver.</p>
+
+          <p>Broadmoor's convenient location and family-friendly atmosphere make it one of Lake Charles' most desirable neighborhoods. Our technicians are familiar with the homes in this area and provide fast, professional HVAC service to keep your family comfortable year-round.</p>
+
+          <h2>HVAC Services for Broadmoor Residents</h2>
+          <p>We provide comprehensive heating and cooling services to the Broadmoor community:</p>
+
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models. Most repairs completed same-day.</li>
+            <li><strong>AC Installation:</strong> New system installation with proper sizing for your home.</li>
+            <li><strong>Heating Repair:</strong> Furnace and heat pump repair to keep you warm during Louisiana winters.</li>
+            <li><strong>Heat Pump Service:</strong> Installation, repair, and maintenance for efficient heating and cooling.</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns and extend equipment life.</li>
+            <li><strong>Indoor Air Quality:</strong> Air purifiers, dehumidifiers, and duct cleaning for healthier air.</li>
+          </ul>
+
+          <h2>Why Broadmoor Homeowners Trust Latour's</h2>
+          <ul>
+            <li><strong>Fast Response:</strong> We typically arrive within 1 hour for emergency calls in Broadmoor</li>
+            <li><strong>Local Knowledge:</strong> We're familiar with Broadmoor homes and common HVAC systems</li>
+            <li><strong>Clean, Professional Service:</strong> We treat your home with respect</li>
+            <li><strong>Upfront Pricing:</strong> No surprises. You approve the price before we start work</li>
+            <li><strong>24/7 Availability:</strong> AC emergencies don't wait for business hours</li>
+          </ul>
+
+          <h2>About Broadmoor</h2>
+          <p>Broadmoor is an established residential neighborhood in Lake Charles known for its convenient location, well-maintained homes, and family-friendly atmosphere. The neighborhood features a mix of ranch-style and two-story homes, many built in the mid-20th century with some newer construction.</p>
+
+          <p>Residents enjoy easy access to schools, shopping, healthcare, and major roadways. The neighborhood's central location makes it one of Lake Charles' most convenient places to live.</p>
+
+          <h2>Common HVAC Issues in Broadmoor Homes</h2>
+          <p>Based on our service calls in Broadmoor, we commonly address:</p>
+          <ul>
+            <li>HVAC system replacements in mid-century homes</li>
+            <li>Duct cleaning and repair in older systems</li>
+            <li>Humidity control during Louisiana summers</li>
+            <li>Efficiency improvements for aging equipment</li>
+            <li>Smart thermostat upgrades</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Broadmoor</h2>
+          <p>Ready for reliable HVAC service? Broadmoor residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Broadmoor HVAC Service</h4>
+            <p>Your neighbors trust Latour's. Fast, reliable service.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Lake Charles Neighborhoods</h4>
+            <ul>
+              <li><a href="/neighborhoods/margaret-place/">Margaret Place</a></li>
+              <li><a href="/neighborhoods/graywood/">Graywood</a></li>
+              <li><a href="/neighborhoods/prien/">Prien</a></li>
+              <li><a href="/neighborhoods/terre-sainte/">Terre Sainte</a></li>
+              <li><a href="/neighborhoods/country-club/">Country Club</a></li>
+              <li><a href="/">All Lake Charles</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Broadmoor?</h2>
+      <p>Fast, professional service from your Lake Charles neighbors.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

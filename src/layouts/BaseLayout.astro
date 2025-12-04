@@ -1,0 +1,263 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  canonicalUrl?: string;
+  schema?: any;
+  breadcrumbSchema?: any;
+  faqSchema?: any;
+}
+
+const {
+  title,
+  description,
+  keywords = "air conditioning repair lake charles, AC repair lake charles LA, HVAC contractor lake charles, furnace repair lake charles, heating contractor lake charles",
+  ogTitle = title,
+  ogDescription = description,
+  canonicalUrl = Astro.url.href,
+  schema,
+  breadcrumbSchema,
+  faqSchema
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Latour's Air Conditioning & Heating, LLC">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="US-LA">
+  <meta name="geo.placename" content="Lake Charles">
+  <meta name="geo.position" content="30.2266;-93.2174">
+  <meta name="ICBM" content="30.2266, -93.2174">
+
+  <meta property="og:title" content={ogTitle}>
+  <meta property="og:description" content={ogDescription}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content="https://latourshvac.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={ogTitle}>
+  <meta name="twitter:description" content={ogDescription}>
+
+  <title>{title}</title>
+
+  <link rel="canonical" href={canonicalUrl}>
+
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  {breadcrumbSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  )}
+
+  {faqSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )}
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          2898 Saucier Rd, Lake Charles, LA 70605
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Open 24/7 - Emergency Service Available
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/latourshvac" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.google.com/maps?cid=YOUR_CID" target="_blank" rel="noopener" aria-label="Google Maps">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C7.802 0 4 3.403 4 7.602c0 6.243 7.052 15.239 7.351 15.623.227.291.597.291.824 0C12.474 22.841 20 13.845 20 7.602 20 3.403 16.198 0 12 0zm0 10c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header-main">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/images/latours-air-conditioning-heating-lake-charles-la.svg" alt="Latour's HVAC - Air Conditioning & Heating">
+      </a>
+
+      <nav class="nav-main">
+        <ul class="nav-menu">
+          <li class={Astro.url.pathname === "/" ? "active" : ""}><a href="/">Home</a></li>
+          <li>
+            <a href="/ac-contractor/">Cooling</a>
+            <ul class="nav-dropdown">
+              <li><a href="/ac-contractor/">Air Conditioning Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+              <li><a href="/ac-contractor/ac-tune-up/">AC Tune-Up</a></li>
+              <li><a href="/ac-contractor/ductless-mini-split/">Ductless Mini Split</a></li>
+              <li><a href="/ac-contractor/emergency-ac-repair/">Emergency AC Repair</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/heating-contractor/">Heating</a>
+            <ul class="nav-dropdown">
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+              <li><a href="/heating-contractor/heat-pump-repair/">Heat Pump Repair</a></li>
+              <li><a href="/heating-contractor/furnace-installation/">Furnace Installation</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/heating-tune-up/">Heating Tune-Up</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/hvac-contractor/">HVAC Services</a>
+            <ul class="nav-dropdown">
+              <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+              <li><a href="/hvac-contractor/hvac-installation/">HVAC Installation</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">HVAC Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/indoor-air-quality/">Indoor Air Quality</a></li>
+              <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/service-areas/">Service Areas</a>
+            <ul class="nav-dropdown">
+              <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+              <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+              <li><a href="/service-areas/moss-bluff-la/">Moss Bluff, LA</a></li>
+              <li><a href="/service-areas/iowa-la/">Iowa, LA</a></li>
+              <li><a href="/service-areas/deridder-la/">DeRidder, LA</a></li>
+              <li><a href="/service-areas/dequincy-la/">DeQuincy, LA</a></li>
+              <li><a href="/service-areas/">View All Areas</a></li>
+            </ul>
+          </li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+13379121233" class="header-phone" onclick="LatourHVAC.trackPhoneClick('3379121233')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (337) 912-1233
+        </a>
+        <a href="/schedule-service/" class="btn btn-primary">Schedule Service</a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo-text">
+            Latour's HVAC
+            <span>Air Conditioning & Heating</span>
+          </div>
+          <p>Family-owned HVAC contractor serving Lake Charles and Southwest Louisiana since 2010. Licensed, insured, and committed to your comfort.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/latourshvac" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.google.com/maps?cid=YOUR_CID" target="_blank" rel="noopener" aria-label="Google">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C7.802 0 4 3.403 4 7.602c0 6.243 7.052 15.239 7.351 15.623.227.291.597.291.824 0C12.474 22.841 20 13.845 20 7.602 20 3.403 16.198 0 12 0zm0 10c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+            </a>
+            <a href="https://www.yelp.com/biz/latours-hvac-lake-charles" target="_blank" rel="noopener" aria-label="Yelp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.794 18.473c-.544.186-1.104.358-1.674.516-.295.082-.552.25-.768.483-.17.185-.298.409-.375.662-.077.252-.1.514-.067.775.042.33.174.64.379.896.163.203.368.368.601.484.372.186.783.276 1.2.262.417-.014.824-.126 1.191-.329.291-.16.551-.373.765-.631.135-.163.247-.344.33-.54.132-.31.18-.651.139-.986-.032-.262-.12-.514-.258-.738-.138-.224-.324-.415-.545-.561-.352-.233-.764-.36-1.187-.36-.252 0-.497.047-.731.137zm-1.167-2.073c-.047-.315-.155-.619-.316-.893-.161-.274-.375-.511-.629-.695-.254-.183-.542-.309-.847-.37-.304-.06-.617-.054-.919.019-.241.058-.468.159-.669.296-.201.137-.374.308-.51.504-.273.39-.418.853-.418 1.327 0 .178.021.354.062.527.054.228.147.445.274.64.253.39.609.702 1.024.897.208.098.431.166.659.202.228.036.46.04.69.011.306-.039.6-.137.868-.289.27-.152.51-.356.707-.603.394-.493.598-1.106.574-1.731-.012-.289-.074-.574-.183-.842zm5.447-5.617c-.037-.302-.135-.595-.286-.861-.151-.266-.352-.499-.591-.686-.24-.186-.516-.321-.811-.396-.295-.074-.601-.086-.9-.035-.239.041-.469.122-.678.239-.21.117-.397.27-.552.452-.31.364-.497.816-.536 1.291-.024.297.012.596.106.878.094.282.243.544.438.768.39.449.92.768 1.504.904.292.068.596.076.893.023.296-.053.578-.166.828-.331.5-.331.866-.826 1.036-1.401.085-.287.12-.586.104-.884-.016-.298-.082-.59-.193-.861z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/ac-contractor/">AC Contractor</a></li>
+            <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+            <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+            <li><a href="/furnace-repair/">Furnace Repair</a></li>
+            <li><a href="/heating-contractor/">Heating Contractor</a></li>
+            <li><a href="/hvac-contractor/">HVAC Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Service Areas</h4>
+          <ul>
+            <li><a href="/">Lake Charles, LA</a></li>
+            <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+            <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+            <li><a href="/service-areas/moss-bluff-la/">Moss Bluff, LA</a></li>
+            <li><a href="/service-areas/iowa-la/">Iowa, LA</a></li>
+            <li><a href="/service-areas/">All Service Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              2898 Saucier Rd<br>Lake Charles, LA 70605
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Open 24/7
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Latour's Air Conditioning & Heating, LLC. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/sitemap/">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/main.js"></script>
+
+  <script is:inline>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script is:inline defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

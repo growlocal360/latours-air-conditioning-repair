@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Indoor Air Quality Services",
+  "serviceType": "Indoor Air Quality Solutions",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Indoor air quality solutions in Lake Charles, LA including air purifiers, dehumidifiers, UV germicidal lights, and advanced filtration systems."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "HVAC Contractor",
+      "item": "https://latourshvac.com/hvac-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Indoor Air Quality",
+      "item": "https://latourshvac.com/hvac-contractor/indoor-air-quality/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Indoor Air Quality Lake Charles LA | Air Purifiers & More | Latour's HVAC"
+  description="Indoor Air Quality Solutions in Lake Charles, LA. Air purifiers, dehumidifiers, UV lights, and filtration systems for cleaner, healthier air. Call (337) 912-1233."
+  keywords="indoor air quality lake charles, air purifier lake charles LA, whole home dehumidifier, UV light HVAC, air filtration"
+  ogDescription="Indoor air quality solutions in Lake Charles. Air purifiers, dehumidifiers, UV germicidal lights, and advanced filtration for healthier air."
+  canonicalUrl="https://latourshvac.com/hvac-contractor/indoor-air-quality/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+        <li>Indoor Air Quality</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Indoor Air Quality Solutions in Lake Charles, LA</h1>
+      <p>Cleaner, healthier air for your home. Air purifiers, dehumidifiers, UV germicidal lights, and advanced filtration systems professionally installed.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">The air inside your home can be 2-5 times more polluted than outdoor air. In Louisiana's humid climate, mold, mildew, and allergens add to the challenge. Latour's HVAC provides <strong>indoor air quality solutions</strong> that remove pollutants, control humidity, and create a healthier home environment.</p>
+
+          <p>Poor indoor air quality can trigger allergies, aggravate asthma, cause headaches, and affect your family's overall health. Our IAQ solutions integrate with your existing HVAC system to continuously clean and condition the air throughout your home.</p>
+
+          <h2>Indoor Air Quality Solutions We Offer</h2>
+
+          <h3>Whole-Home Air Purifiers</h3>
+          <p>Installed in your ductwork, whole-home air purifiers clean the air every time your HVAC system runs. Unlike portable units that only treat one room, these systems protect your entire home.</p>
+          <ul>
+            <li>Remove up to 99.9% of airborne particles</li>
+            <li>Capture viruses, bacteria, and mold spores</li>
+            <li>Reduce allergens like pollen, pet dander, and dust mites</li>
+            <li>Eliminate odors and VOCs</li>
+          </ul>
+
+          <h3>UV Germicidal Lights</h3>
+          <p>Ultraviolet lights installed in your HVAC system kill mold, bacteria, and viruses that pass through. They're particularly effective in Louisiana's humid climate where mold growth is a constant concern.</p>
+          <ul>
+            <li>Kill 99% of mold, bacteria, and viruses</li>
+            <li>Keep evaporator coils clean and efficient</li>
+            <li>Reduce odors caused by biological growth</li>
+            <li>Low maintenance—just replace bulbs annually</li>
+          </ul>
+
+          <h3>Whole-Home Dehumidifiers</h3>
+          <p>Louisiana humidity can overwhelm your AC's ability to remove moisture. A whole-home dehumidifier works with your HVAC system to maintain ideal humidity levels (30-50%).</p>
+          <ul>
+            <li>Prevent mold and mildew growth</li>
+            <li>Reduce musty odors</li>
+            <li>Improve comfort at higher AC temperatures (saving energy)</li>
+            <li>Protect furniture, flooring, and belongings</li>
+            <li>Remove 70-100+ pints of moisture daily</li>
+          </ul>
+
+          <h3>HEPA Filtration</h3>
+          <p>Hospital-grade HEPA filters capture 99.97% of particles 0.3 microns and larger. Ideal for allergy and asthma sufferers.</p>
+          <ul>
+            <li>Capture the smallest particles standard filters miss</li>
+            <li>Remove pollen, dust mites, and pet dander</li>
+            <li>Reduce symptoms for allergy and asthma sufferers</li>
+          </ul>
+
+          <h3>Ventilation Solutions</h3>
+          <p>Modern homes are built tight for energy efficiency, but this can trap pollutants inside. Fresh air ventilation systems bring in filtered outdoor air while exhausting stale indoor air.</p>
+
+          <h2>Signs You Need Indoor Air Quality Improvement</h2>
+          <ul>
+            <li>Allergy or asthma symptoms worse at home</li>
+            <li>Musty or stale odors</li>
+            <li>Visible mold growth</li>
+            <li>Excessive dust on surfaces</li>
+            <li>Condensation on windows</li>
+            <li>Humidity above 50% (you can feel it)</li>
+            <li>Family members with frequent respiratory issues</li>
+          </ul>
+
+          <h2>Why Indoor Air Quality Matters in Louisiana</h2>
+          <p>Our climate creates unique indoor air quality challenges:</p>
+          <ul>
+            <li><strong>High Humidity:</strong> Creates ideal conditions for mold and dust mites</li>
+            <li><strong>Long AC Season:</strong> Homes stay closed up for months</li>
+            <li><strong>Pollen:</strong> Extended allergy seasons year-round</li>
+            <li><strong>Older Homes:</strong> May have hidden mold or inadequate ventilation</li>
+          </ul>
+
+          <h2>Schedule an Indoor Air Quality Assessment</h2>
+          <p>Not sure which IAQ solutions are right for your home? We offer indoor air quality assessments to evaluate your specific needs. Call <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Breathe Cleaner Air</h4>
+            <p>Indoor air quality solutions for healthier homes.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Assessment</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>HVAC Services</h4>
+            <ul>
+              <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+              <li><a href="/hvac-contractor/hvac-installation/">HVAC Installation</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+              <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Cleaner, Healthier Air for Your Home</h2>
+      <p>Indoor air quality solutions professionally installed.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AC Tune-Up Service",
+  "serviceType": "Air Conditioning Maintenance",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-912-1233",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Professional AC tune-up and preventive maintenance service in Lake Charles, LA. Extend equipment life, improve efficiency, prevent costly breakdowns."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AC Contractor",
+      "item": "https://latourshvac.com/ac-contractor/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AC Tune-Up",
+      "item": "https://latourshvac.com/ac-contractor/ac-tune-up/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="AC Tune-Up Lake Charles LA | Preventive Maintenance | Latour's HVAC"
+  description="AC Tune-Up in Lake Charles, LA. Professional air conditioning maintenance to prevent breakdowns, improve efficiency, and extend system life. Call (337) 912-1233."
+  keywords="AC tune-up lake charles, air conditioning maintenance lake charles LA, AC service, preventive maintenance, HVAC tune-up"
+  ogDescription="Professional AC tune-up in Lake Charles. Prevent breakdowns, improve efficiency, extend system life. Schedule your maintenance today."
+  canonicalUrl="https://latourshvac.com/ac-contractor/ac-tune-up/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ac-contractor/">AC Contractor</a></li>
+        <li>AC Tune-Up</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>AC Tune-Up in Lake Charles, LA</h1>
+      <p>Professional air conditioning maintenance to keep your system running efficiently, prevent costly breakdowns, and extend equipment life.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">A professional <strong>AC tune-up</strong> is the best way to keep your air conditioning system running reliably through Louisiana's long, hot summers. Latour's HVAC provides comprehensive maintenance that improves efficiency, prevents breakdowns, and extends the life of your equipment.</p>
+
+          <p>In Lake Charles, your AC works harder and longer than systems in most parts of the country. From April through October, it runs almost constantly to combat temperatures in the 90s and humidity levels that can exceed 80%. Regular maintenance isn't optional—it's essential for keeping your system healthy.</p>
+
+          <h2>What's Included in Our AC Tune-Up</h2>
+          <p>Our comprehensive tune-up includes a thorough inspection and service of your entire cooling system:</p>
+
+          <ul>
+            <li><strong>Inspect and clean condenser coils</strong> - Dirty coils reduce efficiency and can cause overheating</li>
+            <li><strong>Check refrigerant levels</strong> - Low refrigerant indicates a leak and reduces cooling capacity</li>
+            <li><strong>Inspect and clean evaporator coil</strong> - Ensures proper heat transfer and humidity removal</li>
+            <li><strong>Check and tighten electrical connections</strong> - Loose connections can cause failures and safety hazards</li>
+            <li><strong>Test capacitors and contactors</strong> - These components are common failure points</li>
+            <li><strong>Lubricate moving parts</strong> - Reduces friction and wear on motors and bearings</li>
+            <li><strong>Check thermostat calibration</strong> - Ensures accurate temperature control</li>
+            <li><strong>Inspect ductwork for leaks</strong> - Leaky ducts waste energy and reduce comfort</li>
+            <li><strong>Replace or clean air filter</strong> - Dirty filters restrict airflow and reduce efficiency</li>
+            <li><strong>Clear condensate drain</strong> - Clogged drains cause water damage and humidity problems</li>
+            <li><strong>Check blower motor and fan</strong> - Ensures proper airflow throughout your home</li>
+            <li><strong>Test system operation</strong> - Verify proper cooling and cycling</li>
+          </ul>
+
+          <h2>Benefits of Regular AC Maintenance</h2>
+          <ul>
+            <li><strong>Prevent Breakdowns:</strong> Most AC failures are preventable with regular maintenance. A tune-up catches small problems before they become expensive repairs.</li>
+            <li><strong>Lower Energy Bills:</strong> A well-maintained AC operates 15-25% more efficiently than a neglected one, saving money every month.</li>
+            <li><strong>Extend Equipment Life:</strong> Regular maintenance can extend your AC's lifespan from 10-12 years to 15-20 years.</li>
+            <li><strong>Maintain Warranty:</strong> Many manufacturers require annual maintenance to keep your warranty valid.</li>
+            <li><strong>Better Comfort:</strong> A tuned-up AC maintains more consistent temperatures and better humidity control.</li>
+            <li><strong>Improved Air Quality:</strong> Clean coils and fresh filters mean cleaner air for your family.</li>
+          </ul>
+
+          <h2>How Often Should You Get an AC Tune-Up?</h2>
+          <p>In Louisiana's demanding climate, we recommend:</p>
+          <ul>
+            <li><strong>Spring:</strong> Schedule a tune-up in March or April before the cooling season begins</li>
+            <li><strong>Fall (Optional):</strong> A second tune-up in October can catch issues from the summer season</li>
+          </ul>
+          <p>At minimum, your AC should be professionally serviced once per year. Twice-yearly service is ideal for systems that run year-round.</p>
+
+          <h2>Save with a Maintenance Plan</h2>
+          <p>Our <a href="/hvac-contractor/hvac-maintenance/">HVAC Maintenance Plans</a> include annual tune-ups plus additional benefits:</p>
+          <ul>
+            <li>Priority scheduling - Skip the wait during busy seasons</li>
+            <li>Discounts on repairs - Save 15% on any needed repairs</li>
+            <li>No overtime charges - Same rate for evenings and weekends</li>
+            <li>Transferable - Add value when you sell your home</li>
+          </ul>
+
+          <h2>Schedule Your AC Tune-Up</h2>
+          <p>Don't wait for a breakdown. Schedule your AC tune-up today by calling <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">booking online</a>.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Schedule AC Tune-Up</h4>
+            <p>Keep your AC running efficiently all summer long.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>AC Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+              <li><a href="/ac-contractor/ductless-mini-split/">Ductless Mini Split</a></li>
+              <li><a href="/ac-contractor/emergency-ac-repair/">Emergency AC Repair</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Related Services</h4>
+            <ul>
+              <li><a href="/hvac-contractor/hvac-maintenance/">Maintenance Plans</a></li>
+              <li><a href="/hvac-contractor/indoor-air-quality/">Indoor Air Quality</a></li>
+              <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Keep Your AC Running Strong</h2>
+      <p>Schedule your tune-up before the summer rush.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>

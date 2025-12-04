@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Latour's HVAC - Country Club Service",
+  "description": "Air conditioning repair and HVAC service for the Country Club neighborhood in Lake Charles, LA.",
+  "telephone": "+1-337-912-1233",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "areaServed": {
+    "@type": "Neighborhood",
+    "name": "Country Club",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "Lake Charles"
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lake Charles Neighborhoods",
+      "item": "https://latourshvac.com/neighborhoods/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Country Club",
+      "item": "https://latourshvac.com/neighborhoods/country-club/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Air Conditioning Repair Country Club Lake Charles | Latour's HVAC"
+  description="Air Conditioning Repair in Country Club, Lake Charles. Fast, reliable HVAC service for the Country Club area. AC repair, installation & 24/7 emergency service. Call (337) 912-1233."
+  keywords="air conditioning repair country club, AC repair country club lake charles, HVAC country club, heating country club lake charles"
+  ogDescription="HVAC service for the Country Club area in Lake Charles. Fast response, expert technicians, 24/7 emergency service."
+  canonicalUrl="https://latourshvac.com/neighborhoods/country-club/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Top Bar -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Lake Charles</a></li>
+        <li>Country Club</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Air Conditioning Repair in Country Club, Lake Charles</h1>
+      <p>Premium HVAC service for Country Club residents. Fast response times, expert technicians, and 24/7 emergency service for your comfort.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Living in the <strong>Country Club</strong> area? Latour's HVAC is your trusted neighbor for <strong>air conditioning repair</strong> and complete HVAC services. The neighborhoods surrounding Lake Charles Country Club feature beautiful homes that deserve top-quality HVAC care—and that's exactly what we deliver.</p>
+
+          <p>The Country Club area features some of Lake Charles' finest homes, from classic estates to modern luxury residences. Our technicians understand that homeowners here expect premium service, and we deliver with professionalism, expertise, and attention to detail.</p>
+
+          <h2>HVAC Services for Country Club Residents</h2>
+          <p>We provide comprehensive heating and cooling services to the Country Club community:</p>
+
+          <ul>
+            <li><strong>AC Repair:</strong> Fast diagnosis and repair for all makes and models, including high-end systems.</li>
+            <li><strong>AC Installation:</strong> Premium system installation with proper sizing for larger homes.</li>
+            <li><strong>Heating Repair:</strong> Furnace and heat pump repair to keep you comfortable year-round.</li>
+            <li><strong>Zoning Systems:</strong> Multi-zone comfort solutions for larger homes.</li>
+            <li><strong>Maintenance Plans:</strong> Regular tune-ups to prevent breakdowns and maintain efficiency.</li>
+            <li><strong>Indoor Air Quality:</strong> Whole-home air purification and humidity control systems.</li>
+          </ul>
+
+          <h2>Why Country Club Homeowners Trust Latour's</h2>
+          <ul>
+            <li><strong>Premium Service:</strong> We understand the expectations of Country Club homeowners</li>
+            <li><strong>Fast Response:</strong> We typically arrive within 1 hour for emergency calls</li>
+            <li><strong>Large Home Experience:</strong> We're experienced with complex HVAC systems in larger homes</li>
+            <li><strong>Clean, Professional Service:</strong> We treat your home with the utmost respect</li>
+            <li><strong>Upfront Pricing:</strong> No surprises. You approve the price before we start work</li>
+            <li><strong>24/7 Availability:</strong> AC emergencies don't wait for business hours</li>
+          </ul>
+
+          <h2>About Country Club</h2>
+          <p>The Country Club area encompasses the prestigious neighborhoods surrounding Lake Charles Country Club. These neighborhoods feature a mix of classic Louisiana estates and modern luxury homes, many with expansive floor plans, high ceilings, and multiple HVAC zones.</p>
+
+          <p>The mature landscaping and proximity to the golf course create a serene environment, while the larger homes require properly designed HVAC systems to maintain comfort throughout.</p>
+
+          <h2>Common HVAC Considerations for Country Club Homes</h2>
+          <p>Based on our service calls in the Country Club area, we commonly address:</p>
+          <ul>
+            <li>Multi-zone system balancing and optimization</li>
+            <li>High-ceiling cooling challenges</li>
+            <li>Premium equipment maintenance and repair</li>
+            <li>Whole-home dehumidification</li>
+            <li>Smart thermostat integration and automation</li>
+          </ul>
+
+          <h2>Schedule HVAC Service in Country Club</h2>
+          <p>Ready for premium HVAC service? Country Club residents can reach us at <a href="tel:+13379121233">(337) 912-1233</a> or <a href="/schedule-service/">schedule online</a>. We offer same-day appointments and 24/7 emergency service.</p>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Country Club HVAC Service</h4>
+            <p>Premium service for discerning homeowners.</p>
+            <div class="phone">
+              <a href="tel:+13379121233">(337) 912-1233</a>
+            </div>
+            <a href="/schedule-service/" class="btn btn-primary btn-block">Schedule Service</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/ac-contractor/">AC Contractor</a></li>
+              <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+              <li><a href="/furnace-repair/">Furnace Repair</a></li>
+              <li><a href="/heating-contractor/">Heating Contractor</a></li>
+              <li><a href="/hvac-contractor/">HVAC Services</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Lake Charles Neighborhoods</h4>
+            <ul>
+              <li><a href="/neighborhoods/margaret-place/">Margaret Place</a></li>
+              <li><a href="/neighborhoods/graywood/">Graywood</a></li>
+              <li><a href="/neighborhoods/prien/">Prien</a></li>
+              <li><a href="/neighborhoods/terre-sainte/">Terre Sainte</a></li>
+              <li><a href="/neighborhoods/broadmoor/">Broadmoor</a></li>
+              <li><a href="/">All Lake Charles</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need HVAC Service in Country Club?</h2>
+      <p>Premium service from your Lake Charles neighbors.</p>
+      <div class="cta-phone">
+        <a href="tel:+13379121233">(337) 912-1233</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13379121233" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+</BaseLayout>
