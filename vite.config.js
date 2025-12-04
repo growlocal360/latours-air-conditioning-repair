@@ -31,6 +31,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    minify: 'terser',
+    cssMinify: true,
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
     rollupOptions: {
       input: getHtmlEntries(),
       output: {
@@ -39,10 +47,15 @@ export default defineConfig({
             return 'assets/[name]-[hash][extname]';
           }
           return '[name][extname]';
-        }
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        manualChunks: undefined
       }
     },
-    copyPublicDir: true
+    copyPublicDir: true,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500
   },
   server: {
     port: 5173,

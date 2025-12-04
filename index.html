@@ -30,6 +30,10 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://latourshvac.com/">
 
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -929,6 +933,12 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
