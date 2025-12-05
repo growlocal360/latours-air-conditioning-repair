@@ -390,22 +390,22 @@ p {
 }
 
 .mobile-sticky-schedule {
-  background: var(--accent-orange);
-  color: var(--white);
-}
-
-.mobile-sticky-schedule:hover {
-  background: var(--accent-orange-dark);
-  color: var(--white);
-}
-
-.mobile-sticky-phone {
   background: var(--primary-blue);
   color: var(--white);
 }
 
-.mobile-sticky-phone:hover {
+.mobile-sticky-schedule:hover {
   background: var(--primary-blue-dark);
+  color: var(--white);
+}
+
+.mobile-sticky-phone {
+  background: var(--accent-orange);
+  color: var(--white);
+}
+
+.mobile-sticky-phone:hover {
+  background: var(--accent-orange-dark);
   color: var(--white);
 }
 
