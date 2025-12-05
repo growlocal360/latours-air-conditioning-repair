@@ -210,6 +210,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  box-shadow: none;
 }
 
 .logo img {
