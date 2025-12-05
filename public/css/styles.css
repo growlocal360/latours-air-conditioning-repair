@@ -215,6 +215,7 @@ p {
 .logo img {
   height: 60px;
   width: auto;
+  filter: drop-shadow(0 0 0 transparent);
 }
 
 .logo-text {
