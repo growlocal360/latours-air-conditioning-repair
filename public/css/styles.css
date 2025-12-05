@@ -331,6 +331,11 @@ p {
   border-radius: 2px;
 }
 
+/* Mobile Top Bar */
+.mobile-top-bar {
+  display: none;
+}
+
 /* Header CTA */
 .header-cta {
   display: flex;
@@ -358,11 +363,13 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   background: var(--white);
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
   z-index: 999;
   padding: var(--spacing-sm);
   gap: var(--spacing-sm);
+  flex-direction: row;
 }
 
 .mobile-sticky-btn {
@@ -371,12 +378,15 @@ p {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
   font-weight: 600;
   font-size: 0.95rem;
+  line-height: 1.2;
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all var(--transition-normal);
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-sticky-schedule {
@@ -386,6 +396,7 @@ p {
 
 .mobile-sticky-schedule:hover {
   background: var(--accent-orange-dark);
+  color: var(--white);
 }
 
 .mobile-sticky-phone {
@@ -395,10 +406,13 @@ p {
 
 .mobile-sticky-phone:hover {
   background: var(--primary-blue-dark);
+  color: var(--white);
 }
 
 .mobile-sticky-btn svg {
   flex-shrink: 0;
+  width: 20px;
+  height: 20px;
 }
 
 /* ================================================
@@ -1501,12 +1515,26 @@ select.form-control {
 }
 
 @media (max-width: 768px) {
+  .mobile-top-bar {
+    display: block;
+    background: var(--accent-orange);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+  }
+
   .top-bar {
     display: none;
   }
 
   .header-main .container {
     flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 90px;
   }
 
   .nav-main {
@@ -1560,11 +1588,11 @@ select.form-control {
   }
 
   body {
-    padding-bottom: 70px;
+    padding-bottom: 75px;
   }
 
   .mobile-sticky-buttons {
-    display: flex;
+    display: flex !important;
   }
 
   .hero {
