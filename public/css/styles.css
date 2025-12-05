@@ -190,6 +190,18 @@ p {
   gap: var(--spacing-md);
 }
 
+.top-bar-phone {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.top-bar-phone svg {
+  flex-shrink: 0;
+}
+
 .header-main {
   background: var(--white);
   box-shadow: var(--shadow-md);
@@ -337,6 +349,56 @@ p {
 
 .header-phone svg {
   color: var(--accent-orange);
+}
+
+/* Mobile Sticky Buttons */
+.mobile-sticky-buttons {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  padding: var(--spacing-sm);
+  gap: var(--spacing-sm);
+}
+
+.mobile-sticky-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.mobile-sticky-schedule {
+  background: var(--accent-orange);
+  color: var(--white);
+}
+
+.mobile-sticky-schedule:hover {
+  background: var(--accent-orange-dark);
+}
+
+.mobile-sticky-phone {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+
+.mobile-sticky-phone:hover {
+  background: var(--primary-blue-dark);
+}
+
+.mobile-sticky-btn svg {
+  flex-shrink: 0;
 }
 
 /* ================================================
@@ -1495,6 +1557,14 @@ select.form-control {
 
   .header-cta {
     display: none;
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+
+  .mobile-sticky-buttons {
+    display: flex;
   }
 
   .hero {
