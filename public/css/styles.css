@@ -518,7 +518,6 @@ p {
 
 .hero-image img {
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
 }
 
 .hero-trust-badge {
