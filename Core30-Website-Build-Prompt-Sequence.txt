@@ -1,0 +1,601 @@
+CORE 30 WEBSITE BUILD PROMPT SEQUENCE
+GBP Category-Based SEO Website Structure
+================================================================================
+
+TABLE OF CONTENTS
+-----------------
+Phase 1: Initial Setup & Business Profile
+Phase 2: Services & Sub-Services
+Phase 3: Geographic Pages
+Phase 4: Core Pages
+Phase 5: Technical Setup
+Phase 6: Content Generation
+Phase 7: Final Setup
+Quick Reference: Page Count Formula
+Data Collection Form Fields (for SAAS)
+
+================================================================================
+PHASE 1: INITIAL SETUP & BUSINESS PROFILE
+================================================================================
+
+PROMPT 1: PROJECT INITIALIZATION
+--------------------------------
+
+I need to build a new website for [BUSINESS NAME] using the Core 30 SEO methodology with GBP category-based content silos.
+
+BUSINESS TYPE: [Single Location / Multi-Location]
+
+NAP INFORMATION:
+- Business Name: [Legal business name]
+- Address: [Street, City, State, ZIP]
+- Phone: [Primary phone number]
+- Secondary Phone (if any): [Phone]
+- Email: [Email]
+- Website Domain: [domain.com]
+
+BUSINESS HOURS:
+- [Mon-Fri: X-X, Sat: X-X, Sun: Closed, etc.]
+- Emergency/24-7 Service: [Yes/No]
+
+BUSINESS DETAILS:
+- Year Established: [Year]
+- License Numbers: [If applicable]
+- Service Radius: [X miles from location]
+- Owner Name(s): [For about page]
+
+SOCIAL PROFILES:
+- Facebook: [URL]
+- Google Business: [URL]
+- Instagram: [URL]
+- Other: [URLs]
+
+Please confirm you have this information and are ready for GBP category setup.
+
+--------------------------------------------------------------------------------
+
+PROMPT 2A: GBP CATEGORIES (SINGLE LOCATION)
+-------------------------------------------
+
+GBP CATEGORY STRUCTURE:
+
+Primary Category (Homepage Focus):
+- [Primary GBP Category - e.g., "Air conditioning repair service"]
+
+Secondary Categories (Silo Pages):
+1. [Secondary Category 1 - e.g., "AC Contractor"]
+2. [Secondary Category 2 - e.g., "Heating Contractor"]
+3. [Secondary Category 3 - e.g., "Furnace Repair Service"]
+4. [Secondary Category 4 - e.g., "HVAC Contractor"]
+5. [Add more as needed]
+
+For each category, the silo structure will be:
+- Main category page (e.g., /ac-contractor/)
+- Sub-service pages underneath (e.g., /ac-contractor/ac-repair/)
+
+Please confirm this category structure before we define sub-services.
+
+--------------------------------------------------------------------------------
+
+PROMPT 2B: GBP CATEGORIES (MULTI-LOCATION)
+------------------------------------------
+
+GBP LOCATIONS & CATEGORIES:
+
+LOCATION 1 (Primary/Headquarters):
+- Name: [Location name or city]
+- Address: [Full address]
+- Phone: [Location phone]
+- Primary GBP Category: [Category]
+- Secondary GBP Categories: [List]
+- Service Radius: [X miles]
+
+LOCATION 2:
+- Name: [Location name or city]
+- Address: [Full address]
+- Phone: [Location phone]
+- Primary GBP Category: [Category]
+- Secondary GBP Categories: [List]
+- Service Radius: [X miles]
+
+[Repeat for each location]
+
+URL STRUCTURE PREFERENCE:
+- Option A: /locations/[city]/ with services linked
+- Option B: Subdomain per location (city.domain.com)
+- Option C: Services at root, locations as service areas
+
+Please confirm locations and recommend the best URL structure for SEO.
+
+================================================================================
+PHASE 2: SERVICES & SUB-SERVICES
+================================================================================
+
+PROMPT 3: SUB-SERVICES DEFINITION
+---------------------------------
+
+SUB-SERVICES BY CATEGORY:
+
+[CATEGORY 1 NAME] (e.g., AC Contractor - /ac-contractor/):
+1. [Sub-service 1] - URL: /ac-contractor/[sub-service-slug]/
+2. [Sub-service 2] - URL: /ac-contractor/[sub-service-slug]/
+3. [Sub-service 3] - URL: /ac-contractor/[sub-service-slug]/
+4. [Sub-service 4] - URL: /ac-contractor/[sub-service-slug]/
+5. [Sub-service 5] - URL: /ac-contractor/[sub-service-slug]/
+
+[CATEGORY 2 NAME] (e.g., Heating Contractor - /heating-contractor/):
+1. [Sub-service 1] - URL: /heating-contractor/[sub-service-slug]/
+2. [Sub-service 2] - URL: /heating-contractor/[sub-service-slug]/
+3. [Sub-service 3] - URL: /heating-contractor/[sub-service-slug]/
+4. [Sub-service 4] - URL: /heating-contractor/[sub-service-slug]/
+
+[Repeat for each category]
+
+BRANDS SERVICED (for service pages):
+- [Brand 1]
+- [Brand 2]
+- [Brand 3]
+- [Add all brands]
+
+Please map out the complete URL structure for all service silos.
+
+================================================================================
+PHASE 3: GEOGRAPHIC PAGES
+================================================================================
+
+PROMPT 4: SERVICE AREAS (CITIES/TOWNS)
+--------------------------------------
+
+SERVICE AREAS (Cities served outside primary location):
+
+Tier 1 (Within 15 min - Most important):
+1. [City 1, State] - [Distance from main location]
+2. [City 2, State] - [Distance]
+3. [City 3, State] - [Distance]
+
+Tier 2 (Within 30 min):
+4. [City 4, State] - [Distance]
+5. [City 5, State] - [Distance]
+6. [City 6, State] - [Distance]
+
+Tier 3 (Within 45-60 min):
+7. [City 7, State] - [Distance]
+8. [City 8, State] - [Distance]
+
+URL Structure: /service-areas/[city-state]/
+
+Each service area page should include:
+- City-specific H1 and meta description
+- Services offered in that area
+- Distance/response time from main location
+- Local landmarks or context
+- Schema markup for areaServed
+
+Please create the service area page structure.
+
+--------------------------------------------------------------------------------
+
+PROMPT 5: NEIGHBORHOODS (WITHIN PRIMARY CITY)
+---------------------------------------------
+
+NEIGHBORHOODS IN [PRIMARY CITY]:
+
+Tier 1 (High-value/High-population neighborhoods):
+1. [Neighborhood 1] - [Brief description/character]
+2. [Neighborhood 2] - [Description]
+3. [Neighborhood 3] - [Description]
+
+Tier 2 (Secondary neighborhoods):
+4. [Neighborhood 4] - [Description]
+5. [Neighborhood 5] - [Description]
+6. [Neighborhood 6] - [Description]
+
+Tier 3 (Additional coverage):
+7. [Neighborhood 7] - [Description]
+8. [Neighborhood 8] - [Description]
+
+URL Structure: /neighborhoods/[neighborhood-slug]/
+
+Special considerations:
+- Historic districts: [List any]
+- Commercial/downtown areas: [List any]
+- New developments: [List any]
+
+Please create neighborhood pages with locally-relevant content.
+
+================================================================================
+PHASE 4: CORE PAGES
+================================================================================
+
+PROMPT 6: ESSENTIAL PAGES
+-------------------------
+
+Create the following core pages:
+
+1. HOMEPAGE (/)
+   - Focus keyword: [Primary GBP Category] + [City, State]
+   - Hero section with main CTA
+   - Service category overview
+   - Service area summary
+   - Trust signals (years in business, reviews, certifications)
+   - Schema: LocalBusiness + Service
+
+2. ABOUT PAGE (/about/)
+   - Company history and founding story
+   - Owner/team information: [Names, roles, bios]
+   - Certifications/Licenses: [List]
+   - Service area overview
+   - Company values/mission
+   - Schema: Organization
+
+3. CONTACT PAGE (/contact/)
+   - NAP information
+   - Contact form
+   - Hours of operation
+   - Map embed
+   - Service area list
+   - Schema: ContactPage
+
+4. SERVICE AREAS INDEX (/service-areas/)
+   - List all service area pages
+   - Map showing coverage
+   - Brief intro to service radius
+
+5. SCHEDULE SERVICE (/schedule-service/)
+   - Online booking/request form
+   - Phone number prominent
+   - Service type selection
+   - Emergency service callout
+
+Please create these core pages with proper SEO structure.
+
+================================================================================
+PHASE 5: TECHNICAL SETUP
+================================================================================
+
+PROMPT 7: TECHNICAL FOUNDATION
+------------------------------
+
+Set up the technical foundation:
+
+1. FILE STRUCTURE:
+   /
+   ├── index.html (homepage)
+   ├── about/index.html
+   ├── contact/index.html
+   ├── schedule-service/index.html
+   ├── service-areas/
+   │   ├── index.html
+   │   └── [city-state]/index.html (for each city)
+   ├── neighborhoods/
+   │   └── [neighborhood]/index.html (for each)
+   ├── [category-1]/
+   │   ├── index.html
+   │   └── [sub-service]/index.html
+   ├── [category-2]/
+   │   ├── index.html
+   │   └── [sub-service]/index.html
+   ├── css/styles.css
+   ├── js/main.js
+   └── images/
+
+2. GLOBAL ELEMENTS:
+   - Header with logo, navigation, phone CTA
+   - Footer with NAP, service links, legal links
+   - Mobile-responsive navigation
+   - Consistent CTAs throughout
+
+3. SCHEMA MARKUP (on every page):
+   - LocalBusiness (consistent NAP)
+   - BreadcrumbList
+   - Service (on service pages)
+   - AreaServed (on location pages)
+
+4. SEO ELEMENTS:
+   - Unique title tags (under 60 chars)
+   - Meta descriptions (under 160 chars)
+   - Canonical URLs
+   - Open Graph tags
+   - Mobile viewport meta
+
+Please create the CSS framework and global HTML template structure.
+
+================================================================================
+PHASE 6: CONTENT GENERATION
+================================================================================
+
+PROMPT 8: CATEGORY SILO PAGES
+-----------------------------
+
+Create the main category silo pages:
+
+For [CATEGORY NAME] (/[category-slug]/):
+
+TARGET KEYWORD: [Category] + [City, State]
+
+PAGE STRUCTURE:
+1. H1: [Category] in [City, State]
+2. Intro paragraph with primary keyword
+3. Services overview grid linking to sub-service pages
+4. Why choose us section
+5. Service area list with links
+6. Common problems/FAQ section
+7. CTA section
+8. Sidebar with:
+   - Phone/contact CTA
+   - Sub-service links
+   - Related service links
+   - Service area links
+
+SCHEMA: Service type with hasOfferCatalog listing sub-services
+
+[Repeat this prompt for each category silo]
+
+--------------------------------------------------------------------------------
+
+PROMPT 9: SUB-SERVICE PAGES
+---------------------------
+
+Create sub-service pages for [CATEGORY]:
+
+For [SUB-SERVICE NAME] (/[category]/[sub-service]/):
+
+TARGET KEYWORD: [Sub-service] + [City, State]
+
+PAGE STRUCTURE:
+1. H1: [Sub-service] in [City, State]
+2. Lead paragraph with keyword
+3. What is [sub-service] / When you need it
+4. Our process / What's included
+5. Signs you need [sub-service]
+6. Brands we work with (if applicable)
+7. Service areas
+8. Pricing/estimate CTA
+9. Related services sidebar
+
+INTERNAL LINKING:
+- Link to parent category
+- Link to related sub-services
+- Link to service areas
+- Link to schedule page
+
+[Create for each sub-service in the category]
+
+--------------------------------------------------------------------------------
+
+PROMPT 10: SERVICE AREA PAGES
+-----------------------------
+
+Create service area pages:
+
+For [CITY, STATE] (/service-areas/[city-state]/):
+
+TARGET KEYWORD: [Primary Service] + [City, State]
+
+PAGE STRUCTURE:
+1. H1: [Primary Service] in [City], [State]
+2. Intro about serving [City]
+3. Services we provide in [City]
+4. Why [City] residents choose us
+5. About [City] (local context, 2-3 paragraphs)
+6. Response time / distance from our location
+7. Neighborhoods within [City] we serve (if applicable)
+8. Service area CTA
+9. Sidebar with service links
+
+SCHEMA:
+- LocalBusiness with areaServed
+- BreadcrumbList
+
+[Create for each service area city]
+
+--------------------------------------------------------------------------------
+
+PROMPT 11: NEIGHBORHOOD PAGES
+-----------------------------
+
+Create neighborhood pages:
+
+For [NEIGHBORHOOD] (/neighborhoods/[neighborhood-slug]/):
+
+TARGET KEYWORD: [Primary Service] + [Neighborhood] + [City]
+
+PAGE STRUCTURE:
+1. H1: [Primary Service] in [Neighborhood], [City]
+2. Intro about serving [Neighborhood]
+3. Services for [Neighborhood] residents
+4. Why [Neighborhood] homeowners trust us
+5. About [Neighborhood] (character, housing types, 2-3 paragraphs)
+6. Common HVAC/service needs in [Neighborhood]
+7. CTA section
+8. Sidebar with:
+   - Contact CTA
+   - Service links
+   - Other neighborhood links
+
+UNIQUE CONTENT ANGLES:
+- Historic homes: ductless solutions, preservation
+- New construction: warranty, efficiency
+- Commercial areas: business HVAC needs
+- Upscale: premium service expectations
+
+[Create for each neighborhood]
+
+================================================================================
+PHASE 7: FINAL SETUP
+================================================================================
+
+PROMPT 12: NAVIGATION & INTERNAL LINKING
+----------------------------------------
+
+Set up navigation and internal linking:
+
+MAIN NAVIGATION:
+- Home
+- [Category 1 Dropdown]
+  - [Category 1 main]
+  - [Sub-service 1]
+  - [Sub-service 2]
+  - [etc.]
+- [Category 2 Dropdown]
+  - [etc.]
+- Service Areas
+- About
+- Contact
+
+FOOTER LINKS:
+- Services column (main categories)
+- Service Areas column (top 4-5 cities)
+- Company column (About, Contact, etc.)
+- Contact info with NAP
+
+INTERNAL LINKING RULES:
+1. Every sub-service links to parent category
+2. Every category links to related categories
+3. Service pages link to relevant service areas
+4. Service area pages link to services and neighborhoods
+5. All pages link to contact/schedule
+
+Please update all pages with proper navigation and internal links.
+
+--------------------------------------------------------------------------------
+
+PROMPT 13: PRE-LAUNCH CHECKLIST
+-------------------------------
+
+Run pre-launch checklist:
+
+1. VERIFY ALL PAGES EXIST:
+   - [ ] Homepage
+   - [ ] About
+   - [ ] Contact
+   - [ ] Schedule Service
+   - [ ] Service Areas Index
+   - [ ] All [X] service area pages
+   - [ ] All [X] neighborhood pages
+   - [ ] All [X] category pages
+   - [ ] All [X] sub-service pages
+
+2. CHECK EACH PAGE FOR:
+   - [ ] Unique title tag
+   - [ ] Unique meta description
+   - [ ] H1 with target keyword
+   - [ ] Schema markup
+   - [ ] Canonical URL
+   - [ ] Internal links working
+   - [ ] CTAs present
+   - [ ] NAP consistent
+
+3. TECHNICAL CHECKS:
+   - [ ] Mobile responsive
+   - [ ] All CSS/JS loading
+   - [ ] No broken links
+   - [ ] Images optimized
+   - [ ] Page speed acceptable
+
+4. SCHEMA VALIDATION:
+   - [ ] LocalBusiness on all pages
+   - [ ] BreadcrumbList on all pages
+   - [ ] Service schema on service pages
+
+Please verify and report any issues.
+
+--------------------------------------------------------------------------------
+
+PROMPT 14: GIT & DEPLOYMENT
+---------------------------
+
+Initialize git repository and prepare for deployment:
+
+1. Create .gitignore (node_modules, .env, etc.)
+2. Initialize git repo
+3. Create initial commit with all files
+4. Set up remote origin: [REPO URL]
+5. Push to main branch
+
+Deployment platform: [Vercel/Netlify/Other]
+
+Please complete git setup and provide deployment instructions.
+
+================================================================================
+QUICK REFERENCE: PAGE COUNT FORMULA
+================================================================================
+
+For estimating total pages:
+
+SINGLE LOCATION:
+- Core pages: 5 (home, about, contact, schedule, service areas index)
+- Category pages: [Number of GBP categories]
+- Sub-service pages: [Sum of all sub-services across categories]
+- Service area pages: [Number of cities served]
+- Neighborhood pages: [Number of neighborhoods]
+
+TOTAL = 5 + categories + sub-services + service areas + neighborhoods
+
+Example (Latour's HVAC):
+5 + 5 + 14 + 11 + 10 = 45 pages
+
+MULTI-LOCATION:
+Add: Location pages x [Number of locations]
+Consider: Location-specific service pages if offerings differ
+
+================================================================================
+DATA COLLECTION FORM FIELDS (FOR SAAS)
+================================================================================
+
+REQUIRED FIELDS:
+- Business Name
+- Primary Address (Street, City, State, ZIP)
+- Primary Phone
+- Email
+- Website Domain
+- Primary GBP Category
+- Secondary GBP Categories (multi-select or comma-separated)
+- Year Established
+
+OPTIONAL FIELDS:
+- Additional Locations (repeatable group)
+- Owner/Team Names
+- License Numbers
+- Certifications
+- Business Hours
+- Emergency Service (yes/no)
+- Social Media URLs
+
+SERVICE CONFIGURATION:
+- Sub-services per category (repeatable)
+- Brands Serviced (multi-select)
+
+GEOGRAPHIC CONFIGURATION:
+- Service Areas / Cities (repeatable with distance)
+- Neighborhoods (repeatable with description)
+
+CONTENT PREFERENCES:
+- Tone (Professional, Friendly, Technical)
+- Key Differentiators
+- Special Offers / Promotions
+
+================================================================================
+AUTOMATION NOTES
+================================================================================
+
+This prompt sequence can be automated in your SAAS by:
+
+1. Collecting form data from user
+2. Populating prompt templates with variables
+3. Sending to Claude API sequentially
+4. Storing generated content in database
+5. Assembling into final website structure
+6. Deploying to hosting platform
+
+Variable placeholders to replace:
+- [BUSINESS NAME]
+- [CITY, STATE]
+- [PRIMARY GBP CATEGORY]
+- [CATEGORY NAME]
+- [SUB-SERVICE]
+- [NEIGHBORHOOD]
+- [etc.]
+
+================================================================================
+END OF DOCUMENT
+================================================================================
