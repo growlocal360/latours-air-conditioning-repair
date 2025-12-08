@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <h2>Request an Appointment</h2>
           <p>Fill out the form below and we'll contact you within 2 hours during business hours to confirm your appointment.</p>
 
-          <form action="#" method="POST" data-validate style="margin-top: 1.5rem; background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg);">
+          <form id="schedule-form" method="POST" data-validate style="margin-top: 1.5rem; background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg);">
             <h3 style="margin-bottom: 1rem; color: var(--primary-blue-dark);">Contact Information</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="form-group">
@@ -153,6 +153,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </form>
 
+          <!-- Success Message (hidden by default) -->
+          <div id="form-success" style="display: none; background: #d4edda; border: 1px solid #28a745; padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin-top: 1.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" style="margin-bottom: 1rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <h3 style="color: #155724; margin-bottom: 0.5rem;">Request Submitted Successfully!</h3>
+            <p style="color: #155724;">Thank you! We'll contact you within 2 hours during business hours to confirm your appointment.</p>
+          </div>
+
+          <!-- Error Message (hidden by default) -->
+          <div id="form-error" style="display: none; background: #f8d7da; border: 1px solid #dc3545; padding: 1.5rem; border-radius: var(--radius-lg); text-align: center; margin-top: 1rem;">
+            <p style="color: #721c24; margin: 0;">There was an error submitting your request. Please call us at <a href="tel:+13379121233" style="color: #721c24; font-weight: 600;">(337) 912-1233</a> to schedule your appointment.</p>
+          </div>
+
           <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; border: 2px dashed var(--light-gray); border-radius: var(--radius-lg);">
             <h3 style="margin-bottom: 0.5rem;">Prefer to Talk to Someone?</h3>
             <p style="margin-bottom: 1rem;">Call us directly and we'll schedule your appointment over the phone.</p>
@@ -209,4 +221,90 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('schedule-form');
+      const successDiv = document.getElementById('form-success');
+      const errorDiv = document.getElementById('form-error');
+
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          // Reset messages
+          successDiv.style.display = 'none';
+          errorDiv.style.display = 'none';
+
+          // Get form data
+          const formData = new FormData(form);
+
+          // Build payload for GHL webhook
+          const payload = {
+            first_name: formData.get('first_name'),
+            last_name: formData.get('last_name'),
+            name: `${formData.get('first_name')} ${formData.get('last_name')}`,
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            address1: formData.get('address'),
+            city: formData.get('city'),
+            state: formData.get('state'),
+            postal_code: formData.get('zip'),
+            service_type: formData.get('service_type'),
+            urgency: formData.get('urgency'),
+            preferred_date: formData.get('preferred_date'),
+            preferred_time: formData.get('preferred_time'),
+            equipment_info: formData.get('equipment_info'),
+            message: formData.get('problem_description'),
+            source: 'Website Contact Form',
+            tags: ['Website Lead', 'Schedule Service']
+          };
+
+          // Disable submit button
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg> Submitting...';
+
+          try {
+            const response = await fetch('https://services.leadconnectorhq.com/hooks/R611puAaZDQp12dpdWA3/webhook-trigger/82b2a49e-1216-40c5-aa3c-35672eeb15a6', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(payload),
+              mode: 'no-cors' // GHL webhooks don't return CORS headers
+            });
+
+            // Since mode is no-cors, we can't read the response
+            // But if we got here without an error, assume success
+            form.style.display = 'none';
+            successDiv.style.display = 'block';
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Track conversion if Google Analytics is available
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'form_submission', {
+                'event_category': 'Contact',
+                'event_label': 'Schedule Service Form'
+              });
+            }
+
+          } catch (error) {
+            console.error('Form submission error:', error);
+            errorDiv.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
+        });
+      }
+    });
+  </script>
+
+  <style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </BaseLayout>
