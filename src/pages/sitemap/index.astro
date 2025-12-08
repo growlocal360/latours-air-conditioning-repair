@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sitemap",
+      "item": "https://latourshvac.com/sitemap/"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Sitemap | Latour's Air Conditioning & Heating"
+  description="Sitemap for Latour's Air Conditioning & Heating website. Find all pages for HVAC services, service areas, and more in Lake Charles, LA."
+  canonicalUrl="https://latourshvac.com/sitemap/"
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Sitemap</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Sitemap</h1>
+      <p>Browse all pages on our website</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="sitemap-grid">
+
+        <!-- Main Pages -->
+        <div class="sitemap-section">
+          <h2>Main Pages</h2>
+          <ul>
+            <li><a href="/">Home - Air Conditioning Repair Service Lake Charles</a></li>
+            <li><a href="/about/">About Latour's HVAC</a></li>
+            <li><a href="/schedule-service/">Schedule Service</a></li>
+            <li><a href="/service-areas/">Service Areas</a></li>
+          </ul>
+        </div>
+
+        <!-- AC Contractor Services -->
+        <div class="sitemap-section">
+          <h2>Air Conditioning Services</h2>
+          <ul>
+            <li><a href="/ac-contractor/">AC Contractor</a></li>
+            <li><a href="/ac-contractor/ac-repair/">AC Repair</a></li>
+            <li><a href="/ac-contractor/ac-installation/">AC Installation</a></li>
+            <li><a href="/ac-contractor/ac-replacement/">AC Replacement</a></li>
+            <li><a href="/ac-contractor/ac-tune-up/">AC Tune-Up</a></li>
+            <li><a href="/ac-contractor/ductless-mini-split/">Ductless Mini Split</a></li>
+            <li><a href="/ac-contractor/emergency-ac-repair/">Emergency AC Repair</a></li>
+          </ul>
+        </div>
+
+        <!-- Furnace Repair Services -->
+        <div class="sitemap-section">
+          <h2>Furnace Repair Services</h2>
+          <ul>
+            <li><a href="/furnace-repair/">Furnace Repair</a></li>
+          </ul>
+        </div>
+
+        <!-- Heating Contractor Services -->
+        <div class="sitemap-section">
+          <h2>Heating Services</h2>
+          <ul>
+            <li><a href="/heating-contractor/">Heating Contractor</a></li>
+            <li><a href="/heating-contractor/heat-pump-installation/">Heat Pump Installation</a></li>
+            <li><a href="/heating-contractor/heat-pump-repair/">Heat Pump Repair</a></li>
+            <li><a href="/heating-contractor/furnace-installation/">Furnace Installation</a></li>
+            <li><a href="/heating-contractor/heating-tune-up/">Heating Tune-Up</a></li>
+          </ul>
+        </div>
+
+        <!-- HVAC Contractor Services -->
+        <div class="sitemap-section">
+          <h2>HVAC Services</h2>
+          <ul>
+            <li><a href="/hvac-contractor/">HVAC Contractor</a></li>
+            <li><a href="/hvac-contractor/hvac-installation/">HVAC Installation</a></li>
+            <li><a href="/hvac-contractor/hvac-maintenance/">HVAC Maintenance</a></li>
+            <li><a href="/hvac-contractor/indoor-air-quality/">Indoor Air Quality</a></li>
+            <li><a href="/hvac-contractor/duct-cleaning/">Duct Cleaning</a></li>
+            <li><a href="/hvac-contractor/thermostat-installation/">Thermostat Installation</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="sitemap-section">
+          <h2>Service Areas</h2>
+          <ul>
+            <li><a href="/service-areas/">All Service Areas</a></li>
+            <li><a href="/service-areas/sulphur-la/">Sulphur, LA</a></li>
+            <li><a href="/service-areas/westlake-la/">Westlake, LA</a></li>
+            <li><a href="/service-areas/moss-bluff-la/">Moss Bluff, LA</a></li>
+            <li><a href="/service-areas/iowa-la/">Iowa, LA</a></li>
+            <li><a href="/service-areas/deridder-la/">DeRidder, LA</a></li>
+            <li><a href="/service-areas/dequincy-la/">DeQuincy, LA</a></li>
+            <li><a href="/service-areas/kinder-la/">Kinder, LA</a></li>
+            <li><a href="/service-areas/ragley-la/">Ragley, LA</a></li>
+            <li><a href="/service-areas/carlyss-la/">Carlyss, LA</a></li>
+            <li><a href="/service-areas/hackberry-la/">Hackberry, LA</a></li>
+            <li><a href="/service-areas/grand-lake-la/">Grand Lake, LA</a></li>
+          </ul>
+        </div>
+
+        <!-- Lake Charles Neighborhoods -->
+        <div class="sitemap-section">
+          <h2>Lake Charles Neighborhoods</h2>
+          <ul>
+            <li><a href="/neighborhoods/graywood/">Graywood</a></li>
+            <li><a href="/neighborhoods/margaret-place/">Margaret Place</a></li>
+            <li><a href="/neighborhoods/charpentier-district/">Charpentier District</a></li>
+            <li><a href="/neighborhoods/prien/">Prien</a></li>
+            <li><a href="/neighborhoods/terre-sainte/">Terre Sainte</a></li>
+            <li><a href="/neighborhoods/country-club/">Country Club</a></li>
+            <li><a href="/neighborhoods/broadmoor/">Broadmoor</a></li>
+            <li><a href="/neighborhoods/south-lake-charles/">South Lake Charles</a></li>
+            <li><a href="/neighborhoods/north-lake-charles/">North Lake Charles</a></li>
+            <li><a href="/neighborhoods/downtown/">Downtown Lake Charles</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Pages -->
+        <div class="sitemap-section">
+          <h2>Legal & Info</h2>
+          <ul>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms-of-service/">Terms of Service</a></li>
+            <li><a href="/sitemap/">Sitemap</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- XML Sitemap Link -->
+      <div style="margin-top: 3rem; padding: 1.5rem; background: var(--off-white); border-radius: var(--radius-md); text-align: center;">
+        <p style="margin-bottom: 0.5rem;"><strong>For Search Engines:</strong></p>
+        <p style="margin: 0;">View our <a href="/sitemap-index.xml">XML Sitemap</a> for search engine crawling.</p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .sitemap-section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--light-gray);
+  }
+
+  .sitemap-section h2 {
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-orange);
+  }
+
+  .sitemap-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sitemap-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sitemap-section a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  .sitemap-section a:hover {
+    color: var(--accent-orange);
+  }
+
+  @media (max-width: 768px) {
+    .sitemap-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

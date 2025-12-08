@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Terms of Service",
+      "item": "https://latourshvac.com/terms-of-service/"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Terms of Service | Latour's Air Conditioning & Heating"
+  description="Terms of Service for Latour's Air Conditioning & Heating, LLC. Read our terms and conditions for using our website and HVAC services."
+  canonicalUrl="https://latourshvac.com/terms-of-service/"
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Terms of Service</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Terms of Service</h1>
+      <p>Last updated: December 8, 2025</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="legal-content" style="max-width: 800px; margin: 0 auto;">
+
+        <h2>Agreement to Terms</h2>
+        <p>By accessing or using the website latourshvac.com ("Website") or engaging the services of Latour's Air Conditioning & Heating, LLC ("Company," "we," "our," or "us"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Website or services.</p>
+
+        <h2>Services</h2>
+        <p>Latour's Air Conditioning & Heating, LLC provides HVAC services including but not limited to:</p>
+        <ul>
+          <li>Air conditioning repair, installation, and maintenance</li>
+          <li>Heating system repair, installation, and maintenance</li>
+          <li>Indoor air quality services</li>
+          <li>Duct cleaning and repair</li>
+          <li>Emergency HVAC services</li>
+        </ul>
+        <p>All services are subject to availability and may be modified at our discretion.</p>
+
+        <h2>Service Area</h2>
+        <p>We provide services to Lake Charles, Louisiana and surrounding areas within approximately 25 miles of our location. Service availability may vary based on location and scheduling.</p>
+
+        <h2>Scheduling and Appointments</h2>
+        <ul>
+          <li>Appointments are scheduled based on availability and are not guaranteed until confirmed by our office.</li>
+          <li>We make every effort to arrive within the scheduled time window, but delays may occur due to emergency calls or unforeseen circumstances.</li>
+          <li>Cancellations should be made at least 24 hours in advance when possible.</li>
+          <li>We reserve the right to reschedule appointments due to weather, emergencies, or other circumstances beyond our control.</li>
+        </ul>
+
+        <h2>Estimates and Pricing</h2>
+        <ul>
+          <li>Estimates are provided based on information available at the time of assessment and are subject to change if additional issues are discovered.</li>
+          <li>Written estimates are valid for 30 days unless otherwise specified.</li>
+          <li>Final pricing will be confirmed before work begins.</li>
+          <li>Emergency and after-hours services may incur additional charges.</li>
+        </ul>
+
+        <h2>Payment Terms</h2>
+        <ul>
+          <li>Payment is due upon completion of services unless other arrangements have been made in writing.</li>
+          <li>We accept cash, check, and major credit cards.</li>
+          <li>Financing options may be available for qualifying customers on approved credit.</li>
+          <li>Past due accounts may be subject to collection fees and interest charges.</li>
+        </ul>
+
+        <h2>Warranties</h2>
+        <h3>Labor Warranty</h3>
+        <p>We stand behind our workmanship. Labor is warranted for a period specified at the time of service (typically 1 year for repairs, longer for installations). This warranty covers defects in workmanship but does not cover damage caused by misuse, neglect, or acts of nature.</p>
+
+        <h3>Equipment Warranty</h3>
+        <p>New equipment installed by our company carries the manufacturer's warranty. We will assist with warranty claims for equipment we install. Extended warranties may be available for purchase.</p>
+
+        <h3>Warranty Limitations</h3>
+        <p>Warranties do not cover:</p>
+        <ul>
+          <li>Damage caused by improper use or maintenance</li>
+          <li>Pre-existing conditions not disclosed at time of service</li>
+          <li>Damage from power surges, lightning, or natural disasters</li>
+          <li>Normal wear and tear</li>
+          <li>Systems modified by others after our service</li>
+        </ul>
+
+        <h2>Customer Responsibilities</h2>
+        <p>By engaging our services, you agree to:</p>
+        <ul>
+          <li>Provide accurate information about your HVAC system and service needs</li>
+          <li>Ensure safe access to equipment for our technicians</li>
+          <li>Secure pets during service visits</li>
+          <li>Maintain your HVAC system according to manufacturer recommendations</li>
+          <li>Notify us promptly of any issues after service is performed</li>
+        </ul>
+
+        <h2>Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Latour's Air Conditioning & Heating, LLC shall not be liable for:</p>
+        <ul>
+          <li>Indirect, incidental, special, or consequential damages</li>
+          <li>Loss of use, data, or profits</li>
+          <li>Damages exceeding the amount paid for the specific service</li>
+          <li>Delays or failures due to circumstances beyond our reasonable control</li>
+        </ul>
+
+        <h2>Intellectual Property</h2>
+        <p>All content on this Website, including text, graphics, logos, images, and software, is the property of Latour's Air Conditioning & Heating, LLC or its content suppliers and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+
+        <h2>Website Use</h2>
+        <p>When using our Website, you agree not to:</p>
+        <ul>
+          <li>Use the Website for any unlawful purpose</li>
+          <li>Attempt to gain unauthorized access to any part of the Website</li>
+          <li>Interfere with the proper functioning of the Website</li>
+          <li>Submit false or misleading information</li>
+          <li>Use automated systems to access the Website without permission</li>
+        </ul>
+
+        <h2>Third-Party Links</h2>
+        <p>Our Website may contain links to third-party websites. We are not responsible for the content or practices of these external sites. Inclusion of any link does not imply endorsement.</p>
+
+        <h2>Indemnification</h2>
+        <p>You agree to indemnify and hold harmless Latour's Air Conditioning & Heating, LLC, its officers, employees, and agents from any claims, damages, or expenses arising from your use of our Website or services, or your violation of these Terms.</p>
+
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Louisiana, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the courts of Calcasieu Parish, Louisiana.</p>
+
+        <h2>Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to the Website. Your continued use of the Website or services after changes are posted constitutes acceptance of the modified Terms.</p>
+
+        <h2>Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about these Terms of Service, please contact us:</p>
+        <address style="font-style: normal; margin-top: 1rem;">
+          <strong>Latour's Air Conditioning & Heating, LLC</strong><br>
+          2898 Saucier Rd<br>
+          Lake Charles, LA 70605<br>
+          Phone: <a href="tel:+13379121233">(337) 912-1233</a><br>
+          Email: <a href="mailto:info@latourshvac.com">info@latourshvac.com</a>
+        </address>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-blue);
+  }
+
+  .legal-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-blue-dark);
+  }
+
+  .legal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .legal-content address {
+    background: var(--off-white);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+</style>
