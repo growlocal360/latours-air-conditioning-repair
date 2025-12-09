@@ -239,26 +239,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           // Get form data
           const formData = new FormData(form);
 
-          // Build payload for GHL webhook
-          const payload = {
-            first_name: formData.get('first_name'),
-            last_name: formData.get('last_name'),
-            name: `${formData.get('first_name')} ${formData.get('last_name')}`,
-            phone: formData.get('phone'),
-            email: formData.get('email'),
-            address1: formData.get('address'),
-            city: formData.get('city'),
-            state: formData.get('state'),
-            postal_code: formData.get('zip'),
-            service_type: formData.get('service_type'),
-            urgency: formData.get('urgency'),
-            preferred_date: formData.get('preferred_date'),
-            preferred_time: formData.get('preferred_time'),
-            equipment_info: formData.get('equipment_info'),
-            message: formData.get('problem_description'),
-            source: 'Website Contact Form',
-            tags: ['Website Lead', 'Schedule Service']
-          };
+          // Build URL-encoded payload for GHL webhook (works better with no-cors)
+          const payload = new URLSearchParams();
+          payload.append('first_name', formData.get('first_name') || '');
+          payload.append('last_name', formData.get('last_name') || '');
+          payload.append('name', `${formData.get('first_name') || ''} ${formData.get('last_name') || ''}`.trim());
+          payload.append('phone', formData.get('phone') || '');
+          payload.append('email', formData.get('email') || '');
+          payload.append('address1', formData.get('address') || '');
+          payload.append('city', formData.get('city') || '');
+          payload.append('state', formData.get('state') || '');
+          payload.append('postal_code', formData.get('zip') || '');
+          payload.append('service_type', formData.get('service_type') || '');
+          payload.append('urgency', formData.get('urgency') || '');
+          payload.append('preferred_date', formData.get('preferred_date') || '');
+          payload.append('preferred_time', formData.get('preferred_time') || '');
+          payload.append('equipment_info', formData.get('equipment_info') || '');
+          payload.append('message', formData.get('problem_description') || '');
+          payload.append('source', 'Website Contact Form');
+          payload.append('tags', 'Website Lead,Schedule Service');
 
           // Disable submit button
           const submitBtn = form.querySelector('button[type="submit"]');
@@ -267,17 +266,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg> Submitting...';
 
           try {
-            const response = await fetch('https://services.leadconnectorhq.com/hooks/R611puAaZDQp12dpdWA3/webhook-trigger/82b2a49e-1216-40c5-aa3c-35672eeb15a6', {
+            // Use form-urlencoded which works with no-cors mode
+            await fetch('https://services.leadconnectorhq.com/hooks/R611puAaZDQp12dpdWA3/webhook-trigger/82b2a49e-1216-40c5-aa3c-35672eeb15a6', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
               },
-              body: JSON.stringify(payload),
-              mode: 'no-cors' // GHL webhooks don't return CORS headers
+              body: payload.toString(),
+              mode: 'no-cors'
             });
 
-            // Since mode is no-cors, we can't read the response
-            // But if we got here without an error, assume success
+            // Show success (with no-cors we can't verify response, but request was sent)
             form.style.display = 'none';
             successDiv.style.display = 'block';
             successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
