@@ -284,6 +284,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           payload.append('source', 'Website Contact Form');
           payload.append('tags', 'Website Lead,Schedule Service');
 
+          // Combined additional_info field for GHL appointment notes/description
+          const serviceType = formData.get('service_type') || '';
+          const urgency = formData.get('urgency') || '';
+          const equipmentInfo = formData.get('equipment_info') || '';
+          const problemDesc = formData.get('problem_description') || '';
+          const additionalInfo = `Service Type: ${serviceType}\nUrgency: ${urgency}\nEquipment: ${equipmentInfo}\nMessage: ${problemDesc}`;
+          payload.append('additional_info', additionalInfo);
+          payload.append('notes', additionalInfo);
+
           // Disable submit button
           const submitBtn = form.querySelector('button[type="submit"]');
           const originalBtnText = submitBtn.innerHTML;
