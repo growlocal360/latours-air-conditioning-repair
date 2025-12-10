@@ -252,8 +252,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           payload.append('postal_code', formData.get('zip') || '');
           payload.append('service_type', formData.get('service_type') || '');
           payload.append('urgency', formData.get('urgency') || '');
-          payload.append('preferred_date', formData.get('preferred_date') || '');
-          payload.append('preferred_time', formData.get('preferred_time') || '');
+
+          // Format date/time for GHL appointment booking
+          // GHL requires format: MM-DD-YYYY HH:MM A
+          const rawDate = formData.get('preferred_date') || '';
+          const timeSlot = formData.get('preferred_time') || 'morning';
+
+          // Convert time slot to actual time (start of window)
+          // morning (8am-12pm) = 08:00 AM, afternoon (12pm-6pm) = 01:00 PM
+          const timeMap = {
+            'morning': '08:00 AM',
+            'afternoon': '01:00 PM',
+            'flexible': '08:00 AM'
+          };
+          const appointmentTime = timeMap[timeSlot] || '08:00 AM';
+
+          // Format date from YYYY-MM-DD to MM-DD-YYYY
+          let formattedDateTime = '';
+          if (rawDate) {
+            const [year, month, day] = rawDate.split('-');
+            formattedDateTime = `${month}-${day}-${year} ${appointmentTime}`;
+          }
+
+          // Send both raw values (for reference) and formatted datetime
+          payload.append('preferred_date', rawDate);
+          payload.append('preferred_time', timeSlot);
+          payload.append('appointment_datetime', formattedDateTime);
+
           payload.append('equipment_info', formData.get('equipment_info') || '');
           payload.append('message', formData.get('problem_description') || '');
           payload.append('source', 'Website Contact Form');
