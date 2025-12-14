@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Latour's Air Conditioning & Heating",
+  "description": "Customer reviews and testimonials for Latour's HVAC - Lake Charles, LA's trusted air conditioning and heating company.",
+  "telephone": "+1-337-513-4425",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2898 Saucier Rd",
+    "addressLocality": "Lake Charles",
+    "addressRegion": "LA",
+    "postalCode": "70605"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://latourshvac.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://latourshvac.com/reviews/"}
+  ]
+};
+
+const reviews = [
+  {
+    name: "Michael T.",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "November 2024",
+    service: "AC Repair",
+    text: "Latour's came out same day when our AC quit on the hottest day of the year. The technician was professional, explained everything clearly, and had it fixed within an hour. Fair price and great service. Highly recommend!"
+  },
+  {
+    name: "Sarah M.",
+    location: "Sulphur, LA",
+    rating: 5,
+    date: "October 2024",
+    service: "New AC Installation",
+    text: "We got quotes from 5 different companies for a new AC system. Latour's wasn't the cheapest, but they were the most honest about what we actually needed. No high-pressure sales tactics. The installation crew was fantastic - clean, efficient, and respectful of our home."
+  },
+  {
+    name: "David L.",
+    location: "Westlake, LA",
+    rating: 5,
+    date: "October 2024",
+    service: "Furnace Repair",
+    text: "Called on a Saturday evening when our heater stopped working. They had someone out Sunday morning. Turned out to be a simple fix that other companies probably would have used to sell us a new system. Honest and affordable!"
+  },
+  {
+    name: "Jennifer R.",
+    location: "Moss Bluff, LA",
+    rating: 5,
+    date: "September 2024",
+    service: "AC Tune-Up",
+    text: "Been using Latour's for our annual maintenance for 3 years now. They always show up on time, do thorough work, and never try to upsell unnecessary services. That's rare these days!"
+  },
+  {
+    name: "Robert K.",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "September 2024",
+    service: "Emergency AC Repair",
+    text: "AC went out at 10pm with a house full of guests. Called Latour's emergency line and they had someone here within 2 hours. Yes, it cost more for after-hours service, but they were upfront about the pricing and got us cool again. Lifesavers!"
+  },
+  {
+    name: "Amanda P.",
+    location: "Iowa, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Ductless Mini Split",
+    text: "Had a mini split installed in our garage workshop. The team was knowledgeable about placement for optimal cooling and the installation was cleaner than I expected. Works perfectly!"
+  },
+  {
+    name: "James W.",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Heat Pump Installation",
+    text: "Replaced our old system with a new heat pump. Latour's helped us understand the rebates and financing options. The difference in our electric bill has been amazing. Should have done this years ago!"
+  },
+  {
+    name: "Patricia H.",
+    location: "DeRidder, LA",
+    rating: 5,
+    date: "July 2024",
+    service: "AC Repair",
+    text: "Even though we're a bit outside their normal area, Latour's came out to fix our AC. The technician was friendly and took the time to show me how to maintain my filters properly. Great customer service!"
+  }
+];
+---
+
+<BaseLayout
+  title="Reviews & Testimonials | Latour's HVAC - Lake Charles, LA"
+  description="Read customer reviews for Latour's HVAC in Lake Charles, LA. See why our customers trust us for AC repair, heating service, and HVAC installation throughout Southwest Louisiana."
+  keywords="latours hvac reviews, lake charles ac repair reviews, hvac company reviews lake charles, air conditioning reviews sulphur la"
+  ogTitle="Customer Reviews | Latour's HVAC - Lake Charles, LA"
+  ogDescription="See what our customers say about Latour's HVAC. 4.9-star rated AC repair and heating service in Lake Charles and Southwest Louisiana."
+  canonicalUrl="https://latourshvac.com/reviews/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Reviews</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Customer Reviews</h1>
+      <p>See what Lake Charles and Southwest Louisiana homeowners say about Latour's HVAC service.</p>
+    </div>
+  </section>
+
+  <!-- Rating Summary -->
+  <section class="content-section" style="padding-bottom: 0;">
+    <div class="container">
+      <div style="background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg); text-align: center; max-width: 600px; margin: 0 auto;">
+        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-blue);">4.9</div>
+        <div style="color: #f5a623; font-size: 1.5rem; margin: 0.5rem 0;">
+          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+        </div>
+        <p style="margin: 0; color: var(--medium-gray);">Based on 150+ customer reviews</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://www.google.com/search?q=latours+hvac+lake+charles" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Google Reviews</a>
+          <a href="https://www.facebook.com/latoursac" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Facebook Reviews</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Grid -->
+  <section class="content-section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem;">
+        {reviews.map((review) => (
+          <div style="background: #fff; border: 1px solid var(--light-gray); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div>
+                <div style="font-weight: 600; color: var(--dark-gray);">{review.name}</div>
+                <div style="font-size: 0.875rem; color: var(--medium-gray);">{review.location}</div>
+              </div>
+              <div style="color: #f5a623;">
+                {Array(review.rating).fill('').map(() => <span>&#9733;</span>)}
+              </div>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 500; margin-bottom: 0.75rem; text-transform: uppercase;">
+              {review.service} &bull; {review.date}
+            </div>
+            <p style="margin: 0; color: var(--dark-gray); line-height: 1.6;">"{review.text}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Leave Review CTA -->
+  <section style="background: var(--off-white); padding: 3rem 0;">
+    <div class="container" style="text-align: center;">
+      <h2>Had a Great Experience?</h2>
+      <p style="max-width: 600px; margin: 0 auto 1.5rem;">We'd love to hear from you! Your feedback helps us improve and helps other homeowners find reliable HVAC service.</p>
+      <a href="https://www.google.com/search?q=latours+hvac+lake+charles" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Leave a Google Review</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Experience the Latour's Difference</h2>
+      <p>Join our family of satisfied customers across Southwest Louisiana.</p>
+      <div class="cta-phone">
+        <a href="tel:+13375134425">(337) 513-4425</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13375134425" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
