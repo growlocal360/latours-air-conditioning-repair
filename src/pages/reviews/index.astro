@@ -17,7 +17,7 @@ const schema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "50",
+    "reviewCount": "170",
     "bestRating": "5",
     "worstRating": "1"
   }
@@ -32,70 +32,47 @@ const breadcrumbSchema = {
   ]
 };
 
+// Real reviews from Google via Birdeye
 const reviews = [
   {
-    name: "Michael T.",
+    name: "Kat D.",
     location: "Lake Charles, LA",
     rating: 5,
     date: "November 2024",
+    service: "AC Service",
+    text: "Awesome customer service and great price! Mr. Latour provided personal service on a holiday! We highly recommend this company!"
+  },
+  {
+    name: "Gail Pike",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
     service: "AC Repair",
-    text: "Latour's came out same day when our AC quit on the hottest day of the year. The technician was professional, explained everything clearly, and had it fixed within an hour. Fair price and great service. Highly recommend!"
+    text: "Scott was amazing! Came out and addressed our AC issues quickly!"
   },
   {
-    name: "Sarah M.",
-    location: "Sulphur, LA",
-    rating: 5,
-    date: "October 2024",
-    service: "New AC Installation",
-    text: "We got quotes from 5 different companies for a new AC system. Latour's wasn't the cheapest, but they were the most honest about what we actually needed. No high-pressure sales tactics. The installation crew was fantastic - clean, efficient, and respectful of our home."
-  },
-  {
-    name: "David L.",
-    location: "Westlake, LA",
-    rating: 5,
-    date: "October 2024",
-    service: "Furnace Repair",
-    text: "Called on a Saturday evening when our heater stopped working. They had someone out Sunday morning. Turned out to be a simple fix that other companies probably would have used to sell us a new system. Honest and affordable!"
-  },
-  {
-    name: "Jennifer R.",
-    location: "Moss Bluff, LA",
-    rating: 5,
-    date: "September 2024",
-    service: "AC Tune-Up",
-    text: "Been using Latour's for our annual maintenance for 3 years now. They always show up on time, do thorough work, and never try to upsell unnecessary services. That's rare these days!"
-  },
-  {
-    name: "Robert K.",
-    location: "Lake Charles, LA",
-    rating: 5,
-    date: "September 2024",
-    service: "Emergency AC Repair",
-    text: "AC went out at 10pm with a house full of guests. Called Latour's emergency line and they had someone here within 2 hours. Yes, it cost more for after-hours service, but they were upfront about the pricing and got us cool again. Lifesavers!"
-  },
-  {
-    name: "Amanda P.",
-    location: "Iowa, LA",
-    rating: 5,
-    date: "August 2024",
-    service: "Ductless Mini Split",
-    text: "Had a mini split installed in our garage workshop. The team was knowledgeable about placement for optimal cooling and the installation was cleaner than I expected. Works perfectly!"
-  },
-  {
-    name: "James W.",
+    name: "Timothy Cormier",
     location: "Lake Charles, LA",
     rating: 5,
     date: "August 2024",
-    service: "Heat Pump Installation",
-    text: "Replaced our old system with a new heat pump. Latour's helped us understand the rebates and financing options. The difference in our electric bill has been amazing. Should have done this years ago!"
+    service: "AC Repair",
+    text: "Latour's Air Conditioning solved my cooling problem with ease."
   },
   {
-    name: "Patricia H.",
-    location: "DeRidder, LA",
+    name: "Patrick Gaynor",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Weekend AC Repair",
+    text: "Thanks very much for Scott coming out to fix my A/C on a weekend day. Excellent service and a very nice person, arrived one hour after calling. Would recommend their services to anyone!"
+  },
+  {
+    name: "Casey Marks",
+    location: "Lake Charles, LA",
     rating: 5,
     date: "July 2024",
-    service: "AC Repair",
-    text: "Even though we're a bit outside their normal area, Latour's came out to fix our AC. The technician was friendly and took the time to show me how to maintain my filters properly. Great customer service!"
+    service: "Emergency AC Service",
+    text: "Called Latour's on a Sunday AM and in less than one hour Latour's came out listening to my issues and diagnosing the issues within minutes. Stayed a while to make sure the unit was running correctly. Very professional, forthcoming and definitely recommend Latour's."
   }
 ];
 ---
@@ -136,7 +113,7 @@ const reviews = [
         <div style="color: #f5a623; font-size: 1.5rem; margin: 0.5rem 0;">
           <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
         </div>
-        <p style="margin: 0; color: var(--medium-gray);">Based on 50+ customer reviews on Google</p>
+        <p style="margin: 0; color: var(--medium-gray);">Based on 170+ customer reviews on Google</p>
         <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="https://www.google.com/search?q=latours+hvac+lake+charles" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Google Reviews</a>
           <a href="https://www.facebook.com/latoursac" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Facebook Reviews</a>
