@@ -409,6 +409,44 @@ p {
   color: var(--white);
 }
 
+/* Mobile sticky button text layout */
+.mobile-sticky-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.mobile-sticky-main {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.mobile-sticky-sub {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Subtle bounce animation */
+@keyframes subtleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.mobile-sticky-bounce {
+  animation: subtleBounce 2s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.mobile-sticky-bounce:hover {
+  animation: none;
+}
+
 .mobile-sticky-btn svg {
   flex-shrink: 0;
   width: 20px;
