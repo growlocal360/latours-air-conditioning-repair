@@ -216,6 +216,7 @@ p {
   align-items: center;
   padding-top: var(--spacing-md);
   padding-bottom: var(--spacing-md);
+  max-width: var(--container-2xl);
 }
 
 .logo {
@@ -255,7 +256,7 @@ p {
 
 .nav-menu {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
 }
 
 .nav-menu > li {
