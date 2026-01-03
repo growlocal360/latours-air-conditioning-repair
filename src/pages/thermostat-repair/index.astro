@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Thermostat Repair Service",
+  "serviceType": "Air Conditioning Repair",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-513-4425",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Thermostat repair and replacement in Lake Charles, LA. We fix all thermostat problems and install smart WiFi thermostats."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Thermostat Repair",
+      "item": "https://latourshvac.com/thermostat-repair/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Thermostat Repair & Replacement Lake Charles LA | Smart Thermostat Install | Latour's HVAC"
+  description="Thermostat problems? Our Lake Charles technicians repair, replace, and install all types of thermostats including smart WiFi models. Call (337) 513-4425."
+  canonicalUrl="https://latourshvac.com/thermostat-repair/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Thermostat Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Thermostat Repair & Replacement in Lake Charles, LA</h1>
+      <p>A faulty thermostat can cause your AC to short cycle, run constantly, or not work at all. We repair and install all types.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">Your thermostat is the command center of your HVAC system - it tells your AC and furnace when to turn on, when to turn off, and what temperature to maintain. When your <strong>thermostat malfunctions</strong>, it can cause a range of comfort and efficiency problems. Our Lake Charles technicians diagnose thermostat issues quickly and can repair or replace your thermostat the same day.</p>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+            <h2 style="margin-top: 0;">Thermostat Problems?</h2>
+            <p style="font-size: 1.1rem;">Repair & Replacement Same Day</p>
+            <a href="tel:+13375134425" style="font-size: 2rem; font-weight: 700; color: #0066cc;">(337) 513-4425</a>
+          </div>
+
+          <h2>Signs of Thermostat Problems</h2>
+          <p>How do you know if your thermostat is the problem? Watch for these signs:</p>
+          <ul>
+            <li><strong>AC won't turn on:</strong> Your <a href="/ac-not-turning-on/">AC doesn't respond</a> when you adjust the thermostat</li>
+            <li><strong>AC runs constantly:</strong> System never reaches set temperature and won't shut off</li>
+            <li><strong>Short cycling:</strong> AC turns on and off frequently in short bursts</li>
+            <li><strong>Temperature swings:</strong> Large fluctuations between too hot and too cold</li>
+            <li><strong>Unresponsive display:</strong> Blank screen or buttons don't work</li>
+            <li><strong>Wrong temperature reading:</strong> Thermostat shows a temperature that doesn't match actual room temperature</li>
+            <li><strong>Room doesn't match setting:</strong> You set 72° but the room feels much warmer or cooler</li>
+            <li><strong>HVAC runs at wrong times:</strong> System operates on a different schedule than programmed</li>
+          </ul>
+
+          <h2>Common Thermostat Problems We Fix</h2>
+
+          <h3>Dead Batteries</h3>
+          <p>Many thermostats use batteries, even if they're also connected to household power. Dead batteries can cause blank displays, loss of programming, or complete system failure. We'll check and replace batteries as needed.</p>
+
+          <h3>Wiring Problems</h3>
+          <p>Loose, corroded, or damaged wiring between your thermostat and HVAC system can cause intermittent operation or complete failure. We inspect all connections and repair or replace wiring as needed.</p>
+
+          <h3>Calibration Issues</h3>
+          <p>If your thermostat reads the wrong temperature, it won't cycle your system correctly. We can recalibrate thermostats or recommend replacement if calibration isn't possible.</p>
+
+          <h3>Location Problems</h3>
+          <p>A thermostat in the wrong location can cause comfort problems:</p>
+          <ul>
+            <li>Direct sunlight causes false high readings</li>
+            <li>Near a supply vent causes premature shutoff</li>
+            <li>Near exterior doors causes ghost readings</li>
+            <li>In an unused room doesn't reflect actual living space temperature</li>
+          </ul>
+          <p>We can relocate your thermostat for better performance.</p>
+
+          <h3>Compatibility Issues</h3>
+          <p>Not all thermostats work with all HVAC systems. If you recently installed a new thermostat and have problems, it may not be compatible with your system. We can verify compatibility and install the right thermostat.</p>
+
+          <h2>Thermostat Replacement Options</h2>
+          <p>If your thermostat needs replacement, we offer several options:</p>
+
+          <h3>Basic Digital Thermostats</h3>
+          <p>Simple, reliable, and affordable. Easy to use with clear temperature display and basic programming.</p>
+
+          <h3>Programmable Thermostats</h3>
+          <p>Set different temperatures for different times of day and days of the week. Save energy when you're away or sleeping.</p>
+
+          <h3>Smart WiFi Thermostats</h3>
+          <p>Control your home's temperature from anywhere using your smartphone. Features may include:</p>
+          <ul>
+            <li>Remote control via app</li>
+            <li>Learning capabilities that adapt to your schedule</li>
+            <li>Energy usage reports</li>
+            <li>Integration with smart home systems (Alexa, Google Home, etc.)</li>
+            <li>Geofencing to adjust temperature when you leave or arrive</li>
+            <li>Maintenance reminders</li>
+          </ul>
+          <p>Popular smart thermostat brands we install include Nest, Ecobee, Honeywell Home, and Emerson Sensi.</p>
+
+          <h2>What to Check Before Calling</h2>
+          <p>Before calling for service, try these simple checks:</p>
+          <ul>
+            <li><strong>Check batteries:</strong> Replace with fresh batteries</li>
+            <li><strong>Check settings:</strong> Ensure it's set to "cool" in summer, "heat" in winter</li>
+            <li><strong>Check temperature setting:</strong> Make sure set point is appropriate</li>
+            <li><strong>Check circuit breaker:</strong> Verify power to HVAC system</li>
+            <li><strong>Clean the thermostat:</strong> Dust inside can affect sensors</li>
+          </ul>
+
+          <h2>Professional Thermostat Service</h2>
+          <p>Whether you need a simple repair or want to upgrade to a smart thermostat, call <a href="tel:+13375134425">(337) 513-4425</a> for expert service.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Thermostat Service</h4>
+            <p>Repair, replacement, and smart upgrades.</p>
+            <div class="phone">
+              <a href="tel:+13375134425">(337) 513-4425</a>
+            </div>
+            <a href="tel:+13375134425" class="btn btn-primary btn-block">Call Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>AC Repair Services</h4>
+            <ul>
+              <li><a href="/emergency-ac-repair/">Emergency AC Repair</a></li>
+              <li><a href="/ac-not-cooling/">AC Not Cooling</a></li>
+              <li><a href="/ac-not-turning-on/">AC Not Turning On</a></li>
+              <li><a href="/refrigerant-leak-repair/">Refrigerant Leak Repair</a></li>
+              <li><a href="/compressor-repair/">Compressor Repair</a></li>
+              <li><a href="/frozen-evaporator-coil/">Frozen Evaporator Coil</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Thermostat Problems? We Can Help</h2>
+      <p>Repair, replacement, and smart thermostat installation.</p>
+      <div class="cta-phone">
+        <a href="tel:+13375134425">(337) 513-4425</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13375134425" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

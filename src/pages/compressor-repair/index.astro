@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AC Compressor Repair Service",
+  "serviceType": "Air Conditioning Repair",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-513-4425",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Expert AC compressor diagnosis and repair in Lake Charles, LA. Honest assessment of repair vs. replacement options."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Compressor Repair",
+      "item": "https://latourshvac.com/compressor-repair/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="AC Compressor Repair Lake Charles LA | Latour's HVAC"
+  description="AC compressor problems? Our Lake Charles technicians provide honest diagnosis and repair options. Hard start kits, compressor replacement, and system evaluations. Call (337) 513-4425."
+  canonicalUrl="https://latourshvac.com/compressor-repair/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Compressor Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>AC Compressor Repair in Lake Charles, LA</h1>
+      <p>The compressor is the heart of your AC. When it fails, you need honest advice about repair vs. replacement options.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">The <strong>compressor is the most critical and expensive component</strong> in your air conditioning system. It circulates refrigerant through the system, enabling heat transfer that cools your home. When the compressor fails, your AC stops cooling entirely. Our Lake Charles technicians provide honest assessments to help you make the best decision for your situation.</p>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+            <h2 style="margin-top: 0;">Compressor Problems?</h2>
+            <p style="font-size: 1.1rem;">Honest Diagnosis & Fair Pricing</p>
+            <a href="tel:+13375134425" style="font-size: 2rem; font-weight: 700; color: #0066cc;">(337) 513-4425</a>
+          </div>
+
+          <h2>Signs of Compressor Problems</h2>
+          <p>How do you know if your compressor is failing? Watch for these warning signs:</p>
+          <ul>
+            <li><strong>AC not cooling:</strong> Your <a href="/ac-not-cooling/">system runs but doesn't cool</a></li>
+            <li><strong>Outdoor unit not running:</strong> The fan may spin but the compressor doesn't start</li>
+            <li><strong>Unusual noises:</strong> Grinding, squealing, or rattling from the outdoor unit</li>
+            <li><strong>Hard starting:</strong> The compressor struggles to turn on or trips the breaker</li>
+            <li><strong>Tripped circuit breaker:</strong> The compressor repeatedly trips the breaker</li>
+            <li><strong>Hot air from vents:</strong> The system blows warm air instead of cold</li>
+            <li><strong>Vibration:</strong> Excessive vibration from the outdoor unit when running</li>
+          </ul>
+
+          <h2>Common Compressor Problems</h2>
+
+          <h3>Hard Starting</h3>
+          <p>If your compressor struggles to start or makes a clicking/humming sound before starting, it may need a hard start kit. This relatively inexpensive device helps the compressor start more easily and can extend its life. A hard start kit is often a good solution for older compressors showing their age.</p>
+
+          <h3>Electrical Failure</h3>
+          <p>Compressors can fail due to electrical problems like:</p>
+          <ul>
+            <li>Failed start or run capacitor</li>
+            <li>Burned windings</li>
+            <li>Grounded compressor</li>
+            <li>Open windings</li>
+          </ul>
+          <p>Some electrical problems (like capacitor failure) are easily repaired. Others (like burned windings) mean the compressor needs replacement.</p>
+
+          <h3>Mechanical Failure</h3>
+          <p>Internal mechanical problems include:</p>
+          <ul>
+            <li>Seized compressor (won't turn)</li>
+            <li>Broken internal components</li>
+            <li>Bearing failure</li>
+          </ul>
+          <p>Mechanical failures typically require compressor replacement.</p>
+
+          <h3>Refrigerant-Related Damage</h3>
+          <p>Compressors often fail due to issues that could have been prevented:</p>
+          <ul>
+            <li><strong>Low refrigerant:</strong> Running with <a href="/refrigerant-leak-repair/">low refrigerant</a> causes overheating</li>
+            <li><strong>Liquid slugging:</strong> Liquid refrigerant entering the compressor causes internal damage</li>
+            <li><strong>Contamination:</strong> Moisture or debris in the system damages internal components</li>
+          </ul>
+
+          <h2>Repair vs. Replace: Making the Right Decision</h2>
+          <p>When your compressor fails, you have several options. Here's how we help you decide:</p>
+
+          <h3>Consider Compressor Replacement When:</h3>
+          <ul>
+            <li>Your system is less than 10 years old</li>
+            <li>The rest of the system is in good condition</li>
+            <li>The compressor is still under warranty</li>
+            <li>It's a straightforward compressor failure</li>
+          </ul>
+
+          <h3>Consider Full System Replacement When:</h3>
+          <ul>
+            <li>Your AC is more than 10-12 years old</li>
+            <li>You've had multiple repairs recently</li>
+            <li>The system uses R-22 refrigerant (phased out)</li>
+            <li>Energy efficiency is poor</li>
+            <li>Compressor replacement cost exceeds 50% of new system cost</li>
+          </ul>
+
+          <h2>Our Compressor Diagnostic Process</h2>
+          <ol>
+            <li>Test electrical components (capacitors, contactors, wiring)</li>
+            <li>Check compressor electrical readings (amps, ohms)</li>
+            <li>Test for grounded or open windings</li>
+            <li>Check refrigerant pressures and charge</li>
+            <li>Inspect for physical damage or contamination</li>
+            <li>Provide honest assessment of repair vs. replacement options</li>
+          </ol>
+
+          <h2>Preventing Compressor Failure</h2>
+          <p>Protect your compressor investment with these preventive measures:</p>
+          <ul>
+            <li>Schedule annual <a href="/ac-contractor/ac-tune-up/">AC tune-ups</a></li>
+            <li>Change air filters regularly</li>
+            <li>Address refrigerant leaks promptly</li>
+            <li>Don't ignore unusual noises or performance issues</li>
+            <li>Keep the outdoor unit clear of debris</li>
+            <li>Consider a hard start kit for older systems</li>
+          </ul>
+
+          <h2>Get an Honest Compressor Assessment</h2>
+          <p>We won't push unnecessary repairs or replacements. Call <a href="tel:+13375134425">(337) 513-4425</a> for an honest evaluation of your compressor problem.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>Compressor Diagnosis</h4>
+            <p>Honest assessment. Fair pricing.</p>
+            <div class="phone">
+              <a href="tel:+13375134425">(337) 513-4425</a>
+            </div>
+            <a href="tel:+13375134425" class="btn btn-primary btn-block">Call Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>AC Repair Services</h4>
+            <ul>
+              <li><a href="/emergency-ac-repair/">Emergency AC Repair</a></li>
+              <li><a href="/ac-not-cooling/">AC Not Cooling</a></li>
+              <li><a href="/ac-not-turning-on/">AC Not Turning On</a></li>
+              <li><a href="/refrigerant-leak-repair/">Refrigerant Leak Repair</a></li>
+              <li><a href="/frozen-evaporator-coil/">Frozen Evaporator Coil</a></li>
+              <li><a href="/thermostat-repair/">Thermostat Repair</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Compressor Problems? Get Honest Answers</h2>
+      <p>Expert diagnosis. Repair vs. replacement guidance. Fair pricing.</p>
+      <div class="cta-phone">
+        <a href="tel:+13375134425">(337) 513-4425</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13375134425" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

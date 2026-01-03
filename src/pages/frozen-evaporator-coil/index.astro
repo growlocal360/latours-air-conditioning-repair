@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Frozen Evaporator Coil Repair Service",
+  "serviceType": "Air Conditioning Repair",
+  "provider": {
+    "@type": "HVACBusiness",
+    "name": "Latour's Air Conditioning & Heating, LLC",
+    "telephone": "+1-337-513-4425",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2898 Saucier Rd",
+      "addressLocality": "Lake Charles",
+      "addressRegion": "LA",
+      "postalCode": "70605"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Lake Charles"
+  },
+  "description": "Frozen AC coil repair in Lake Charles, LA. We diagnose and fix the root cause of frozen evaporator coils to prevent recurring problems."
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://latourshvac.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Frozen Evaporator Coil",
+      "item": "https://latourshvac.com/frozen-evaporator-coil/"
+    }
+  ]
+};
+
+---
+
+<BaseLayout
+  title="Frozen Evaporator Coil Repair Lake Charles LA | AC Freezing Up | Latour's HVAC"
+  description="AC frozen or iced up? Our Lake Charles technicians diagnose and fix the root cause of frozen evaporator coils. Same-day service available. Call (337) 513-4425."
+  canonicalUrl="https://latourshvac.com/frozen-evaporator-coil/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Frozen Evaporator Coil</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Frozen Evaporator Coil Repair in Lake Charles, LA</h1>
+      <p>A frozen AC coil can't cool your home and may cause water damage. We find and fix the root cause to prevent it from happening again.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <p class="lead">If you see ice forming on your AC unit or refrigerant lines, your <strong>evaporator coil is freezing</strong>. This is a sign something is wrong - a healthy AC system shouldn't freeze even in constant use. Running your AC with a frozen coil can damage the compressor and cause water damage when the ice melts. Our Lake Charles technicians diagnose and fix the underlying cause.</p>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+            <h2 style="margin-top: 0;">AC Freezing Up?</h2>
+            <p style="font-size: 1.1rem;">Turn Off Your AC & Call Us</p>
+            <a href="tel:+13375134425" style="font-size: 2rem; font-weight: 700; color: #0066cc;">(337) 513-4425</a>
+          </div>
+
+          <h2>Signs of a Frozen Evaporator Coil</h2>
+          <p>How do you know if your evaporator coil is frozen?</p>
+          <ul>
+            <li><strong>Visible ice:</strong> Ice on refrigerant lines, outdoor unit, or visible on indoor coil</li>
+            <li><strong>AC not cooling:</strong> Your <a href="/ac-not-cooling/">AC runs but doesn't cool</a> effectively</li>
+            <li><strong>Warm air from vents:</strong> Little or no cold air coming from registers</li>
+            <li><strong>Water leaks:</strong> Water dripping or pooling around indoor unit when ice melts</li>
+            <li><strong>Higher humidity:</strong> Your home feels more humid than usual</li>
+            <li><strong>Hissing sounds:</strong> Unusual sounds from the indoor unit</li>
+          </ul>
+
+          <h2>What Causes an Evaporator Coil to Freeze?</h2>
+          <p>A frozen coil is always a symptom of an underlying problem. Here are the most common causes:</p>
+
+          <h3>1. Restricted Airflow</h3>
+          <p>The evaporator coil needs warm air flowing over it to prevent freezing. When airflow is restricted, the coil gets too cold and ice forms. Common airflow restrictions include:</p>
+          <ul>
+            <li><strong>Dirty air filter:</strong> The #1 cause of frozen coils - check and replace your filter</li>
+            <li><strong>Closed or blocked vents:</strong> Furniture or closed registers blocking airflow</li>
+            <li><strong>Dirty evaporator coil:</strong> Dust and debris insulating the coil</li>
+            <li><strong>Collapsed ductwork:</strong> Damaged ducts restricting airflow</li>
+            <li><strong>Blower motor problems:</strong> A failing blower can't move enough air</li>
+          </ul>
+
+          <h3>2. Low Refrigerant</h3>
+          <p>When <a href="/refrigerant-leak-repair/">refrigerant levels are low</a>, pressure drops in the evaporator coil, causing temperatures to fall below freezing. Signs that low refrigerant is causing your freeze-up:</p>
+          <ul>
+            <li>Ice forms even with a clean filter and good airflow</li>
+            <li>Hissing or bubbling sounds (indicating a leak)</li>
+            <li>AC has been gradually cooling less effectively</li>
+          </ul>
+
+          <h3>3. Blower Fan Problems</h3>
+          <p>If the blower fan isn't running or is running too slowly, insufficient air passes over the coil. This can be caused by:</p>
+          <ul>
+            <li>Failed blower motor</li>
+            <li>Broken fan belt (on belt-driven systems)</li>
+            <li>Bad blower motor capacitor</li>
+            <li>Control board issues</li>
+          </ul>
+
+          <h3>4. Thermostat Issues</h3>
+          <p>A malfunctioning <a href="/thermostat-repair/">thermostat</a> might cause the AC to run continuously or when outdoor temperatures are too low, leading to freeze-ups.</p>
+
+          <h3>5. Running AC When It's Too Cold Outside</h3>
+          <p>Most AC systems shouldn't run when outdoor temperatures are below 60°F. Running in cold weather can cause the coil to freeze.</p>
+
+          <h2>What to Do If Your AC is Frozen</h2>
+          <p>If you discover your AC is frozen, follow these steps:</p>
+          <ol>
+            <li><strong>Turn off the AC:</strong> Switch the thermostat to "off" to stop the compressor</li>
+            <li><strong>Turn on the fan:</strong> Set the fan to "on" (not "auto") to blow warm air over the coil and speed thawing</li>
+            <li><strong>Check the filter:</strong> Replace if dirty</li>
+            <li><strong>Check vents:</strong> Make sure all supply and return vents are open and unobstructed</li>
+            <li><strong>Let it thaw:</strong> Wait 2-4 hours for complete thawing before restarting</li>
+            <li><strong>Call us:</strong> If the problem recurs, there's an underlying issue that needs professional diagnosis</li>
+          </ol>
+
+          <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+            <strong>Warning:</strong> Never chip or scrape ice off your AC coil - you can damage the coil fins and refrigerant lines.
+          </div>
+
+          <h2>Our Frozen Coil Repair Process</h2>
+          <ol>
+            <li>Allow the system to fully thaw (or assist with safe thawing techniques)</li>
+            <li>Check refrigerant levels and test for leaks</li>
+            <li>Inspect and clean evaporator coil</li>
+            <li>Test blower motor operation and airflow</li>
+            <li>Check air filter and ductwork</li>
+            <li>Verify thermostat operation</li>
+            <li>Repair the root cause to prevent recurrence</li>
+          </ol>
+
+          <h2>Stop Your AC From Freezing Up</h2>
+          <p>If your AC keeps freezing, there's an underlying problem. Call <a href="tel:+13375134425">(337) 513-4425</a> for expert diagnosis and repair.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget sidebar-cta">
+            <h4>AC Frozen? Get Help</h4>
+            <p>We'll find the cause and fix it right.</p>
+            <div class="phone">
+              <a href="tel:+13375134425">(337) 513-4425</a>
+            </div>
+            <a href="tel:+13375134425" class="btn btn-primary btn-block">Call Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>AC Repair Services</h4>
+            <ul>
+              <li><a href="/emergency-ac-repair/">Emergency AC Repair</a></li>
+              <li><a href="/ac-not-cooling/">AC Not Cooling</a></li>
+              <li><a href="/ac-not-turning-on/">AC Not Turning On</a></li>
+              <li><a href="/refrigerant-leak-repair/">Refrigerant Leak Repair</a></li>
+              <li><a href="/compressor-repair/">Compressor Repair</a></li>
+              <li><a href="/thermostat-repair/">Thermostat Repair</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>AC Freezing Up? We'll Fix the Root Cause</h2>
+      <p>Stop the cycle of frozen coils. Get a lasting repair.</p>
+      <div class="cta-phone">
+        <a href="tel:+13375134425">(337) 513-4425</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+13375134425" class="btn btn-secondary btn-lg">Call Now</a>
+        <a href="/schedule-service/" class="btn btn-outline-white btn-lg">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
