@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { listPublishedSnaps } from '../../lib/jobsnaps/queries';
+
+export const prerender = false;
+
+const snaps = await listPublishedSnaps(60);
+
+// Short edge cache so newly-published snaps appear within ~30s of the webhook
+// firing, without hammering the DB on every request.
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, s-maxage=30, stale-while-revalidate=300',
+);
+
+const title = "Recent Work | Latour's Air Conditioning & Heating";
+const description =
+  'Browse recent HVAC service calls, AC repairs, and installations completed by Latour’s Air Conditioning & Heating in Lake Charles and Southwest Louisiana.';
+
+function truncate(text: string | null | undefined, max = 160): string {
+  if (!text) return '';
+  return text.length > max ? text.slice(0, max - 1).trimEnd() + '…' : text;
+}
+
+function locationLabel(loc: any): string {
+  if (!loc) return '';
+  const parts = [loc.city, loc.state].filter(Boolean);
+  return parts.join(', ');
+}
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="work-index">
+    <header class="work-index__header">
+      <h1>Recent Work</h1>
+      <p>
+        A look at recent HVAC jobs completed by our team across Lake Charles and
+        Southwest Louisiana.
+      </p>
+    </header>
+
+    {snaps.length === 0 ? (
+      <p class="work-index__empty">
+        Job photos and stories will appear here as our team posts them. Check back soon.
+      </p>
+    ) : (
+      <ul class="work-grid">
+        {snaps.map((snap) => {
+          const featured = snap.media?.[0];
+          return (
+            <li class="work-card">
+              <a href={`/work/${snap.slug}`} class="work-card__link">
+                {featured?.url && (
+                  <div class="work-card__image-wrap">
+                    <img
+                      src={featured.url}
+                      alt={featured.alt || snap.title || 'Recent HVAC work'}
+                      width={featured.width ?? undefined}
+                      height={featured.height ?? undefined}
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="work-card__body">
+                  <h2 class="work-card__title">{snap.title || 'Untitled job'}</h2>
+                  {snap.description && (
+                    <p class="work-card__desc">{truncate(snap.description, 180)}</p>
+                  )}
+                  {locationLabel(snap.location) && (
+                    <p class="work-card__loc">{locationLabel(snap.location)}</p>
+                  )}
+                </div>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )}
+  </main>
+</BaseLayout>
+
+<style>
+  .work-index {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+  .work-index__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .work-index__header h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: 0 0 0.5rem;
+  }
+  .work-index__header p {
+    color: #555;
+    max-width: 60ch;
+    margin: 0 auto;
+  }
+  .work-index__empty {
+    text-align: center;
+    color: #666;
+    padding: 3rem 1rem;
+  }
+  .work-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 720px) {
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .work-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .work-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .work-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  .work-card__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .work-card__image-wrap {
+    aspect-ratio: 4 / 3;
+    background: #f4f4f4;
+    overflow: hidden;
+  }
+  .work-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .work-card__body { padding: 1rem 1.1rem 1.25rem; }
+  .work-card__title {
+    font-size: 1.15rem;
+    margin: 0 0 0.4rem;
+    line-height: 1.3;
+  }
+  .work-card__desc {
+    color: #555;
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .work-card__loc {
+    color: #777;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+</style>

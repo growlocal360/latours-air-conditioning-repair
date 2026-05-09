@@ -5,6 +5,7 @@ interface Props {
   keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogImage?: string;
   canonicalUrl?: string;
   schema?: any;
   breadcrumbSchema?: any;
@@ -17,6 +18,7 @@ const {
   keywords = "air conditioning repair lake charles, AC repair lake charles LA, HVAC contractor lake charles, furnace repair lake charles, heating contractor lake charles",
   ogTitle = title,
   ogDescription = description,
+  ogImage = "https://latourshvac.com/images/og-image.jpg",
   canonicalUrl = Astro.url.href,
   schema,
   breadcrumbSchema,
@@ -42,7 +44,7 @@ const {
   <meta property="og:description" content={ogDescription}>
   <meta property="og:type" content="website">
   <meta property="og:url" content={canonicalUrl}>
-  <meta property="og:image" content="https://latourshvac.com/images/og-image.jpg">
+  <meta property="og:image" content={ogImage}>
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
