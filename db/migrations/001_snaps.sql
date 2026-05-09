@@ -45,3 +45,10 @@ create policy "snaps_anon_read"
   using (true);
 
 -- (No insert/update/delete policies for anon — service_role bypasses RLS.)
+
+-- Table-level GRANTs. Required separately from RLS policies: a role must
+-- have the SELECT/INSERT/etc. privilege on the table first, THEN RLS
+-- decides which rows. Newer Supabase projects no longer auto-grant on
+-- new tables, so we do it explicitly here.
+grant select on public.snaps to anon, authenticated;
+grant all on public.snaps to service_role;
