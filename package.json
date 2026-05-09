@@ -14,7 +14,8 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vercel": "^7.0.0",
     "@supabase/supabase-js": "^2.45.0",
-    "astro": "^4.0.0"
+    "astro": "^4.0.0",
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "terser": "^5.44.1"

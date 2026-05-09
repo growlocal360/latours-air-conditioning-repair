@@ -1,4 +1,10 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import WebSocket from 'ws';
+
+// Supabase's Realtime client needs WebSocket at construction time. Node < 22
+// has no native WebSocket, so we hand it the `ws` package. We don't actually
+// use Realtime, but the client still initializes it.
+const realtimeOptions = { transport: WebSocket as unknown as typeof globalThis.WebSocket };
 
 // Look up an env var by trying multiple names in order. Lets the same
 // codebase work whether the project uses unprefixed names or the
@@ -30,7 +36,10 @@ export function getSupabaseAdmin(): SupabaseClient {
   if (_admin) return _admin;
   const url = requireEnv(['SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_URL']);
   const key = requireEnv(['SUPABASE_SERVICE_ROLE_KEY']);
-  _admin = createClient(url, key, { auth: { persistSession: false } });
+  _admin = createClient(url, key, {
+    auth: { persistSession: false },
+    realtime: realtimeOptions,
+  });
   return _admin;
 }
 
@@ -42,6 +51,9 @@ export function getSupabaseAnon(): SupabaseClient {
     'SUPABASE_ANON_KEY',
     'NEXT_PUBLIC_SUPABASE_ANON_KEY',
   ]);
-  _anon = createClient(url, key, { auth: { persistSession: false } });
+  _anon = createClient(url, key, {
+    auth: { persistSession: false },
+    realtime: realtimeOptions,
+  });
   return _anon;
 }
