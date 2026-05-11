@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { listPublishedSnaps } from '../../lib/jobsnaps/queries';
 
@@ -52,11 +53,13 @@ function locationLabel(loc: any): string {
               <a href={`/work/${snap.slug}`} class="work-card__link">
                 {featured?.url && (
                   <div class="work-card__image-wrap">
-                    <img
+                    <Image
                       src={featured.url}
                       alt={featured.alt || snap.title || 'Recent HVAC work'}
-                      width={featured.width ?? undefined}
-                      height={featured.height ?? undefined}
+                      width={featured.width ?? 800}
+                      height={featured.height ?? 600}
+                      widths={[400, 600, 800]}
+                      sizes="(min-width: 1024px) 380px, (min-width: 720px) 50vw, 100vw"
                       loading="lazy"
                     />
                   </div>

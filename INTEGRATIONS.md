@@ -22,21 +22,44 @@ The schedule-service form is **client-side only** — it POSTs straight to a Hig
 
 ## What's working in production today
 
-### Job Snaps (GrowLocal 360) — ✅ live end-to-end
+### Job Snaps (GrowLocal 360) — ✅ live end-to-end (now with image mirroring)
 
 | Item | Status |
 |---|---|
 | Astro hybrid mode + `@astrojs/vercel/serverless` adapter | ✅ |
-| Supabase `public.snaps` table created (with RLS + GRANTs) | ✅ |
-| Webhook handler [src/pages/api/jobsnaps-webhook.ts](src/pages/api/jobsnaps-webhook.ts) — HMAC-SHA256 verify, 5-min replay window | ✅ |
-| Listing page [src/pages/work/index.astro](src/pages/work/index.astro) | ✅ |
-| Detail page [src/pages/work/[slug].astro](src/pages/work/%5Bslug%5D.astro) — Article JSON-LD, dynamic OG image, canonical URL | ✅ |
+| Supabase `public.snaps` table created (with RLS + GRANTs) | ✅ migration 001 run |
+| Supabase `snaps` storage bucket (public read, authenticated write, 20MB jpeg/png/webp) | ✅ written as [db/migrations/002_snaps_storage.sql](db/migrations/002_snaps_storage.sql) — ⏳ user runs in Supabase SQL Editor |
+| Webhook handler [src/pages/api/jobsnaps-webhook.ts](src/pages/api/jobsnaps-webhook.ts) — HMAC-SHA256 verify, 5-min replay window, **mirrors media into Supabase Storage before upsert** | ✅ |
+| Image mirror helpers [src/lib/jobsnaps/mirror.ts](src/lib/jobsnaps/mirror.ts) — fetch source → upload `<snapId>/<index>.<ext>` → rewrite `media[].url` to public Supabase URL. Failed mirrors are dropped, snap still upserts with surviving media. | ✅ |
+| Cleanup on `job_snap.unpublished` — lists every file under the snap's prefix and removes them before deleting the DB row | ✅ |
+| Listing page [src/pages/work/index.astro](src/pages/work/index.astro) — Astro `<Image>` via Vercel image service | ✅ |
+| Detail page [src/pages/work/[slug].astro](src/pages/work/%5Bslug%5D.astro) — Article JSON-LD (uses **raw** Supabase URLs so Google crawls direct), Astro `<Image>` for rendering | ✅ |
 | Dynamic snap sitemap [src/pages/sitemap-snaps.xml.ts](src/pages/sitemap-snaps.xml.ts) — 5-min edge cache, picks up new/deleted snaps automatically | ✅ |
 | [public/robots.txt](public/robots.txt) advertising both sitemaps to crawlers | ✅ |
 | "View Our Work" link in header dropdown + footer Resources | ✅ |
 | `JOBSNAPS_*` env vars in Vercel | ✅ |
 | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` in Vercel (or the `NEXT_PUBLIC_*` versions — code accepts either) | ✅ |
 | First end-to-end test snap published | 🟡 webhook delivery from GrowLocal still needs verification — see "Open verification step" below |
+
+#### Image mirror flow (added 2026-05-10)
+
+We no longer depend on GrowLocal's CDN being available long-term — every snap photo is mirrored into our own Supabase Storage bucket as part of the webhook handler:
+
+1. GrowLocal POSTs a `job_snap.published` / `job_snap.updated` event with `media[]` of source URLs
+2. For each item, we `fetch()` the bytes and upload to `snaps/<snapId>/<index>.<ext>` (`upsert: true`)
+3. We replace `media[i].url` with the public Supabase URL via `getPublicUrl()`
+4. We upsert the row — the DB now holds Supabase URLs, not GrowLocal URLs
+5. On `job_snap.unpublished`, `cleanupSnapImages()` lists everything under `<snapId>/` and removes it
+
+Failure handling: if any individual mirror fails (404 from source, network blip, mime type rejected), that media item is dropped from the array but the snap still upserts with whatever succeeded. The webhook response includes `media_mirrored` / `media_total` for visibility.
+
+Determinism: keys are `<snapId>/<index>.<ext>` so re-publishes overwrite the same object — the public URL never changes, browsers cache normally, and SEO doesn't fragment.
+
+#### Image rendering (Astro Image + Vercel image service)
+
+[astro.config.mjs](astro.config.mjs) sets `adapter: vercel({ imageService: true })` and `image.remotePatterns = [{ protocol: 'https', hostname: '**.supabase.co' }]`. Snap photos use `<Image>` from `astro:assets` with explicit widths/sizes arrays so Vercel's image optimizer serves responsive WebP/AVIF.
+
+JSON-LD `image` field deliberately uses the **raw** Supabase URLs (`gallery.map((m) => m.url)`) so Googlebot fetches the original asset directly — image optimization URLs from `/_vercel/image?...` are not crawled.
 
 #### Production gotchas we hit (and fixed)
 
@@ -47,6 +70,7 @@ If anything similar comes up again, these are the patches that resolved them:
 3. **`permission denied for table snaps`.** RLS policy alone isn't enough — newer Supabase projects don't auto-grant on new tables. Fix: explicit `GRANT SELECT ON public.snaps TO anon, authenticated; GRANT ALL ON public.snaps TO service_role` in the migration.
 4. **`Missing required env var: SUPABASE_URL`.** Supabase's Vercel integration installs vars under `NEXT_PUBLIC_*` (Next.js convention). Fix: [src/lib/supabase.ts](src/lib/supabase.ts) reads either `SUPABASE_URL` or `NEXT_PUBLIC_SUPABASE_URL` — same for the anon key.
 5. **`@astrojs/sitemap@3.7.x` crash under Astro 4.** That release uses `astro:routes:resolved` (Astro 5+ hook). Fix: pin to `^3.2.1`.
+6. **Next.js patterns in briefs.** Two briefs this round assumed Next.js (`app/api/route.ts`, `next/image`, `next.config.js`). Translated 1:1 to Astro equivalents (`src/pages/api/*.ts`, `astro:assets` `<Image>`, `astro.config.mjs` `image.remotePatterns` + Vercel adapter `imageService: true`). Don't try to migrate the project to Next.js — the user has been clear about staying on Astro.
 
 #### Open verification step
 

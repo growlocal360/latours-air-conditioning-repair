@@ -5,7 +5,12 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   site: 'https://latourshvac.com',
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({ imageService: true }),
+  image: {
+    // Allow Astro's <Image> to optimize remote images we mirror into Supabase
+    // storage. ** matches any number of subdomain labels.
+    remotePatterns: [{ protocol: 'https', hostname: '**.supabase.co' }],
+  },
   integrations: [
     sitemap({
       changefreq: 'weekly',

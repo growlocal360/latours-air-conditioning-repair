@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { verifyWebhookSignature } from '../../lib/jobsnaps/signature';
 import { deleteSnapById, upsertSnap } from '../../lib/jobsnaps/queries';
+import { cleanupSnapImages, mirrorMedia } from '../../lib/jobsnaps/mirror';
 import type { WebhookEvent } from '../../lib/jobsnaps/types';
 
 export const prerender = false;
@@ -35,12 +36,27 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     if (event.type === 'job_snap.unpublished') {
+      // Drop mirrored objects first so the bucket stays clean. Cleanup
+      // errors are logged inside the helper but do not block the row delete.
+      await cleanupSnapImages(event.data.id);
       const slug = await deleteSnapById(event.data.id);
       return json(200, { ok: true, action: 'deleted', slug });
     }
     if (event.type === 'job_snap.published' || event.type === 'job_snap.updated') {
-      const slug = await upsertSnap(event.data);
-      return json(200, { ok: true, action: 'upserted', slug });
+      // Mirror every media item into our snaps bucket and rewrite each
+      // url to the public Supabase URL. Failed mirrors are dropped (partial
+      // data is better than no data); successful ones use deterministic
+      // keys so re-publishes overwrite the same files in place.
+      const mirroredMedia = await mirrorMedia(event.data.id, event.data.media || []);
+      const patched = { ...event.data, media: mirroredMedia };
+      const slug = await upsertSnap(patched);
+      return json(200, {
+        ok: true,
+        action: 'upserted',
+        slug,
+        media_mirrored: mirroredMedia.length,
+        media_total: (event.data.media || []).length,
+      });
     }
     return json(200, { ok: true, action: 'ignored', type: event.type });
   } catch (err) {
