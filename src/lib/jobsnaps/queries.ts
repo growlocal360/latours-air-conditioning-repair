@@ -3,7 +3,10 @@ import { dedupeSlug, slugify } from './slug';
 import type { SnapPayload, SnapRow } from './types';
 
 const COLUMNS =
-  'id, title, slug, description, service_type, brand, location, media, published_at, created_at, updated_at';
+  'id, short_id, title, slug, url_path, description, meta_title, h1, ' +
+  'meta_description, alt_text, public_location_label, service_type, brand, ' +
+  'primary_problem, equipment_type, location, media, published_at, ' +
+  'created_at, updated_at';
 
 export async function listPublishedSnaps(limit = 60): Promise<SnapRow[]> {
   const sb = getSupabaseAnon();
@@ -49,24 +52,38 @@ async function existingSlugForId(id: string): Promise<string | null> {
   return data?.slug ?? null;
 }
 
-// Returns the slug that ends up persisted.
+// Resolve the slug to persist. GL360's pre-computed slug wins when present
+// (their canonical SEO scheme handles collisions via short_id suffix already).
+// For legacy snaps without a GL360 slug, fall back to: existing-row slug for
+// URL stability, else generate from the title with collision dedupe.
+async function resolveSlug(snap: SnapPayload): Promise<string> {
+  if (snap.slug) return snap.slug;
+  const existing = await existingSlugForId(snap.id);
+  if (existing) return existing;
+  const desired = slugify(snap.title ?? snap.id);
+  return dedupeSlug(desired, snap.id, existingSnapIdForSlug);
+}
+
 export async function upsertSnap(snap: SnapPayload): Promise<string> {
-  const existingSlug = await existingSlugForId(snap.id);
-  // Once a snap is live, keep its slug stable for SEO even if the title changes.
-  let slug = existingSlug;
-  if (!slug) {
-    const desired = slugify(snap.title ?? snap.id);
-    slug = await dedupeSlug(desired, snap.id, existingSnapIdForSlug);
-  }
+  const slug = await resolveSlug(snap);
 
   const sb = getSupabaseAdmin();
   const row = {
     id: snap.id,
+    short_id: snap.short_id,
     title: snap.title,
     slug,
+    url_path: snap.url_path,
     description: snap.description,
+    meta_title: snap.meta_title,
+    h1: snap.h1,
+    meta_description: snap.meta_description,
+    alt_text: snap.alt_text,
+    public_location_label: snap.public_location_label,
     service_type: snap.service_type,
     brand: snap.brand,
+    primary_problem: snap.primary_problem,
+    equipment_type: snap.equipment_type,
     location: snap.location,
     media: snap.media,
     published_at: snap.published_at,
@@ -77,7 +94,6 @@ export async function upsertSnap(snap: SnapPayload): Promise<string> {
   return slug;
 }
 
-// Returns the slug that was deleted (if any), so callers can revalidate it.
 export async function deleteSnapById(id: string): Promise<string | null> {
   const sb = getSupabaseAdmin();
   const { data, error } = await sb

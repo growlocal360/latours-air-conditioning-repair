@@ -45,9 +45,10 @@ export const POST: APIRoute = async ({ request }) => {
     if (event.type === 'job_snap.published' || event.type === 'job_snap.updated') {
       // Mirror every media item into our snaps bucket and rewrite each
       // url to the public Supabase URL. Failed mirrors are dropped (partial
-      // data is better than no data); successful ones use deterministic
-      // keys so re-publishes overwrite the same files in place.
-      const mirroredMedia = await mirrorMedia(event.data.id, event.data.media || []);
+      // data is better than no data); successful ones use the GL360
+      // SEO-safe filename (or a slug-derived fallback) as the storage key
+      // so re-publishes overwrite the same files in place.
+      const mirroredMedia = await mirrorMedia(event.data);
       const patched = { ...event.data, media: mirroredMedia };
       const slug = await upsertSnap(patched);
       return json(200, {

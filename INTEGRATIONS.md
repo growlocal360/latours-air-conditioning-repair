@@ -22,13 +22,15 @@ The schedule-service form is **client-side only** — it POSTs straight to a Hig
 
 ## What's working in production today
 
-### Job Snaps (GrowLocal 360) — ✅ live end-to-end (now with image mirroring)
+### Job Snaps (GrowLocal 360) — ✅ live end-to-end (mirror + GL360 SEO fields)
 
 | Item | Status |
 |---|---|
 | Astro hybrid mode + `@astrojs/vercel/serverless` adapter | ✅ |
 | Supabase `public.snaps` table created (with RLS + GRANTs) | ✅ migration 001 run |
 | Supabase `snaps` storage bucket (public read, authenticated write, 20MB jpeg/png/webp) | ✅ written as [db/migrations/002_snaps_storage.sql](db/migrations/002_snaps_storage.sql) — ⏳ user runs in Supabase SQL Editor |
+| Snaps table extended with GL360 SEO + structured fields (short_id, url_path, meta_title, h1, meta_description, alt_text, public_location_label, primary_problem, equipment_type) | ✅ written as [db/migrations/003_snaps_seo_fields.sql](db/migrations/003_snaps_seo_fields.sql) — ⏳ user runs in Supabase SQL Editor |
+| **`JOBSNAPS_WEBHOOK_SECRET` rotated to `whsec_Gk2IrxqwGmFFB65cIZ1OyLe-qbLuzr25`** (previous: `whsec__PUarKHc-tMyJgFUVaU-ABr7jY1Xs1Ww`) | ⏳ **user updates value in Vercel — otherwise next publish returns 401** |
 | Webhook handler [src/pages/api/jobsnaps-webhook.ts](src/pages/api/jobsnaps-webhook.ts) — HMAC-SHA256 verify, 5-min replay window, **mirrors media into Supabase Storage before upsert** | ✅ |
 | Image mirror helpers [src/lib/jobsnaps/mirror.ts](src/lib/jobsnaps/mirror.ts) — fetch source → upload `<snapId>/<index>.<ext>` → rewrite `media[].url` to public Supabase URL. Failed mirrors are dropped, snap still upserts with surviving media. | ✅ |
 | Cleanup on `job_snap.unpublished` — lists every file under the snap's prefix and removes them before deleting the DB row | ✅ |
@@ -41,7 +43,25 @@ The schedule-service form is **client-side only** — it POSTs straight to a Hig
 | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` in Vercel (or the `NEXT_PUBLIC_*` versions — code accepts either) | ✅ |
 | First end-to-end test snap published | 🟡 webhook delivery from GrowLocal still needs verification — see "Open verification step" below |
 
-#### Image mirror flow (added 2026-05-10)
+#### GL360 SEO fields are the source of truth (added 2026-05-10)
+
+GrowLocal 360 pre-computes canonical SEO-safe values for every snap. We persist them verbatim and prefer them in rendering:
+
+| Field | Used for |
+|---|---|
+| `slug` | Row's slug column (URL path key). No more client-side slugification. |
+| `url_path` | Canonical link target on `/work` cards |
+| `meta_title` | `<title>` tag |
+| `h1` | Page H1 + listing card heading |
+| `meta_description` | `<meta name="description">` |
+| `alt_text` | Default `<img alt>` for any media item missing its own `alt` |
+| `public_location_label` | Location chip shown on cards + detail page |
+| `media[i].filename` | Storage key under `<snapId>/` so mirrored files have SEO-safe names |
+| `primary_problem`, `equipment_type`, `brand`, `service_type`, `state_abbr` | JSON-LD enrichment (brand, about, keywords, addressRegion) |
+
+For legacy snaps (rows from before these columns existed), the page falls back to the old fields (`title`, `description`, computed city/state label, `<id>/<index>.<ext>` storage keys).
+
+#### Image mirror flow
 
 We no longer depend on GrowLocal's CDN being available long-term — every snap photo is mirrored into our own Supabase Storage bucket as part of the webhook handler:
 

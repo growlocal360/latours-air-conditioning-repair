@@ -48,14 +48,21 @@ function locationLabel(loc: any): string {
       <ul class="work-grid">
         {snaps.map((snap) => {
           const featured = snap.media?.[0];
+          // Prefer GL360-generated SEO fields; fall back to legacy fields
+          // for snaps stored before those columns existed.
+          const heading = snap.h1 || snap.title || 'Untitled job';
+          const blurb = snap.meta_description || snap.description;
+          const locLabel = snap.public_location_label || locationLabel(snap.location);
+          const href = snap.url_path || `/work/${snap.slug}`;
+          const featuredAlt = featured?.alt || snap.alt_text || heading;
           return (
             <li class="work-card">
-              <a href={`/work/${snap.slug}`} class="work-card__link">
+              <a href={href} class="work-card__link">
                 {featured?.url && (
                   <div class="work-card__image-wrap">
                     <Image
                       src={featured.url}
-                      alt={featured.alt || snap.title || 'Recent HVAC work'}
+                      alt={featuredAlt}
                       width={featured.width ?? 800}
                       height={featured.height ?? 600}
                       widths={[400, 600, 800]}
@@ -65,12 +72,12 @@ function locationLabel(loc: any): string {
                   </div>
                 )}
                 <div class="work-card__body">
-                  <h2 class="work-card__title">{snap.title || 'Untitled job'}</h2>
-                  {snap.description && (
-                    <p class="work-card__desc">{truncate(snap.description, 180)}</p>
+                  <h2 class="work-card__title">{heading}</h2>
+                  {blurb && (
+                    <p class="work-card__desc">{truncate(blurb, 180)}</p>
                   )}
-                  {locationLabel(snap.location) && (
-                    <p class="work-card__loc">{locationLabel(snap.location)}</p>
+                  {locLabel && (
+                    <p class="work-card__loc">{locLabel}</p>
                   )}
                 </div>
               </a>

@@ -1,5 +1,5 @@
 import { getSupabaseAdmin } from '../supabase';
-import type { SnapMediaItem } from './types';
+import type { SnapMediaItem, SnapPayload } from './types';
 
 const BUCKET = 'snaps';
 
@@ -17,25 +17,39 @@ function contentTypeFromExt(ext: string): string {
   return 'image/jpeg';
 }
 
-// Fetch a single image and upload it to the snaps bucket at a deterministic
-// key (<snapId>/<index>.<ext>) so re-publishes overwrite the same object.
-// Returns the public URL on success, or null on any failure — callers should
-// drop the failed item but keep going with the rest.
-export async function mirrorImage(
-  snapId: string,
+// Resolve the storage key for a single media item. GL360 pre-computes an
+// SEO-safe filename per image — use it verbatim when present. Otherwise fall
+// back to a slug-derived name, then to a plain index. Always prefix with the
+// snap id so cleanup-by-prefix on unpublish is one list+remove call.
+function keyForItem(
+  snap: SnapPayload,
   index: number,
-  originalUrl: string,
+  media: SnapMediaItem,
+  ext: string,
+): string {
+  if (media.filename) return `${snap.id}/${media.filename}`;
+  if (snap.slug) return `${snap.id}/${snap.slug}-${index}.${ext}`;
+  return `${snap.id}/${index}.${ext}`;
+}
+
+// Fetch a single image and upload it to the snaps bucket. Returns the public
+// URL on success, or null on any failure — callers should drop the failed
+// item but keep going with the rest of the media array.
+export async function mirrorImage(
+  snap: SnapPayload,
+  index: number,
+  media: SnapMediaItem,
 ): Promise<string | null> {
   try {
-    const res = await fetch(originalUrl);
+    const res = await fetch(media.url);
     if (!res.ok) {
-      console.error(`[mirror] fetch ${res.status} for ${originalUrl}`);
+      console.error(`[mirror] fetch ${res.status} for ${media.url}`);
       return null;
     }
     const ct = res.headers.get('content-type');
     const ext = extFromContentType(ct);
     const contentType = contentTypeFromExt(ext);
-    const key = `${snapId}/${index}.${ext}`;
+    const key = keyForItem(snap, index, media, ext);
     const buffer = await res.arrayBuffer();
 
     const sb = getSupabaseAdmin();
@@ -49,7 +63,7 @@ export async function mirrorImage(
     const { data } = sb.storage.from(BUCKET).getPublicUrl(key);
     return data.publicUrl;
   } catch (err) {
-    console.error(`[mirror] error for ${originalUrl}`, err);
+    console.error(`[mirror] error for ${media.url}`, err);
     return null;
   }
 }
@@ -57,14 +71,12 @@ export async function mirrorImage(
 // Mirror every media item in parallel. Items whose mirror failed are dropped
 // from the returned array — better to publish a snap with partial photos
 // than to fail the whole upsert.
-export async function mirrorMedia(
-  snapId: string,
-  media: SnapMediaItem[],
-): Promise<SnapMediaItem[]> {
-  if (!media || media.length === 0) return [];
+export async function mirrorMedia(snap: SnapPayload): Promise<SnapMediaItem[]> {
+  const media = snap.media ?? [];
+  if (media.length === 0) return [];
   const results = await Promise.all(
     media.map(async (item, idx) => {
-      const newUrl = await mirrorImage(snapId, idx, item.url);
+      const newUrl = await mirrorImage(snap, idx, item);
       if (!newUrl) return null;
       return { ...item, url: newUrl };
     }),

@@ -24,24 +24,49 @@ const featured = snap.media?.[0];
 const gallery = snap.media ?? [];
 const loc = snap.location ?? null;
 
-function locationLabel(): string {
+function fallbackLocationLabel(): string {
   if (!loc) return '';
-  const parts = [loc.address, loc.city, loc.state, loc.zip].filter(Boolean);
+  const parts = [loc.address, loc.city, loc.state_abbr || loc.state, loc.zip].filter(Boolean);
   return parts.join(', ');
 }
 
-const canonicalUrl = `https://latourshvac.com/work/${snap.slug}`;
-const pageTitle = `${snap.title || 'Recent HVAC Job'} | Latour's Air Conditioning & Heating`;
+// GL360-generated SEO fields are the source of truth when present;
+// legacy snaps fall back to title/description/computed location.
+const heading = snap.h1 || snap.title || 'Recent HVAC Job';
+const locationLabelText = snap.public_location_label || fallbackLocationLabel();
+
+const canonicalUrl = snap.url_path
+  ? `https://latourshvac.com${snap.url_path.replace(/\/$/, '')}`
+  : `https://latourshvac.com/work/${snap.slug}`;
+
+const pageTitle =
+  snap.meta_title ||
+  `${heading} | Latour's Air Conditioning & Heating`;
+
 const pageDescription =
+  snap.meta_description ||
   (snap.description && snap.description.slice(0, 160)) ||
   `Recent HVAC job by Latour's Air Conditioning & Heating in Lake Charles, LA.`;
+
+// JSON-LD uses raw Supabase URLs (already mirrored to our bucket) so Google
+// crawls the original asset directly, not the Vercel-optimized variant.
 const ogImage = featured?.url;
+
+const addressFields = loc
+  ? {
+      streetAddress: loc.address ?? undefined,
+      addressLocality: loc.city ?? undefined,
+      addressRegion: loc.state_abbr ?? loc.state ?? undefined,
+      postalCode: loc.zip ?? undefined,
+      addressCountry: 'US',
+    }
+  : null;
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: snap.title || 'Recent HVAC Job',
-  description: snap.description || pageDescription,
+  headline: heading,
+  description: snap.meta_description || snap.description || pageDescription,
   image: gallery.map((m) => m.url).filter(Boolean),
   datePublished: snap.published_at,
   dateModified: snap.updated_at,
@@ -56,18 +81,20 @@ const articleSchema = {
     url: 'https://latourshvac.com',
   },
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
-  ...(loc && (loc.address || loc.city)
+  ...(snap.brand ? { brand: { '@type': 'Brand', name: snap.brand } } : {}),
+  ...(snap.service_type ? { about: snap.service_type } : {}),
+  ...(snap.primary_problem
+    ? {
+        keywords: [snap.primary_problem, snap.equipment_type]
+          .filter(Boolean)
+          .join(', '),
+      }
+    : {}),
+  ...(addressFields && (loc?.address || loc?.city)
     ? {
         contentLocation: {
           '@type': 'Place',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: loc.address ?? undefined,
-            addressLocality: loc.city ?? undefined,
-            addressRegion: loc.state ?? undefined,
-            postalCode: loc.zip ?? undefined,
-            addressCountry: 'US',
-          },
+          address: { '@type': 'PostalAddress', ...addressFields },
         },
       }
     : {}),
@@ -78,7 +105,7 @@ const articleSchema = {
   title={pageTitle}
   description={pageDescription}
   canonicalUrl={canonicalUrl}
-  ogTitle={snap.title ?? pageTitle}
+  ogTitle={snap.meta_title ?? heading}
   ogDescription={pageDescription}
   ogImage={ogImage}
   schema={articleSchema}
@@ -87,11 +114,12 @@ const articleSchema = {
     <article>
       <header class="snap__header">
         <p class="snap__crumb"><a href="/work">← Recent Work</a></p>
-        <h1>{snap.title || 'Recent HVAC Job'}</h1>
+        <h1>{heading}</h1>
         <ul class="snap__meta">
           {snap.service_type && <li><strong>Service:</strong> {snap.service_type}</li>}
           {snap.brand && <li><strong>Brand:</strong> {snap.brand}</li>}
-          {locationLabel() && <li><strong>Location:</strong> {locationLabel()}</li>}
+          {snap.primary_problem && <li><strong>Problem:</strong> {snap.primary_problem}</li>}
+          {locationLabelText && <li><strong>Location:</strong> {locationLabelText}</li>}
         </ul>
       </header>
 
@@ -103,16 +131,16 @@ const articleSchema = {
 
       {gallery.length > 0 && (
         <section class="snap__gallery" aria-label="Photos from this job">
-          {gallery.map((m) => (
+          {gallery.map((m, i) => (
             <figure>
               <Image
                 src={m.url}
-                alt={m.alt || snap.title || 'HVAC job photo'}
+                alt={m.alt || snap.alt_text || heading}
                 width={m.width ?? 1600}
                 height={m.height ?? 1200}
                 widths={[600, 900, 1200, 1600]}
                 sizes="(min-width: 720px) 440px, 100vw"
-                loading="lazy"
+                loading={i === 0 ? 'eager' : 'lazy'}
               />
               {m.alt && <figcaption>{m.alt}</figcaption>}
             </figure>
