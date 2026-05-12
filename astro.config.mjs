@@ -5,10 +5,22 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   site: 'https://latourshvac.com',
   output: 'hybrid',
-  adapter: vercel({ imageService: true }),
+  adapter: vercel({
+    imageService: true,
+    // Vercel's runtime image optimizer validates remote URLs against its
+    // own list — must be set in addition to the top-level image config
+    // below, which only gates the <Image> component at build/render time.
+    imagesConfig: {
+      sizes: [320, 640, 768, 1024, 1280, 1600],
+      // `domains` is required by Vercel's image-config schema even when using
+      // remotePatterns. Leave it empty — all our remote sources match via
+      // remotePatterns below.
+      domains: [],
+      remotePatterns: [{ protocol: 'https', hostname: '**.supabase.co' }],
+    },
+  }),
   image: {
-    // Allow Astro's <Image> to optimize remote images we mirror into Supabase
-    // storage. ** matches any number of subdomain labels.
+    // Allowed by Astro's <Image> component itself. ** matches any subdomain depth.
     remotePatterns: [{ protocol: 'https', hostname: '**.supabase.co' }],
   },
   integrations: [
