@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getSnapBySlug } from '../../lib/jobsnaps/queries';
 
@@ -133,14 +132,13 @@ const articleSchema = {
         <section class="snap__gallery" aria-label="Photos from this job">
           {gallery.map((m, i) => (
             <figure>
-              <Image
+              <img
                 src={m.url}
                 alt={m.alt || snap.alt_text || heading}
                 width={m.width ?? 1600}
                 height={m.height ?? 1200}
-                widths={[600, 900, 1200, 1600]}
-                sizes="(min-width: 720px) 440px, 100vw"
                 loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
               />
               {m.alt && <figcaption>{m.alt}</figcaption>}
             </figure>
