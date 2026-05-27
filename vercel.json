@@ -6,8 +6,8 @@
     { "source": "/about-us/", "destination": "/about/", "permanent": true },
     { "source": "/air-conditioning", "destination": "/ac-contractor/", "permanent": true },
     { "source": "/air-conditioning/", "destination": "/ac-contractor/", "permanent": true },
-    { "source": "/services", "destination": "/hvac-contractor/", "permanent": true },
-    { "source": "/services/", "destination": "/hvac-contractor/", "permanent": true },
+    { "source": "/services", "destination": "/ac-contractor/", "permanent": true },
+    { "source": "/services/", "destination": "/ac-contractor/", "permanent": true },
     { "source": "/maintenance", "destination": "/hvac-contractor/hvac-maintenance/", "permanent": true },
     { "source": "/maintenance/", "destination": "/hvac-contractor/hvac-maintenance/", "permanent": true },
     { "source": "/ac-repair-sulphur-la", "destination": "/service-areas/sulphur-la/", "permanent": true },
@@ -17,7 +17,39 @@
     { "source": "/air-conditioning-repair-westlake-la", "destination": "/service-areas/westlake-la/", "permanent": true },
     { "source": "/air-conditioning-repair-westlake-la/", "destination": "/service-areas/westlake-la/", "permanent": true },
     { "source": "/heat-pump", "destination": "/heating-contractor/heat-pump-repair/", "permanent": true },
-    { "source": "/heat-pump/", "destination": "/heating-contractor/heat-pump-repair/", "permanent": true }
+    { "source": "/heat-pump/", "destination": "/heating-contractor/heat-pump-repair/", "permanent": true },
+
+    { "source": "/schedule", "destination": "/schedule-service", "permanent": true },
+    { "source": "/terms-conditions", "destination": "/terms-of-service", "permanent": true },
+    { "source": "/locations", "destination": "/service-areas", "permanent": true },
+
+    { "source": "/air-conditioning-contractor", "destination": "/ac-contractor", "permanent": true },
+    { "source": "/ac-installation", "destination": "/ac-contractor/ac-installation", "permanent": true },
+    { "source": "/ac-tune-up", "destination": "/ac-contractor/ac-tune-up", "permanent": true },
+    { "source": "/ac-repair-lake-charles-la", "destination": "/ac-contractor/ac-repair", "permanent": true },
+
+    { "source": "/heating-repair", "destination": "/heating-contractor", "permanent": true },
+    { "source": "/new-furnace-installation", "destination": "/heating-contractor/furnace-installation", "permanent": true },
+    { "source": "/furnace-tune-ups", "destination": "/heating-contractor/heating-tune-up", "permanent": true },
+
+    { "source": "/indoor-air-quality", "destination": "/hvac-contractor/indoor-air-quality", "permanent": true },
+
+    { "source": "/air-conditioning-repair-carlyss-la", "destination": "/service-areas/carlyss-la", "permanent": true },
+    { "source": "/air-conditioning-repair-dequincy-la", "destination": "/service-areas/dequincy-la", "permanent": true },
+    { "source": "/air-conditioning-repair-deridder-la", "destination": "/service-areas/deridder-la", "permanent": true },
+    { "source": "/air-conditioning-repair-moss-bluff-la", "destination": "/service-areas/moss-bluff-la", "permanent": true },
+
+    { "source": "/pinederosa-park", "destination": "/", "permanent": true },
+    { "source": "/burton-coliseum-complex", "destination": "/", "permanent": true },
+    { "source": "/spar-waterpark-sulphur-la", "destination": "/", "permanent": true },
+    { "source": "/civic-center-lake-charles-la", "destination": "/", "permanent": true },
+    { "source": "/river-bluff-park-moss-bluff", "destination": "/", "permanent": true },
+    { "source": "/millennium-park-lake-charles-la", "destination": "/", "permanent": true },
+    { "source": "/sam-houston-jones-state-park-moss-bluff", "destination": "/", "permanent": true },
+    { "source": "/top-5-restaurants-in-westlake", "destination": "/", "permanent": true },
+    { "source": "/top-5-restaurants-in-sulphur", "destination": "/", "permanent": true },
+    { "source": "/top-5-restaurants-in-moss-bluff", "destination": "/", "permanent": true },
+    { "source": "/top-5-restaurants-in-lake-charles", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
