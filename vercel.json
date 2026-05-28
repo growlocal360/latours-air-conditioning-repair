@@ -19,6 +19,8 @@
     { "source": "/heat-pump", "destination": "/heating-contractor/heat-pump-repair/", "permanent": true },
     { "source": "/heat-pump/", "destination": "/heating-contractor/heat-pump-repair/", "permanent": true },
 
+    { "source": "/sitemap-snaps.xml", "destination": "/sitemap-snaps", "permanent": true },
+
     { "source": "/schedule", "destination": "/schedule-service", "permanent": true },
     { "source": "/terms-conditions", "destination": "/terms-of-service", "permanent": true },
     { "source": "/locations", "destination": "/service-areas", "permanent": true },
