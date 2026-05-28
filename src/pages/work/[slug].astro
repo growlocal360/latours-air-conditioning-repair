@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getSnapBySlug } from '../../lib/jobsnaps/queries';
+import { toPublicImageUrl } from '../../lib/jobsnaps/public-url';
 
 export const prerender = false;
 
@@ -47,9 +48,11 @@ const pageDescription =
   (snap.description && snap.description.slice(0, 160)) ||
   `Recent HVAC job by Latour's Air Conditioning & Heating in Lake Charles, LA.`;
 
-// JSON-LD uses raw Supabase URLs (already mirrored to our bucket) so Google
-// crawls the original asset directly, not the Vercel-optimized variant.
-const ogImage = featured?.url;
+// All public image URLs are served from latourshvac.com via a Vercel rewrite
+// (see vercel.json) that proxies bytes from Supabase Storage. Keeping every
+// indexed URL on the brand domain protects image-search attribution and lets
+// us swap storage providers later without invalidating any indexed URL.
+const ogImage = featured?.url ? toPublicImageUrl(featured.url) : undefined;
 
 const addressFields = loc
   ? {
@@ -66,7 +69,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: heading,
   description: snap.meta_description || snap.description || pageDescription,
-  image: gallery.map((m) => m.url).filter(Boolean),
+  image: gallery.map((m) => m.url).filter(Boolean).map(toPublicImageUrl),
   datePublished: snap.published_at,
   dateModified: snap.updated_at,
   author: {
@@ -133,7 +136,7 @@ const articleSchema = {
           {gallery.map((m, i) => (
             <figure>
               <img
-                src={m.url}
+                src={toPublicImageUrl(m.url)}
                 alt={m.alt || snap.alt_text || heading}
                 width={m.width ?? 1600}
                 height={m.height ?? 1200}

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { listPublishedSnaps } from '../../lib/jobsnaps/queries';
+import { toPublicImageUrl } from '../../lib/jobsnaps/public-url';
 
 export const prerender = false;
 
@@ -60,7 +61,7 @@ function locationLabel(loc: any): string {
                 {featured?.url && (
                   <div class="work-card__image-wrap">
                     <img
-                      src={featured.url}
+                      src={toPublicImageUrl(featured.url)}
                       alt={featuredAlt}
                       width={featured.width ?? 800}
                       height={featured.height ?? 600}

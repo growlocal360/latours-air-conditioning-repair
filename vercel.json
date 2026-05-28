@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/images/snaps/:path*",
+      "destination": "https://zhfizktvliwfsalgkbdw.supabase.co/storage/v1/object/public/snaps/:path*"
+    }
+  ],
   "redirects": [
     { "source": "/about-us", "destination": "/about/", "permanent": true },
     { "source": "/about-us/", "destination": "/about/", "permanent": true },

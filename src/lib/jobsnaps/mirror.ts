@@ -18,18 +18,20 @@ function contentTypeFromExt(ext: string): string {
 }
 
 // Resolve the storage key for a single media item. GL360 pre-computes an
-// SEO-safe filename per image — use it verbatim when present. Otherwise fall
-// back to a slug-derived name, then to a plain index. Always prefix with the
-// snap id so cleanup-by-prefix on unpublish is one list+remove call.
+// SEO-safe filename per image (already globally unique — includes a short
+// hash) and we use it verbatim when present. Legacy fallbacks use slug or
+// snap id to stay globally unique. Storage is flat (no per-snap folder) so
+// the served URL is `/images/snaps/<filename>` with no UUID in the path —
+// see ../lib/jobsnaps/public-url.ts for why.
 function keyForItem(
   snap: SnapPayload,
   index: number,
   media: SnapMediaItem,
   ext: string,
 ): string {
-  if (media.filename) return `${snap.id}/${media.filename}`;
-  if (snap.slug) return `${snap.id}/${snap.slug}-${index}.${ext}`;
-  return `${snap.id}/${index}.${ext}`;
+  if (media.filename) return media.filename;
+  if (snap.slug) return `${snap.slug}-${index}.${ext}`;
+  return `${snap.id}-${index}.${ext}`;
 }
 
 // Fetch a single image and upload it to the snaps bucket. Returns the public
@@ -84,20 +86,39 @@ export async function mirrorMedia(snap: SnapPayload): Promise<SnapMediaItem[]> {
   return results.filter((r): r is SnapMediaItem => r !== null);
 }
 
-// On unpublish, sweep every mirrored file under the snap's prefix so we
-// don't accumulate orphans.
+// On unpublish, sweep every mirrored file for the snap. Flat storage means we
+// can't list-by-prefix anymore, so we read the snap's media URLs from the row
+// (still present at this point — the webhook calls us before deleteSnapById)
+// and derive the storage keys from each public URL. Also sweeps any legacy
+// nested files under `<snapId>/` so prior-format mirrors get cleaned up too.
 export async function cleanupSnapImages(snapId: string): Promise<void> {
   try {
     const sb = getSupabaseAdmin();
-    const { data: files, error: listErr } = await sb.storage
-      .from(BUCKET)
-      .list(snapId);
-    if (listErr) {
-      console.error('[mirror] cleanup list failed', listErr);
-      return;
+    const keys: string[] = [];
+
+    const { data: row, error: fetchErr } = await sb
+      .from('snaps')
+      .select('media')
+      .eq('id', snapId)
+      .maybeSingle();
+    if (fetchErr) {
+      console.error('[mirror] cleanup fetch failed', fetchErr);
+    } else {
+      const media = (row?.media as { url?: string }[] | null) ?? [];
+      for (const item of media) {
+        const m = item.url?.match(/\/storage\/v1\/object\/public\/snaps\/(.+)$/);
+        if (m) keys.push(m[1]);
+      }
     }
-    if (!files || files.length === 0) return;
-    const keys = files.map((f) => `${snapId}/${f.name}`);
+
+    // Legacy nested files (pre-flat-storage). Harmless no-op for snaps that
+    // were always flat — list() just returns [] for a non-existent prefix.
+    const { data: legacy } = await sb.storage.from(BUCKET).list(snapId);
+    if (legacy && legacy.length > 0) {
+      for (const f of legacy) keys.push(`${snapId}/${f.name}`);
+    }
+
+    if (keys.length === 0) return;
     const { error: rmErr } = await sb.storage.from(BUCKET).remove(keys);
     if (rmErr) console.error('[mirror] cleanup remove failed', rmErr);
   } catch (err) {
