@@ -43,3 +43,16 @@ ${urls}
     },
   });
 };
+
+// Astro auto-handles HEAD for page routes but not for custom endpoints, so a
+// bare GET-only endpoint 404s on HEAD. Crawlers GET sitemaps, but uptime
+// monitors and link checkers often HEAD them — answer 200 (headers only, no
+// DB query) so those don't see a false 404.
+export const HEAD: APIRoute = () =>
+  new Response(null, {
+    status: 200,
+    headers: {
+      'content-type': 'application/xml; charset=utf-8',
+      'cache-control': 'public, s-maxage=300, stale-while-revalidate=900',
+    },
+  });
