@@ -11,9 +11,9 @@
   --primary-blue-light: #2d5a8a;
 
   /* Accent Colors */
-  --accent-orange: #ff6b35;
-  --accent-orange-dark: #e55a2b;
-  --accent-orange-light: #ff8c5a;
+  --accent-orange: #d64918;
+  --accent-orange-dark: #b03d14;
+  --accent-orange-light: #e87049;
 
   /* Secondary Colors */
   --cool-blue: #4a90d9;
@@ -1218,6 +1218,14 @@ section {
 
 .footer-brand .logo-text {
   color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-brand-logo {
+  display: block;
+  height: 90px;
+  width: auto;
+  max-width: 100%;
   margin-bottom: var(--spacing-md);
 }
 
