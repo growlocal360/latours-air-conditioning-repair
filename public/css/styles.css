@@ -1207,6 +1207,27 @@ section {
   background: var(--primary-blue-dark);
   color: var(--white);
   padding-top: var(--spacing-3xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cover-fit watermark of the secondary brand logo behind footer content.
+   Pseudo-element so it doesn't fight the existing dark background or the
+   stacking of nav/links/copyright. Bump opacity if a bolder treatment is
+   desired. */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/latours-ac-repair-service-lake-charles-la.svg') center / cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-main {
@@ -1223,7 +1244,7 @@ section {
 
 .footer-brand-logo {
   display: block;
-  height: 60px;
+  height: 175px;
   width: auto;
   max-width: 100%;
   margin-bottom: var(--spacing-md);
