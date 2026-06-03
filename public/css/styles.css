@@ -1244,10 +1244,19 @@ section {
 
 .footer-brand-logo {
   display: block;
-  height: 175px;
+  height: 145px;
   width: auto;
   max-width: 100%;
   margin-bottom: var(--spacing-md);
+}
+
+/* On mobile the footer-main collapses to a single text-centered column,
+   but text-align doesn't center block-level <img>. Auto margins do. */
+@media (max-width: 768px) {
+  .footer-brand-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .footer-brand p {
