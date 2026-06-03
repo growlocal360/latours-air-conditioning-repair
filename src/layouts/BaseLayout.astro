@@ -24,6 +24,13 @@ const {
   breadcrumbSchema,
   faqSchema
 } = Astro.props;
+
+// Cache-buster appended to /css/* and /js/* asset URLs. vercel.json caches
+// those paths for a year with `immutable`, so browsers never revalidate them
+// against the server. Bump this string whenever styles.css or main.js change
+// to force every visitor (including ones who already cached an old copy)
+// to download the new version.
+const ASSET_VERSION = '20260603a';
 ---
 
 <!DOCTYPE html>
@@ -55,14 +62,14 @@ const {
 
   <link rel="canonical" href={canonicalUrl}>
 
-  <link rel="preload" href="/css/styles.css" as="style">
+  <link rel="preload" href={`/css/styles.css?v=${ASSET_VERSION}`} as="style">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href={`/css/styles.css?v=${ASSET_VERSION}`}>
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -275,7 +282,7 @@ const {
     </div>
   </footer>
 
-  <script is:inline src="/js/main.js"></script>
+  <script is:inline src={`/js/main.js?v=${ASSET_VERSION}`}></script>
 
   <script is:inline>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
