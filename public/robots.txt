@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-
+ 
+# AI content usage preferences (Content Signals)
+# search   = allow indexing for traditional + AI search results
+# ai-input = allow AI assistants to use this content in live answers (helps customers find Latour's)
+# ai-train = do NOT use this content to train/fine-tune AI models
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+ 
 Sitemap: https://latourshvac.com/sitemap-index.xml
 Sitemap: https://latourshvac.com/sitemap-snaps
+ 
