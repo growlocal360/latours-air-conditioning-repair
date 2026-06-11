@@ -32,21 +32,89 @@ const breadcrumbSchema = {
   ]
 };
 
-// Real reviews from Google via Birdeye
+// Real reviews from Google via Latour's GBP. 50 hand-picked entries spanning
+// recent (last few weeks) → 2020-era. Mixed across service types so the page
+// reads like a real cross-section of the business, not 50 variants of the
+// same praise. Empty / single-word / "View full review" truncated entries
+// from the source listing are intentionally excluded.
 const reviews = [
+  {
+    name: "Dillon Donovan",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2026",
+    service: "Sunday Emergency AC Repair",
+    text: "Owner is a great guy! He fixed my AC within 30 minutes. This was a last minute call out on a Sunday and I really needed it done for work. Wish I could give more than 5 stars!"
+  },
+  {
+    name: "Joe White",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "April 2026",
+    service: "Honest Referral",
+    text: "100% recommend. He couldn't be there so he recommended another company. Someone that will lose business but look out for you is good people in my book. Thank you."
+  },
+  {
+    name: "Taylor Smith",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "April 2026",
+    service: "Emergency AC Repair",
+    text: "A/C was down and Mr. Latour was here within 20 minutes and had everything fixed and running in less than an hour. Super professional and honest."
+  },
+  {
+    name: "Caitlynn Deshotels",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "February 2026",
+    service: "AC Repair",
+    text: "Great service! AC issue was quickly fixed. 10/10 recommend Latour's!"
+  },
+  {
+    name: "Jalil Abushanab",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "February 2026",
+    service: "AC Service",
+    text: "Great people and great service!"
+  },
+  {
+    name: "Cade Paul",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "February 2026",
+    service: "AC Service",
+    text: "Very impressed with the quality of work and customer service. They fixed the issue quickly and efficiently!"
+  },
+  {
+    name: "Brittany Lawson",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "February 2026",
+    service: "AC Repair",
+    text: "Very professional and very nice. They came out a few months ago and I haven't had any problems with my AC since. Still working good as new."
+  },
   {
     name: "Kat D.",
     location: "Lake Charles, LA",
     rating: 5,
-    date: "November 2024",
-    service: "AC Service",
+    date: "October 2025",
+    service: "Holiday AC Service",
     text: "Awesome customer service and great price! Mr. Latour provided personal service on a holiday! We highly recommend this company!"
+  },
+  {
+    name: "Erica Mazzella",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "July 2025",
+    service: "AC and Heating Service",
+    text: "Scott is fantastic — very knowledgeable, honest, and thorough. I'll never call anyone else for AC or heating issues. He's got our business for life!"
   },
   {
     name: "Gail Pike",
     location: "Lake Charles, LA",
     rating: 5,
-    date: "August 2024",
+    date: "July 2025",
     service: "AC Repair",
     text: "Scott was amazing! Came out and addressed our AC issues quickly!"
   },
@@ -54,15 +122,15 @@ const reviews = [
     name: "Timothy Cormier",
     location: "Lake Charles, LA",
     rating: 5,
-    date: "August 2024",
-    service: "AC Repair",
+    date: "July 2025",
+    service: "AC Service",
     text: "Latour's Air Conditioning solved my cooling problem with ease."
   },
   {
     name: "Patrick Gaynor",
     location: "Lake Charles, LA",
     rating: 5,
-    date: "August 2024",
+    date: "July 2025",
     service: "Weekend AC Repair",
     text: "Thanks very much for Scott coming out to fix my A/C on a weekend day. Excellent service and a very nice person, arrived one hour after calling. Would recommend their services to anyone!"
   },
@@ -70,9 +138,305 @@ const reviews = [
     name: "Casey Marks",
     location: "Lake Charles, LA",
     rating: 5,
-    date: "July 2024",
-    service: "Emergency AC Service",
+    date: "July 2025",
+    service: "Sunday Emergency AC Service",
     text: "Called Latour's on a Sunday AM and in less than one hour Latour's came out listening to my issues and diagnosing the issues within minutes. Stayed a while to make sure the unit was running correctly. Very professional, forthcoming and definitely recommend Latour's."
+  },
+  {
+    name: "Andrew Boddie",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2025",
+    service: "Sunday AC Repair",
+    text: "I struggled to find an AC service place that was attentive, honest and reliable. I finally found one! They even came out on a Sunday when I had an issue with my AC not working. I highly recommend Latour's!"
+  },
+  {
+    name: "Gene Link",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2025",
+    service: "Same-Day AC Service",
+    text: "Called Scott Monday morning, he showed up mid-morning the same day, and finished about noon. Very reasonable charge for service and labor. Definitely highly recommend him."
+  },
+  {
+    name: "Robbie Hess",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "March 2025",
+    service: "Same-Day AC Repair",
+    text: "Great service. I called in the morning and they were here the same day and got my unit back to cooling the house!"
+  },
+  {
+    name: "Christopher Duplechin",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "January 2025",
+    service: "Short-Notice AC Repair",
+    text: "Scott came out and took a quick look at my unit and was able to diagnose the problem and got our unit cooling! Appreciate Scott coming out in short notice and getting us rolling!"
+  },
+  {
+    name: "Joshua Hebert",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "January 2025",
+    service: "After-Hours Heating Service",
+    text: "Very professional and knowledgeable. Took my call after hours, took the time to answer my questions, and was out the next day to look at my heater. Will definitely be using Latour's again!"
+  },
+  {
+    name: "Mandy Mcclelland",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "September 2024",
+    service: "General Service",
+    text: "Scott's one of the best. Fast, honest and reliable."
+  },
+  {
+    name: "Alisa Bailey",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "September 2024",
+    service: "Sunday Evening AC Repair",
+    text: "Scott came out on a Sunday at 7pm to fix our a/c. He was very professional and honest. He was also very reasonable in pricing for a new AC which eventually we will need. Couldn't ask for better service!"
+  },
+  {
+    name: "Jason Wilkinson",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Same-Day AC Service",
+    text: "Very nice and professional. Came the same day I called and fair priced."
+  },
+  {
+    name: "Tate Woodard",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Sunday Emergency AC Repair",
+    text: "Came out immediately on a Sunday morning. Had our problem fixed in 10 minutes. Highly recommended."
+  },
+  {
+    name: "Brandon Gimnick",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "AC Service",
+    text: "Dependable, fast, honest and fair price. Will use again."
+  },
+  {
+    name: "Karen Brown",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "General Service",
+    text: "I highly recommend Scott! He gives excellent, professional service and is an honest and all-around nice guy."
+  },
+  {
+    name: "Mathieu Bonin",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "AC Repair",
+    text: "Scott fixed everything up quickly and at a great price! Support local business and call them if you need AC help. Will use again!"
+  },
+  {
+    name: "Jamie DeCrane",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "AC Installation",
+    text: "We were very pleased with their service. Quick response, quick installation, trustworthy. We are very pleased and will only use this company for our needs. Thank you so much!"
+  },
+  {
+    name: "Carl Lejeune",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2024",
+    service: "Sunday Emergency AC Repair",
+    text: "Mr. Latour came out on a Sunday right after my distress call and fixed my a/c unit in less than half an hour. Charged such a reasonable rate that I gave him a tip! Great and prompt service, thank you sir!"
+  },
+  {
+    name: "Brandon Lewis",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "July 2024",
+    service: "AC Diagnostic and Repair",
+    text: "Mr. Latour was very professional. He diagnosed the issue with my AC unit and repaired it. He also gave very helpful information to prevent the issue from occurring again."
+  },
+  {
+    name: "Devin Osbourn",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "June 2024",
+    service: "AC Service",
+    text: "Knowledgeable, friendly and very responsive company. They took time to explain what was wrong with my AC, how they'd fix it, and preventative steps I could take to keep my AC running. Definitely recommend."
+  },
+  {
+    name: "Crystal Brister",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2024",
+    service: "General Service",
+    text: "Super friendly and knowledgeable! Highly recommend."
+  },
+  {
+    name: "Ricky Stutes",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2024",
+    service: "AC Service",
+    text: "Excellent service with a personal experience to match. Highly recommend!"
+  },
+  {
+    name: "T. Young",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2024",
+    service: "General Service",
+    text: "Definitely a company I can count on. Dependable and hard working. I would recommend using them to anyone I care about."
+  },
+  {
+    name: "Brynna Sonnier",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2024",
+    service: "AC Service",
+    text: "Mr. Latour is great! 100% recommend for all your a/c needs."
+  },
+  {
+    name: "DeAngela Edwards",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2024",
+    service: "General Service",
+    text: "Wonderful experience! Highly recommend."
+  },
+  {
+    name: "Brooke Sensat",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2023",
+    service: "General Service",
+    text: "So nice and professional!"
+  },
+  {
+    name: "Jerry DeBarge",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2023",
+    service: "AC Service",
+    text: "They were amazing! Always on time and professional. Great prices!"
+  },
+  {
+    name: "Scott (customer review)",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2023",
+    service: "After-Hours AC Repair",
+    text: "Called at 8pm and by 10pm Scott had the unit back up and running. Price was reasonable for coming out after hours and so quick. Definitely recommend using Latour's for your HVAC needs."
+  },
+  {
+    name: "Ryan Fults",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "July 2023",
+    service: "Saturday AC Repair",
+    text: "Called early on a Saturday morning. Got a call back promptly and service within the hour. Found the problem and fixed it really quick at a reasonable price. Will definitely call again for any future issues."
+  },
+  {
+    name: "Zack L.",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "June 2023",
+    service: "After-Hours AC Repair",
+    text: "Called Latour's at 8:30 pm, he was at my house within 45 minutes. Diagnosed and fixed the problem quickly. Great prices, super knowledgeable and professional. Will use again!"
+  },
+  {
+    name: "Jeff Francis",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "June 2023",
+    service: "AC Service",
+    text: "Great response time. Explained what was wrong and fixed it. Will call again."
+  },
+  {
+    name: "Ethan Kane",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "October 2022",
+    service: "HVAC Service",
+    text: "The best service you could ask for. These guys were prompt, professional, reasonable, and super cool. Felt like family was over working on my HVAC."
+  },
+  {
+    name: "Trent Swart",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2022",
+    service: "AC Repair",
+    text: "Responded immediately, came to the house quickly, fixed the problem and provided additional knowledge surrounding the health of the A/C system."
+  },
+  {
+    name: "Larry Janicek",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "June 2022",
+    service: "AC Service",
+    text: "Great service, knows his stuff, timely and good price. Will use again."
+  },
+  {
+    name: "Shelton Anderson",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2022",
+    service: "AC Service",
+    text: "Work was well done and done in a timely manner. Would highly recommend for anyone looking for any type of air conditioning service. 13/10!"
+  },
+  {
+    name: "Emily Gotreaux",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "May 2022",
+    service: "AC Repair",
+    text: "Can't thank them enough for getting my AC up and going! They were very respectful, professional, and knew what they were doing. Y'all are awesome."
+  },
+  {
+    name: "Chele Trahan",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "March 2022",
+    service: "General Service",
+    text: "Hometown friendly service, very conscious of your budget. Won't overprice you or do unnecessary work."
+  },
+  {
+    name: "David Couvillon",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2021",
+    service: "Saturday AC Service",
+    text: "On a Saturday he showed up within a couple hours of me calling. Very professional and took care of business. Would highly recommend as a trustworthy AC technician. Couldn't have been more polite and helpful."
+  },
+  {
+    name: "Anthony Jones",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2021",
+    service: "General Service",
+    text: "Great guy! Very detailed and knowledgeable. I will definitely use him again."
+  },
+  {
+    name: "Haleigh Turner",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "July 2021",
+    service: "Emergency AC Service",
+    text: "They came out within 45 minutes of calling and only took 10 minutes to diagnose our AC problem! Will definitely use this company any time my AC needs to be looked at."
+  },
+  {
+    name: "Casey Woodard",
+    location: "Lake Charles, LA",
+    rating: 5,
+    date: "August 2020",
+    service: "Weekend AC Repair",
+    text: "If you need your AC worked on, I highly recommend Latour's. My AC went out on the weekend, they came right over and had it fixed in no time. Nice, honest and trustworthy. Give them a call."
   }
 ];
 ---
